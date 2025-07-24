@@ -1,0 +1,785 @@
+2025-04-02 14:33:39文件开始写入
+__中文_二进制多关系可以模拟交替的非确定性,例如,在游戏或与环境相互作用的不断演变的系统中。 arXiv:2305.11344v2 [
+__英文_Binary multirelations can model alternating nondeterminism, for instance, in games or evolving systems interacting with an environment. arXiv:2305.11344v2  [
+__原文英文_arXiv:2305.11344v2  [cs.LO]  14 Jun 2023  Determinism of Multirelations  Hitoshi Furusawa, Walter Guttmann and Georg Struth  June 16, 2023  Abstract  Binary multirelations can model alternating nondeterminism, for instance, in games or  nondeterministically evolving systems interacting with an environment.
+__原文中文_arXiv:2305.11344v2 [cs.LO] 2023年6月14日 2023年6月16日 Hitoshi Furusawa、Walter Gutmann和Georg Struth 2023年6月16日 2023年6月16日
+__中文_我们用多种关系语言研究内外部部分和外外部部分及整体功能多重关系类别。这种系统可以显示两者的部分或全部功能行为。
+__英文_We study classes of inner and outer partial and total functional multirelations in a multirelational language. Such systems can show partial or total functional behaviour at both
+__原文英文_ Such systems can  show partial or total functional behaviour at both levels of alternation, so that nondetermin-  istic behaviour may occur only at one level or both levels, or not at all. We study classes  of inner and outer partial and total functional multirelations in a multirelational language  based on relation algebra and power allegories.
+__原文中文_这种系统可以显示两个交替等级的部分或全部功能行为,因此非决定性行为只能发生在一个等级或两个等级,或者完全不能发生。 我们用基于关系代数和动力代数的多关系语言研究内外部部分和整体功能多重关系。
+__中文_我们显示,从同时动态逻辑来看,关于Peleg构成的确定论多重关系类别中所提到的形式类别,其中有一些是动态逻辑。
+__英文_We show that the classes of deterministic multirelations mentioned form categories with respect to Peleg composition from concurrent dynamic logic. Some of these are
+__原文英文_ While it is known that general multirelations  do not form a category, we show that the classes of deterministic multirelations mentioned  form categories with respect to Peleg composition from concurrent dynamic logic, and some-  times quantaloids. Some of these are isomorphic to the category of binary relations.
+__原文中文_虽然众所周知,一般的多重关系不构成一个类别,但我们表明,从同时动态逻辑和有时的孔形体来看,确定性多重关系类别中提到了与Peleg构成有关的形式类别,其中有些是二进制关系类别中的无形态的。
+__中文_通过二进制关系绘制的确定性地图大致为多种关系。
+__英文_Determinisation maps approximate multirelations by binary relations. Such maps are useful for de�
+__原文英文_ We also  introduce determinisation maps that approximate multirelations either by binary relations  or by deterministic multirelations.  Such maps are useful for deﬁning modal operators on  multirelations.
+__原文中文_我们还引入了确定性地图,通过二进制关系或确定性多重关系,大致上是多重关系。 这些地图有助于界定多重关系的模式操作员。
+__中文_这是关于多种关系内部结构的三部曲中的第二篇文章。多重关系是X型的二进制关系 {_____________________________________________________________________________________
+__英文_This is the second article in a trilogy on the inner structure of multirelations. Multirelations are binary relations of type X ↔
+__原文英文_  1  Introduction  This is the second article in a trilogy on the inner structure of multirelations [FGS23b], the  determinisation of such relations and their algebras of modal operators [FGS23a].  Multirelations are binary relations of type X ↔PY .
+__原文中文_1 这是关于多种关系[FGS23b]内部结构、确定这种关系及其模式操作员代数[FGS23a]的三部文章中的第二篇文章。多重关系是X PY 型号的二元关系。
+__中文_正如本三选一第一条所解释的,它们是交替天使的模范
+__英文_As explained in the ﬁrst article of this trilogy, they are models of alternating angel
+__原文英文_  As explained in the ﬁrst article of  this trilogy, they are models of alternating angelic and demonic nondeterminism, while arbitrary  relations are standard models of angelic nondeterminism without alternation.
+__原文中文_正如本三部曲的第一篇文章所解释的,它们是交替的天使和恶魔非决定性的模型,而任意关系则是没有交替的天使非决定性的标准模型。
+__中文_X 中的每个元素可以通过这种多重关系、在非决定性的外部或天使层次上与一个或许多元素相联系,或与一个或多个元素相联系,或与一个或多个元素相联系。
+__英文_Each element in X can be related by such a multirelation, at the outer or angelic level of nondeterminism, to one element or many elements, or to no
+__原文英文_ Each element in  X can be related by such a multirelation, at the outer or angelic level of nondeterminism, to  one subset or many subsets of Y , or to no set at all, and within each of these subsets, at the  inner or demonic level of determinism, to one element or many elements, or to no element at  all.
+__原文中文_X中的每个元素都可以通过这种多重关系,在非决定性的外部或天使层面,与Y的一个子集或许多子集,或根本没有设定,在其中每一个子集中,在确定论的内在或魔鬼层面,与一个或许多元素,或与一个或许多元素,或与一个或许多元素,或完全没有设定。
+__中文_多种关系被用来用天使和demonic非确定论来描述程序语义的语义。
+__英文_Multirelations have been used to describe the semantics of programs with both angelic anddemonic nondeterminism. The inner or demonic structure of
+__原文英文_ Multirelations have been used to describe the semantics of programs with both angelic and  demonic nondeterminism [Rew03].  In the ﬁrst part of this trilogy we have studied the inner or demonic structure of multirelations,  which complements the usual angelic boolean structure on relations.
+__原文中文_多种关系被用来描述用天使和恶魔的非决定性主义[Rew03] 和天使和魔鬼的非决定性主义(rew03] 两种语言的语义。 在本三部曲的第一部分,我们研究了多种关系的内部或恶魔结构,这补充了通常的天使关系布林结构。
+__中文_典型的内部操作是两种多重关系R、S和S之间的内部结合。如果是R和S
+__英文_A typical inner operation is the inner union of two multirelations R, S of the same type. If R and S
+__原文英文_ A typical inner operation  is the inner union of two multirelations R, S of the same type: if R and S relate an element a  with the sets B and C, respectively, then R ⋒S relates a with the set B ∪C.
+__原文中文_典型的内部操作是两种相同类型的多重关系R、S的内部结合:如果R和S将一个元素分别与B组和C组联系起来,那么R++S将一个元素与B++C组合联系起来。
+__中文_内部交叉和内部补充,然后可以定义为:
+__英文_Inner intersection and inner complementation can then be deﬁned in
+__原文英文_ Inner intersection  and inner complementation can then be deﬁned in the obvious way, performing set-intersection or  set-complementation on the second components of pairs.
+__原文中文_然后可以以明显的方式界定内部交叉和内部补充,对对对的第二个组成部分进行定置交叉或定置组合。
+__中文_我们还讨论了内在独一性或内部部分功能、内部整体和内部确定主义的概念。
+__英文_We have also discussed notions of inner univalence or inner partial functionality, inner totality and inner determinism. A multirelation is inner univalent
+__原文英文_  We have also discussed notions of inner univalence or inner partial functionality, inner totality  and inner determinism or functionality, which complement the standard outer notions from rela-  tion algebra. A multirelation is inner univalent if every element in its codomain is either empty  or a singleton set.
+__原文中文_我们还讨论了内在独一性或内部部分功能、内部整体和内部确定性或功能等概念,这些概念补充了雷拉动力代数的标准外向概念。 如果其共同域内的每个元素都是空的或单吨的,则多重关系就是内在独一性。
+__中文_如果一个多个关系在其域域的每一元素都与非空套件相关,它就是内在的共和。它是内在的阻力
+__英文_A multirelation is inner total if every element in its domain is related to a non-empty set. It is inner deter
+__原文英文_ This means that mapping to the empty set represents inner partiality. Conse-  quently, a multirelation is inner total if every element in its domain is related to a non-empty set,  and it is inner deterministic if it is inner univalent and inner total.
+__原文中文_这意味着向空组的映射代表了内部的偏向性。 默认, 如果其域内的每一元素都与非空组有关, 多个关系就是内在的, 而如果它是内在的单向性和内在的, 它就是内在的确定性 。
+__中文_外外非象体多动关系是一个部分函数。外部总共多动关系与每个元素都有关。
+__英文_An outer univalentmultirelation is (the graph of) a partial function. An outer total multirelation relates every element
+__原文英文_ By contrast, an outer univalent  multirelation is (the graph of) a partial function, an outer total multirelation relates every element  with some set (including the empty one) and an outer deterministic multirelation is (the graph  of) a function.
+__原文中文_相比之下,外形单体多关系是(图)部分函数,外形总多关系将每个元素与某些集(包括空的)相联系,外形确定性多关系是(图)函数。
+__中文_因此,内在的单体多关系可被视为天使的多功能,不允许任何内在或魔鬼的选择。
+__英文_ inner univalent multirelations can thus be seen as angelic multirela-tions that do not allow any inner or demonic choices.
+__原文英文_ Intuitively, inner univalent multirelations can thus be seen as angelic multirela-  tions that do not allow any inner or demonic choices, while outer univalent multirelations can be  seen as demonic, as they do not allow any outer or angelic choices [Rew03].
+__原文中文_直观地说,内在单一的多重关系可被视为不允许任何内在或恶魔选择的天使多功能性动因,而外部的单独多重关系则可被视为妖魔性,因为它们不允许任何外部或天使性选择[Rew03]。
+__中文_确定性内部的多重关系纯属天使式关系,因为不允许空空的内在选择
+__英文_Inner deterministic multirelations are strictly angelic, as empty inner choices are not permitted
+__原文英文_ Inner deterministic  1  multirelations are therefore strictly angelic, as empty inner choices are not permitted, while outer  deterministic multirelations are strictly demonic, as empty outer choices are impossible.
+__原文中文_因此,确定性1的多重关系完全是天使式的,因为不允许空洞的内部选择,而外部确定性多重关系完全是魔鬼式的,因为空外选择是不可能的。
+__中文_在本条中,我们用一种代数语言[FKST17]研究内外单体和确定性混合体的结构,这种代数语言结合了关系代数和功率等的特征。
+__英文_In this article we study the structure of inner and outer univalent and deterministic mul-tirelations in an algebraic language [FKST17] that combines features of relation algebra and power alleg
+__原文英文_  In this article we study the structure of inner and outer univalent and deterministic mul-  tirelations in an algebraic language [FKST17] that combines features of relation algebra [Sch11],  quantaloids [Pit88, Ros96] and power allegories [FˇS90, BdM97] with speciﬁc operations for mul-  tirelations.
+__原文中文_在本条中,我们用一种代数语言[FKST17]研究内外单体和确定性混合物胎变的结构,这种代数语言结合了关系代数[Sch11]、四环形[Pit88、Ros96]和动力类胎变[FS90、BdM97]的特性,并用具体操作来处理混合物胎变。
+__中文_除了上述内外部结构操作外,我们考虑的是多种关系[Pel87]的Pelele构成[Pel87]。
+__英文_Apart from the operations on the inner and outer structure mentioned, we consider the Peleg                composition of multirelations [Pel87], which comes from concurrent
+__原文英文_ We also consider the determinisation of multirelations either by relations or by deter-  ministic multirelations.  Apart from the operations on the inner and outer structure mentioned, we consider the Peleg  composition of multirelations [Pel87], which comes from concurrent dynamic logic and is one of  several possible compositions for multirelations.
+__原文中文_我们还考虑确定多种关系,无论是通过关系还是通过威慑性现实性多关系。 除了上述内部和外部结构的行动外,我们还考虑多重关系[Pel87]的Peleg构成,它来自同时动态逻辑,是多重关系的若干可能构成之一。
+__中文_依据Pelele 构成的多重关系并不形成类别,因为这一操作没有关联性。
+__英文_Multirelations under Peleg composition do not notform categories because this operation is not associative. Yet speciﬁc classes of mult
+__原文英文_ Multirelations under Peleg composition do not  form categories because this operation is not associative. Yet speciﬁc classes of multirelations  do, for instance the classes of deterministic or univalent multirelations (Proposition 2.8).  In  Propositions 3.5 and 4.
+__原文中文_由Peleg构成的多重关系不构成类别,因为这一操作没有关联性。 但具体的多重关系类别确实存在,例如确定性或非虚拟多重关系类别(2.8号提案)。 在3.5和4号提案中,有3.5和4号提案。
+__中文_我们显示,内在的单体和内在的确定性多元关系在Pelele 构成方面构成不同类别。 特别是,权力转换。
+__英文_We show that inner univalent and inner deterministic multirelations form categories with respect to Peleg composition. In particular, the power transpose
+__原文英文_5 we show that inner univalent and inner deterministic multirelations form  categories with respect to Peleg composition as well. In particular, the power transpose map from  power allegories is in fact a functor from Rel to categories of inner deterministic multirelations  with respect to Peleg composition.
+__原文中文_5 我们显示, 与Peleg 构成相关的内部单项和内部确定性多重关系形式。 特别是, 电力转换图从权力分配图实际上从Rel到Peleg 构成方面的内部确定性多重关系类别。
+__中文_内外部确定性多种关系类别与系列和关系类别无定型,其浓缩形式为孔子。
+__英文_The categories of inner and outer deterministicmultirelations are isomorphic to the category Rel of sets and relations and its enrichment in the form of quantaloids.
+__原文英文_  Moreover, the categories of inner and outer deterministic  multirelations are isomorphic to the category Rel of sets and relations and its enrichment in the  form of quantaloids (Proposition 3.8).  We further introduce an operation that approximates multirelations by relations and their  isomorphic inner and outer deterministic multirelations.
+__原文中文_此外,内外部确定性多重关系类别与系列和关系雷尔类别及其以等离子体形式进行的浓缩(3.8Proposition 3.8)不相上下,我们进一步引入了一种根据关系及其非定离子内外部多关系,近似多重关系的行动。
+__中文_裂变和裂变图与Galois最初的多关系关系有关,也是内部和外部确定因素类别之间的真菌。
+__英文_Fusion and ﬁssion maps are related to the original multirelation by Galois. They are also functorsbetween the categories of inner and outer deterministic
+__原文英文_ These determinisation maps on multire-  lations, which we call fusion and ﬁssion maps, are related to the original multirelation by Galois  connections with respect to one of the inner preorders (Proposition 3.12). They are also functors  between the categories of inner and outer deterministic multirelations (Corollary 3.
+__原文中文_我们称之为聚变和裂变图,这些多点点点的确定图与Galois连接的原有多点关系有关,涉及一个内部序序(Proposion 3.12)。 这些图也是内、外多种关系(Cololly 3)类别之间的诱因(Proposion 3.12)。
+__中文_确定性地图用于证明内分辨性多重关系构成一个类别。
+__英文_The determinisation maps are used in the proof that inner univalent multirelations form a category. We work in concrete extensions and enrichments of Rel throughout this article, with a
+__原文英文_10), and the  inner and outer deterministic multirelations arise as their ﬁxpoints. The determinisation maps are  further used in the proof that inner univalent multirelations form a category.  As in [FGS23b], we work in concrete extensions and enrichments of Rel throughout this article,  but with a view towards future axiomatic approaches.
+__原文中文_确定性图被进一步用于证明内在的单体多重关系构成一个类别。和[FGS23b]一样,我们在整个[FGS23b]条中努力具体扩展和浓缩Rel,但着眼于未来的非非同性方法。
+__中文_我们开发了一个庞大的图书馆,以多种关系为借口,更广义地说,以多种关系为根据,
+__英文_We have developed a substantial library forreasoning with multirelations [GS23], and more generally with
+__原文英文_ Once again we have used the Isabelle/HOL  proof assistant to check many results in this article, and have developed a substantial library for  reasoning with multirelations [GS23], and more generally with concrete power allegories.
+__原文中文_我们再次利用伊莎贝尔/HOL校对助理检查文章中的许多结果,并开发了一个庞大的图书馆,以便与多种关系[GS23]进行推理,更笼统地说,与具体的权力分配。
+__中文_首先,我们回顾二元关系和多相关关系的基本原理。
+__英文_Relations and Multirelations. First we recall the basics of binary relations and multirelated. See [FGS23b] and the
+__原文英文_ Never-  theless we did not aim at a complete formalisation and our article is self-contained without the  Isabelle libraries.  2  Relations and Multirelations  First we recall the basics of binary relations and multirelations. See [FGS23b] and the references  therein for details.
+__原文中文_我们从来没有想过要完全正式化,我们的文章没有伊莎贝尔图书馆,是自成一体的。 2 关系和多重关系首先我们回顾二元关系和多重关系的基本原理。 详情见[FGS23b]及其中的参考资料。
+__中文_我们关于具体关系和多重关系的代数语言
+__英文_Our algebraic language of concrete relations and multirelations
+__原文英文_ Our algebraic language of concrete relations and multirelations is again based  on enrichments of the category Rel of sets and relations.
+__原文中文_我们关于具体关系和多重关系的代数语言再次以系列和关系Rel类别的浓缩为基础。
+__中文_我们扩展了关系[Sch11]的标准计算法,从权力分配的概念[FS90]中扩展了关系[Sch11]的标准计算法,特别使用了与《公约》和《经济、社会、文化权利国际公约》和《经济、社会、文化权利国际公约》以及《经济、社会、文化权利国际公约》和《经济、社会、文化权利国际公约》有关联的概念。
+__英文_We extend the standard calculus of relations [Sch11] with concepts from power allegories [FˇS90] using in particular the connection with the monad of
+__原文英文_ Yet in contrast to [FGS23b] we extend  the standard calculus of relations [Sch11] with concepts from power allegories [FˇS90] using in  particular the connection with the monad of the powerset functor in Set [BdM97], and with  multirelational concepts, as in [FKST17].
+__原文中文_然而,与[FGS23b]不同,我们扩展了关系[Sch11]的标准计算法,其概念来自权力分配[FS90],特别使用Set[BdM97] 中电源集真菌的修道院的连接,以及多重关系概念,如[FKST17]。
+__中文_我们从[FGS23b]小基础扩大关系和多关系概念的依附关系清单和多关系概念清单,使之扩大至此处所需的其他概念。
+__英文_We extend the dependency list of relational and multirelational concepts with respect to a small basis from [FGS23b] to the additional concepts needed here in
+__原文英文_ The richness of this language sometimes prevents us  from listing all properties used in calculations and proofs – we often refer to “standard” properties  instead. We extend the dependency list of relational and multirelational concepts with respect to  a small basis from [FGS23b] to the additional concepts needed here in Appendix A.  2.
+__原文中文_这种语言的丰富有时使我们无法列出计算和证明中所使用的所有属性 — — 我们常常提到“标准”属性。 我们把关系和多重关系概念的依附清单从[FGS23b]扩大到附录A.2中需要的额外概念。
+__中文_在[FGS23b]之后,我们在Rel类中工作,以物体、关系和箭头的形式开展工作
+__英文_Following [FGS23b], we work in the category Rel with sets as objects, relations as arrows
+__原文英文_1  Binary relations  Following [FGS23b], we work in the category Rel with sets as objects, relations as arrows, rela-  tional composition as arrow composition and the identity or diagonal relations as identity arrows.
+__原文中文_1 二元关系。 在[FGS23b]之后,我们在雷尔类别中工作,以物体、箭头、箭头、箭头构成和身份或对角关系作为身份箭头。
+__中文_它形成一个模块化的四环形[Ros96],其中的四环
+__英文_It forms a modular quantaloid [Ros96], where a quantal
+__原文英文_  It forms a modular quantaloid [Ros96], where a quantaloid is a category enriched in the symmetric  closed monoidal category of sup-lattices.
+__原文中文_它形成一个模块式的四人基体[Ros96],其中一种四人基体是一种在对称封闭的单项顶端类别中富集的类别。
+__中文_对于雷尔来说,高压产生关系构成和保留。通过结束,关系构成有两种剩余作为右联结。作为一个苏普,它具有两种剩余。
+__英文_For Rel, the tensor yields relational composition andsup-preservation. By closure, relational composition has two residuals as right adjoints. As a sup
+__原文英文_ For Rel, the tensor yields relational composition and  sup-preservation; by closure, relational composition has two residuals as right adjoints; as a sup-  lattice, it has arbitrary sups and infs, that is, unions and intersections. Rel, in particular, is even  2  a complete atomic boolean algebra.
+__原文中文_对于雷尔来说,高压产生关系构成和保值;通过关闭,关系构成有两种剩余物作为右接合物;作为一种合金,它有任意的外观和外观,即结合和交叉体。 特别是,雷尔甚至有两个完整的原子布尔代数。
+__中文_Rel 是一个模块型的四环形。 rel 具有相对的反义 。
+__英文_Rel is a modular quantaloid. Rel has the relational converse as
+__原文英文_ As a modular quantaloid, Rel has the relational converse as  an involution which satisﬁes the modular or Dedekind law of relation algebra.
+__原文中文_Rel作为模块型孔子,其关系反相为革命,它符合模块型或德方关系法代数代数法。
+__中文_我们为X和UX上的身份关系撰写X,Y为Homset rel(X,Y),IdX为X和UX上的身份关系撰写X,Y为最大元素为X。 我们还为R和S(RS)的补充撰写R,RS为关系的关系构成撰写RS
+__英文_We write X, Y for the homset Rel(X, Y), IdX for the identity relations on X and UX,Y for the greatest element in X. We also write −R for the complement of R and S, RS for the relational composition of relations
+__原文英文_  We write X ↔Y for the homset Rel(X, Y ), IdX for the identity relations on X, ∅X,Y for the  least and UX,Y for the greatest element in X ↔Y , −R for the complement of R and S −R for  the relative complement S ∩−R, RS for the relational composition of relations R, S of suitable  type, R/S and R\S for the left and right residuals of R and S and R⌣for the converse of R.
+__原文中文_我们为X、X、Y、IdX上的身份关系写X Y,为X、X、Y上最小的身份关系写IdX,为X、Y和UX,为X、Y和Y的最大元素写R-R,为R和S-R的补充,为S、R和R的相对补充,为R、S和R的关系组成,为R、S和R的左和右残渣写R/S和R\S,为R和R的对角写R-R。
+__中文_我们需要这些属性 T\S = (S/T ) 和 T/S = - (-T S) 属性 RS T
+__英文_We need the properties T \S = (S⌣/T ⌣) and T/S = −(−T S) The property RS ∩T ⊆
+__原文英文_ The  modular law is the property RS ∩T ⊆(R ∩T S⌣)S.  We need the properties T \S = (S⌣/T ⌣)⌣, T/S = −(−T S⌣) and T \S = −(T ⌣(−S)) of  residuals.
+__原文中文_模块法是残留物的属性 RS RS QT (R T S )S。 我们需要残留物的属性 T \S = (S /T ) , T/S = ~(T S ) 和 T \S = ~(T (-S ) 。
+__中文_T:X和S:Y的对称商数 T  S: X Y T: X 和 S: Y 被定义为测试。我们还需要以下概念: 域图 R: X, Y, R 7IdX, X = {(a, a) {
+__英文_The symmetric quotient T ÷ S : X ↔Y of T : X and S : Y is deﬁned as a test. We also need the following concepts: The domain map R : X, Y, R 7→IdX, X = {(a, a) | 
+__原文英文_ We also need the following concepts:  • the symmetric quotient T ÷ S : X ↔Y of T : X ↔Z and S : Y ↔Z, deﬁned as  T ÷ S = (T \S) ∩(T ⌣/S⌣),  • tests, which are relations R ⊆Id, and whose relational composition is intersection,  • the domain map R : X ↔Y, R 7→IdX ∩RR⌣= IdX ∩RUY,X = {(a, a) | ∃b. Ra,b}.
+__原文中文_我们还需要以下概念:对称商数T  S: X  Y T : X  和 S : Y = T  S = (T \ S)  (T  / S ), 测试,这是关系R  Id, 其关系构成是交叉的, • 域图R : X  Y, R 7Id X  RR  IdX  RUY, X = {(a)  b. Ra,b}。
+__中文_域元素和试验构成任何X的Rel(X,X)的相同完整子代数
+__英文_Domain elements and tests form the same full subalgebra of Rel(X, X) for any X
+__原文英文_  Domain elements and tests form the same full subalgebra of Rel(X, X) for any X, a complete  atomic boolean algebra.  As the title of this article indicates, we are particularly interested in the following properties.
+__原文中文_域元素和试验构成任何X的Rel(X,X)的完整子代数,一个完整的原子布尔代数,正如本条标题所示,我们特别关心以下属性。
+__中文_在 Rel 中确定性关系的函数当然是 Set 中函数的图形。 R: X  Y 关系是全部函数和单独函数之间的关系。也可以是部分函数,或者
+__英文_Functions as deterministic relations in Rel are of course graphs of functions in Set. The relation R : X ↔Y is a relation between total and univalent functions. It can also be a partial function, or
+__原文英文_  The relation R : X ↔Y is  • outer total if dom(R) = IdX, or equivalently IdX ⊆RR⌣,  • outer univalent, or a partial function, if R⌣R ⊆IdY ,  • outer deterministic, or a function, if it is total and univalent.  Functions as deterministic relations in Rel are of course graphs of functions in Set.
+__原文中文_关系 R: X Y 是指 如果 Dom(R) = IdX 或等同 IdX = R , 则外部共振 ; • 外共振, 或部分函数, 如果 R R  IdY , 外部确定性, 或函数, 如果是全部和无确定性, 则外部确定性, 或函数 。 在 Rel 中作为确定性关系的函数当然是 Set 中函数的图表 。
+__中文_我们需要相关法PQ Q Q Q Q(SS89) 来计算外无异 Q [SS89] 。 我们进一步写RA 来限制 R 与一组 A 和 R(A ) 中域元素的关系。 R(A ) 用于 A 和 R(A ) 的外无异 Q [SS89] 外无异 Q [SS89] 。
+__英文_We need the relational law PQ ∩S for outer univalent Q [SS89] in calculations. We further write R|A for the restriction of relation R to domain elements in the set A, R(A) for the relational image of
+__原文英文_ They also  model programs as a subset of nondeterministic speciﬁcations in program reﬁnement calculi. We  need the relational law PQ ∩S = (P ∩SQ⌣)Q for outer univalent Q [SS89] in calculations.  We further write R|A for the restriction of relation R to domain elements in the set A, R(A)  for the relational image of A under R and R(a) for R({a}).
+__原文中文_它们还将程序作为非确定性规格的子集,作为方案改进计算计算法的模型。我们需要计算外部单项 Q [SS89] 的关联法 PQ S = (P S )Q Q。我们进一步写RA , 以限制R 与套装 A 域元素的关系, R(A) , 以显示 R 和 R (a) 下的 A 的关联图像 。
+__中文_X 和 X Q PY 在Set 中的非确定函数之间的关系之间的无形态性可表现为 Rel。 非确定性函数 X  PY
+__英文_The isomorphismbetween relations in X and nondeterministic functions in X →PY in Set can be expressedin Rel. Nondetergetic functions X → PY
+__原文英文_  Next we recall the basic concepts from power allegories [FˇS90, BdM97]. The isomorphism  between relations in X ↔Y and nondeterministic functions in X →PY in Set can be expressed  in Rel. Nondeterministic functions X →PY in Set are of course functions X ↔PY in Rel.
+__原文中文_接下来,我们回顾权力所有者的基本概念[FS90,BdM97]。XY关系与XPY在Set的非确定性功能之间的无定型作用可以用Rel表示。非确定性功能XPY在Set当然是Rel的XPY功能。
+__中文_电源转换 : (X Y) (X PY) , R 7maps 关系 X Y 到 X P 函数的 R 7maps 关系 X Y
+__英文_The power transpose: (X ↔Y ) →(X ↓PY ), R 7maps relations X ↓Y to functions in X →P
+__原文英文_  The power transpose  Λ : (X ↔Y ) →(X ↔PY ), R 7→{(a, R(a)) | a ∈X}  maps relations X ↔Y to functions in X ↔PY , which are graphs of the nondeterministic  functions X →PY in Set.
+__原文中文_电源转换 : (X Y) (X PY) , R 7(a, R(a) ) (a) (a) (X) ) 映射 X Y 与 X PY 函数的关系, 这些函数是 Set 中非确定函数 X PY 的图形 。
+__中文_在另一方面,与PY(PY):PY Y(PY Y)是会员关系Y(Y):Y(Y)的反义词。我们今后写 α = (-) 。此函数在 X 中绘制关系和函数图 。
+__英文_In the other direction, relational postcomposition with the has-element  relation  PY : PY Y is the converse of the membership relation  Y : Y. We henceforth write α = (−)∋. This function maps relations and functions in X
+__原文英文_ In the other direction, relational postcomposition with the has-element  relation ∋Y : PY ↔Y , the converse of the membership relation ∈Y : Y ↔PY , maps relations and  therefore functions in X ↔PY to relations in X ↔Y . We henceforth write α = (−)∋. This  function satisﬁes  α : (X ↔PY ) →(X ↔Y ), R 7→  n  (a, b) | b ∈  [  R(a)  o  .
+__原文中文_在另一个方向上,与有势关系的关系后遗症(Y):PY :Y Y :Y :Y :Y PY :成员关系相对应的X PY 显示关系,因此在X PY 与X Y 的关系中也显示功能。我们今后写 α = (-) 。此函数满足α :(X PY ) (X Y ) , R 7 n (a, b)  b  [R(a) o 。
+__中文_代数, (R) = R
+__英文_Algebraically, Λ(R) = R⌣÷ ∈, and we will see below how ∋and α can be expressed in terms of basic relational and multirelational operations. Let R : X →Y and let f : X PY be deterministic. Then f = f(
+__原文英文_  Algebraically, Λ(R) = R⌣÷ ∈, and we will see below how ∋and α can be expressed in terms of  basic relational and multirelational operations.  Lemma 2.1. Let R : X →Y and let f : X →PY be deterministic. Then  1. f = Λ(R) ⇔R = α(f),  2. α(Λ(R)) = R and Λ(α(f)) = f,  3. fΛ(R) = Λ(fR) and Λ(∋X) = IdPX.
+__原文中文_代数, (R) = R                                                         (fR)  (f)  (f)  (x)          (x)   (x)
+__中文_因此下图显示 X  PY 函数的通勤。 因此,  和 α 形成双对双向。 我们还需要关联图像授粉器 P :( X Y )  (P)  (P) 。
+__英文_The following diagram therefore commutes for functions in X ↔PY. It follows that Λ and α form a bijective pair. We also need the relational image functor P : (X ↔Y ) →(P
+__原文英文_  3  The following diagram therefore commutes for functions in X ↔PY :  X ↔PY  X ↔PY  X ↔Y  X ↔Y  id  α  α  id  Λ  It follows that Λ and α form a bijective pair.  We also need the relational image functor  P : (X ↔Y ) →(PX ↔PY ), R 7→Λ(∋XR).
+__原文中文_3 下图显示X PY 函数的通勤 : X PY X PY X Y X Y id α α id
+__中文_扩展定义, P( R) = {( A, R( A) {( R)   A    X}) , 所以由 Set 中共变量电源源连接器提供的关联图像
+__英文_Expanding deﬁnitions, P(R) = {(A, R(A) | A ⊆X}, so that the relational image, given by the Covariant powerset functor in Set, is
+__原文英文_  Expanding deﬁnitions, P(R) = {(A, R(A)) | A ⊆X}, so that the relational image, given by the  covariant powerset functor in Set, is coded again as a graph. It is deterministic by deﬁnition. As  a functor, it satisﬁes of course P(RS) = P(R)P(S) and P(Id) = Id.
+__原文中文_扩展定义, P(R) = {(A, R(A) ) {(A) )  A  X}, 以便由 Set 中共变量电源设置真菌给定的关联图像再次编码为图表。 按定义,它具有确定性。 作为配方, 它当然满足 P(RS) = P(R) P(S) 和 P(Id) = Id 。
+__中文_电源元件的单位和乘数以 X : X PX 相连接回收。让 R: X 和 S : Y 和 f : Y 和 f : Y : 确定性。 然后, monad 被称为 R- S- Y monad , 乘法是 S- Y- Z monad 。 monad 可以是 S- Y- Z monad 。
+__英文_The unit and multiplication of the powerset monad are recovered relationally as ηX : X ↔PX. Let R : X and S : Y and f : Y be deterministic. Then the monad is called the R-S-Y monad and the multiplication is the S-Y-Z monad. The monad can be
+__原文英文_  The unit and multiplication of the powerset monad are recovered relationally as ηX : X ↔PX  and µX : P2X ↔PX such that ηX = Λ(IdX) and µX = P(∋X). Alternatively, ηX = IdX ÷ ∈X  and, expanding deﬁnitions, ηX = {(a, {a}) | a ∈X}.  Lemma 2.2. Let R : X ↔Y , S : Y ↔Z, let f : X ↔Y be deterministic. Then  1. Λ(RS) = Λ(R)P(S),  2.
+__原文中文_功率元件的单位和乘数以 X : X : X PX 和 μX : P2X PX = X 和 μX = P( X ) 。 或者, X = IdX   X 和 扩展定义 , X = {(a, {a}   X 。 Let R : X Y, S : Y , let f : X Y 具有确定性。 然后, 1. (RS) = (R)P (S), 2,
+__中文_P 不在 Rel 上形成monad ; 它只在它的宽度子类Rel 上形成 monad ; P 有右反方向, 所以P 有月度轴: P( μ) μ = , P( ) 3⁄4 = Id, P2( f) 1⁄2 = μP( f) 和 P
+__英文_P does not form a monad on Rel; it only does so on its wide subcategory Rel. P has a right inverse, so P has the monad axioms: P(µ)µ = µµ, P(η)¾ = Id, and P2(f)½ = µP(f), and P
+__原文英文_ ηP(R) = Λ(R) and α(ηP(R)) = R, hence P has a right inverse,  3. Λ(f) = fη,  4. η and µ are natural transformations: ηP(f) = fη and P2(f)µ = µP(f),  5. the monad axioms hold: P(µ)µ = µµ, P(η)µ = Id and ηµ = Id,  6. α(η) = Id.  Rather unsurprisingly, P does not form a monad on Rel; it only does so on its wide subcategory  Set (up to isomorphism).
+__原文中文_P(R) = (R) 和α(P(R) = R) = R,因此P 有右反转, 3. (f) = f, 4. 和 微克是自然变异: P(f) = f 和 P2(f) μ = 微克P(f), 5. 月球的轴承: P( μ) μ = , P( ) μ = Id 和  = Id, 6. α( ) = Id. 。 相当不令人惊讶的是, P 不构成雷尔上的月亮; 它只在广泛的子组( 以无形态形式) 时才这样做 。
+__中文_以下关系在代数方面是标准关系,可在电力出口中加以界定,包括子关系28Y和补充关系C。我们需要以下技术利玛作为证明。请R:X Y。然后关系C:X:Y等于C:Y:X。我们可以证明C:
+__英文_The following relations are standard in relation algebra and can be deﬁned in power allegories. They include the subset relation ΩY and the complementation relation C. We need the following technical lemma in proofs. Let R : X ↔Y . Then the relation C: X: Y is equivalent to C: Y: X. We can prove that C:
+__原文英文_  The following relations are standard in relation algebra and can be deﬁned in power allegories:  • the subset relation ΩY = ∈Y \∈Y = {(A, B) | A ⊆B ⊆Y },  • the complementation relation C = ∈Y ÷ −∈Y = {(A, −A) | A ⊆Y }.  We need the following technical lemma in proofs.  Lemma 2.3. Let R : X ↔Y . Then  1. Λ(R)C = Λ(−R),  2. Λ(R)Ω= R⌣\∈= (∋/R)⌣.  Proof.
+__原文中文_以下关系是参照代数的标准,可在权力分配中加以界定: 子关系 = Y = Y Y = {(A,B)  A B Y } , 补充关系 C = Y  Y = {(A,-A)  A Y }。 我们需要以下技术利玛 。 Lemma 2.3。让我们R : X Y 。 然后 1. (R) C = (R), 2. (R) (/R) 。 证明 。
+__中文_(R)的 Lemma 2.1和确定性在第二和第三步中使用。(1)和(2) 对于(1)和(2),我们在第三步中使用xx的定型和再生特性。我们还在第四步中使用Lemma 1.1,在第五步中使用Lemma 3.2的特性。结果是:
+__英文_Lemma 2.1 and determinism of Λ(R) are used in the second and third steps. For (1) and (2) we use the deﬁni-                tion of Ω and the properties ofresiduals in the third step. We also use Lemma 1.1 in the fourth and properties of Lemma 3.2 in the fifth step. The result is
+__原文英文_ For (1), Λ(R)C = Λ(R)Λ(−∋) = Λ(Λ(R)(−∋)) = Λ(−(Λ(R)∋)) = Λ(−R).  This uses  properties of Lemma 2.1 and determinism of Λ(R).  For (2), Λ(R)Ω= Λ(R)(−(∋(−∈))) = −(Λ(R)∋(−∈)) = −(R(−∈)) = R⌣\∈, using the deﬁni-  tion of Ωand determinism of Λ(R) in the second step, Lemma 2.1 in the fourth and properties of  residuals in the third.
+__原文中文_对于(1) (R)C = (R)-() = () = (-() ) = (-) () = (-) = (-) (-) ) = (-) = (-) ) = (-) = (-) = (-) = (-) = (-) = (-) (-) ) = (-) (-) = (-) (-) = (-) (-) (-) (-) (-) = (-) (-) (-) ) = (- (-) (-) (-) ) (- (-) (- (-) ) (-) ) (- (-) (-) (-) (-) (-) ) ) = (-) (-) ) (-) (-) (-) ) = ) (-) (-) (-) (-) (-) (-) ) (-) ) (-) ) ) ) = (-) ) ) (- (- (-) ) = = (-) (-) ) (- (-) ) (-) (-) ) ) (-) ) (- (-) ) ) ) (- (-) ) (- () ) ) ) ) (- (- (- (-) ) ) ) ) (
+__中文_多重关系是 Rel 中的箭头 X    PY , 因此是 Set 中的双非决定性函数 X P2Y 。 我们为 Homset X  PY 写入 M( X, Y ) 。 对于 R, 我们写 S d R , 如果 S 是
+__英文_A multirelation is an arrow X ↔PY in Rel and therefore a doubly-nondeterministic function X →P2Y in Set. We write M(X, Y ) for the homset X ↓PY. For R, we write S ⊆d R if S is
+__原文英文_  Finally, for R, S : X ↔Y , we write S ⊆d R if S is univalent, dom(S) = dom(R) and S ⊆R.  This allows us to decompose any relation as R = S  S⊆dR S [FGS23b, Lemma 2.1].  4  2.2  Multirelations  A multirelation is an arrow X ↔PY in Rel and therefore a doubly-nondeterministic function  X →P2Y in Set. We write M(X, Y ) for the homset X ↔PY .
+__原文中文_最后,对于 R, S: X  Y, 我们写S d R 如果 S 是 univalent, dom( S) = dom( R) 和 S R 。 这样我们就可以分解 R = S dR S [FGS23b, Lemma 2.1] 的任何关系。 4 2. 2 多重关系 A 多重关系是 Rel 中的箭头 X PY, 因此在 Set 中写一个双重的非定义函数 X P2Y 。 我们为 Homset X PY 写入 M (X, Y ) 。
+__中文_多重关系不构成一个类别。 双电源附加器不产生合适的
+__英文_Multirelations do not form a category. Double powerset functor does not yield a suitable
+__原文英文_ Multirelations do not form  a category: the double powerset functor does not yield a suitable monad [KS18] and hence no  associative composition with suitable units [FKST17].
+__原文中文_多重关系不构成一个类别:双电源集真菌不产生合适的山顶[KS18],因此与合适的单位没有关联构成[FKST17]。
+__中文_Pelele 构成 [Pel87] 可以用Peleleg 解除来定义。 Kleisli 解除也可以用同样的方式使用。 其组成可以写为:( X PY )  (PX PY ) 或 (X PZ )  (X × PZ )  (X × PZ ) 。
+__英文_The Peleg composition [Pel87] can be deﬁned in terms of the Peleg lifting. The Kleisli lifting can also be used in the same way. The composition can be written as: (X ↔PY ) → (PX ↓PY)  or (X → PZ) → (X × PZ
+__原文英文_  The Peleg composition [Pel87] ∗: (X ↔PY ) × (Y ↔PZ) →(X ↔PZ) can be deﬁned in  terms of the Peleg lifting (−)∗: (X ↔PY ) →(PX ↔PY ) of multirelations, which in turn can  be deﬁned in terms of the Kleisli lifting (−)P : (X ↔PY ) →(PX ↔PY ) [FKST17]:  RP = P(α(R)),  R∗= dom(R)∗  [  S⊆dR  SP,  R ∗S = RS∗.
+__原文中文_Peleg 构成[Pel87] *:(X PY ) × (Y PZ) (X PZ) (X) PZ) 可以用多重关系的Peleg 提升(-) * :(X PY) (PX PY) 来定义,反过来,也可以用Kleisli 提升(-) P:(X PY) (PX PY) (FKST17) :RP = P(α(R)) ,R dom(R) {[SdR SP,R* S = RS* 来定义。
+__中文_Kleisli 升降是Kleisli 升降或 Kleisli 扩展的多重关系类比。 它属于电源赛月球的类别, 也可以用来扩大月球, 以包括其他月球。 例如, 它可以扩大到包括Monad- Phenomen 的月球。 它也可以扩大到包括月球 。
+__英文_Kleisli lifting is the multirelational analogue of the Kleisli lift or KleislI extension. It is a category of the powerset monad. It can also be used to extend the monad to include other monads. For example, it can be extended to include a monad that includes the Monad-Phenomenon. It could also extend to include the
+__原文英文_  Expanding deﬁnitions,  RP =  n  (A, B) | B =  [  R(A)  o  ,  R∗=  n  (A, B) | ∃f : X →PY. f|A ⊆R ∧B =  [  f(A)  o  ,  R ∗S =  n  (a, C) | ∃B. Ra,B ∧∃f : Y →PZ. f|B ⊆S ∧C =  [  f(B)  o  .  The Kleisli lifting is the multirelational analogue of the Kleisli lifting or Kleisli extension in  the Kleisli category of the powerset monad.
+__原文中文_扩展定义,RP = n(A, B) = B = [R(A) o, R n (A, B)    f : X PY. fA R B = [f(A) o , R S = n (a, C) B. Ra, B f : Y PZ. f B S C = [f(B) o 。 Kleisli 升降是Kleisli 升降或Kleisli 扩展的多重关系模拟,位于电元月球的Kleisli 类别中。
+__中文_Lemma 2.4可被视为任何多关系关系关系近似关系的关系图像。
+__英文_Lemma 2.4 can be seen as the relational image of the relational approximation of any multirelation. By deﬁnition, Kleisli liftings of multire
+__原文英文_ Its standard deﬁnition translates to multirelations.  Lemma 2.4. Let R : X ↔PY . Then RP = P(R)µ.  It can also be seen as the relational image of the relational approximation of any multirelation  using α. By deﬁnition, Kleisli liftings of multirelations are functions in Rel.
+__原文中文_其标准定义转换为多重关系。 Lemma 2.4. 允许 R : X PY 。 然后RP = P(R) μ。它也可以被视为使用 α 的多重关系关系关系近似关系的关联图像。 顾名思义, 多重关系Kleisli的提升是 Rel 的函数 。
+__中文_Peleg构成的单位由多关系 X 给出; 因此, 我们从此以后也写 1X for X 。 让 R: X PY, S: Y
+__英文_The units of Peleg composition are given by the multirelations ηX; because of this, we hence-forth also write 1X forηX. Let R : X ↔PY , S : Y ↔
+__原文英文_  The units of Peleg composition are given by the multirelations ηX; because of this, we hence-  forth also write 1X for ηX.  Lemma 2.5. Let R : X ↔PY , S : Y ↔PZ and let f : X ↔PY be a function. Then the laws  (RSP)P = RPSP, ηP = Id and ηfP = f of extension systems hold.
+__原文中文_Peleg构成的单位由多关系 X 提供; 因此, 我们因此也为 X. Lemma 2. 2.5 撰写 1X 。 请 R: X PY, S : Y PZ 和 f: X PY 函数。 然后法律 (RSP) P = RPSP, P = Id 和 fP = f 扩展系统持有。
+__中文_标准属性 P( R) = ( R) P 和 μ = = IDP 仍然持有任何多关联。再次,扩展系统轴
+__英文_The standard properties P(R) = (Rη)P and µ = IdP still hold for any multirelation. Once again, the extension system axi
+__原文英文_  The standard properties P(R) = (Rη)P and µ = IdP, which recover the powerset monad from  its extension system, still hold for any multirelation. Once again, the extension system axioms  work only for deterministic multirelations – the standard arrows of the Kleisli category of the  powerset functor.
+__原文中文_标准属性 P( R) = ( R) P 和 μ = = IdP ,它们从扩展系统中回收了电源元,仍然可以维持任何多重关系。 再说一次, 扩展系统轴只能用于确定性多重关系 — — 电源元子连接器 Kleisli 类的标准箭头。
+__中文_Peleg构成与外部结构的相互作用较弱;例如,见[FS15]。特别是,它不是关联的;只有(R ∗S) * T。
+__英文_The interaction of Peleg composition with the outer structure is weak; see [FS15] for examples. In particular, it is not associative; only (R ∗S) ∗T �
+__原文英文_  The interaction of Peleg composition with the outer structure is weak; see [FS15] for examples.  In particular, it is not associative; only (R ∗S) ∗T ⊆R ∗(S ∗T ) holds. Hence (RS∗)∗need  not be equal to R∗S∗, and multirelations do not form a category under Peleg composition.
+__原文中文_Peleg构成与外部结构的相互作用很薄弱;例如,见[FS15]。特别是,它不具有关联性;它只有(R ∗S) * T R * * (S ∗ T) 。因此(RS ∗) * 不一定等于 R *S * ,而多重关系不构成Peleg构成的类别。
+__中文_如果第三个因素是工会封闭的[FKST17],那么Pelele 构成就成为联合组成。 Lemma 2.6是简单描述独一和单一的描述。
+__英文_Peleg composition preserves arbitrary unions in its ﬁrst argument. Peleg composition becomes associative if the third factor is union-closed [FKST17]. The Lemma 2.6 is a simple description of univalent and
+__原文英文_ The  composition becomes associative if the third factor is union-closed [FKST17]. Peleg composition  also preserves arbitrary unions in its ﬁrst argument.  Algebraic descriptions of univalent and deterministic multirelations are simple.  Lemma 2.6 ([FKST17]). Let R : X ↔PY . Then  1. R = dom(R)1XRP and R∗= dom(R)∗RP if R is univalent,  2.
+__原文中文_如果第三个因素是工会封闭的[FKST17],则组成就成为关联性。Peleg的组成也保留了第一个论点中的任意性工会。代数对单体和确定性多重关系的描述很简单。Lemma 2.6 ([FKST17]). Let R: X PY. 然后是1. R=dom(R)1XRP和Rdom(R)*RP,如果R是非自愿的,2。
+__中文_由于Kleisli的多重关系提升是功能,因此从(1) 可以看出,单象形多重关系解除Peleg是单象形的。 或者,R: X PY是非象形的,如果和的话。
+__英文_As Kleisli liftings of multirelations are functions, it follows from (1) that Peleg lifting of univalent multirelation are univalent. Alternatively, R : X ↔PY is univalent if and
+__原文英文_ R = 1XRP and R∗= RP if R is deterministic.  As Kleisli liftings of multirelations are functions, it follows from (1) that Peleg liftings of  univalent multirelations are univalent. Alternatively, R : X ↔PY is univalent if and only if, for  all S : X ↔PY , dom(R) = dom(S) and S ⊆R imply S = R [FKST17].
+__原文中文_R=1XRP和RRP,如果R是确定性的。由于多关系Kleisli的提升是功能,因此从(1) 可以看出,单方多关系Peleg的提升是非动态的。或者,R: X PY是非动态的,条件是,对于所有S: X PY, dom(R) = dom(S) 和 S R 表示 S = R [FKST17]。
+__中文_统性多重关系具有较强的代数特性。 让 R、 S 和 f 成为可混成的多相关和 f 单流。 然后, T 是无异的, 因此 R 和 S 是可混成的。 T 如果而且只有在可混成的情况下, T 也是无异的, 所以T 是复合的。 然后, R 和 S 的多重关系是无异的, 因此也是无异的。
+__英文_Univalent multirelations have stronger algebraic properties. Let R, S and f be composable multirelated and f univalent. Then the T are univalent, and therefore the R and S are composable. The T is univalent if and only if it is composable, and so the T is composite. The multirelation of R and the S is then univalent and therefore univalent as well. The univalent T is
+__原文英文_ Thus  S∗= dom(S)∗  [  T ⊆dS  TP =  [  T ⊆dS  dom(S)∗TP =  [  T ⊆dS  dom(T )∗TP =  [  T ⊆dS  T∗,  5  as the T are univalent, and therefore  R ∗S = R  [  T ⊆dS  T∗= R dom(S)∗  [  T ⊆dS  TP = R dom(S)∗  [  T ⊆dS  P(α(T )).  Univalent multirelations have stronger algebraic properties.  Lemma 2.7 ([FKST17]). Let R, S and f be composable multirelations and f univalent. Then  1.
+__原文中文_因此,SdS TdS TdS TP = [T dS dom(S) * TP = [T dS dom(T) * {TP = [T dS T* 5,因为T是非同性,因此R ∗S = R [T dS T {R dom(S) * [T dS TP = R dom(S) * [T dS P(T) 。 单价多重关系具有较强的代数特性。 Lemma 2.7 ([FKST17]). 让R、S和f成为可折反的多重关系和f 。
+__中文_单象体和确定性多点关系组成类别,包括形形形色色的物体、箭头、波列构成和1X作为身份箭头。 定律 (Sf*) * * S* *
+__英文_The univalent and the deterministic multirelations form categories with sets asobjects, multirelated as arrows, Peleg composition and 1X as identity arrows. The laws (Sf∗)∗= S∗
+__原文英文_ the laws (Sf∗)∗= S∗f∗, η∗= Id and ηR∗= R of extension systems hold,  2. (R ∗S) ∗f = R ∗(S ∗f).  Proposition 2.8. The univalent and the deterministic multirelations form categories with sets as  objects, multirelations as arrows, Peleg composition and 1X as identity arrows.  Proof.
+__原文中文_(Sf*) * S*f* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Id * * * * * * * * * * * R* R* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ** 提议2.8。
+__中文_2.7. 多重关系 1X是决定性的,因此是非动态的。
+__英文_Lemma 2.7. Multirelations 1X are deterministic and hence univalent. Peleg composition of
+__原文英文_ Peleg composition of univalent and therefore deterministic multirelations is associative by  Lemma 2.7. Multirelations 1X are deterministic and hence univalent. It remains to show that ∗  preserves univalence and determinism.
+__原文中文_Lemma 2.7. 多重关系1x是决定性的,因此是非象素的构成,因此确定性多重关系是联系的。 多重关系1X是决定性的,因此是非象素的。 仍然可以证明,* 保留了非象素和确定性。
+__中文_如果R和S是可合成的单象体多重关系,RSP是总计的,因为SP是决定性的,关系组分保持整体。
+__英文_If R and S are composable univalent multirelations, RSP is total, because SP is deterministic and relationalcomposition preserves totality. See Proposition 3. If
+__原文英文_ If R and S are composable univalent multirelations, then  R ∗S = RS∗is univalent because S∗is univalent and relational composition preserves univalence.  If R and S are also total, then R ∗S = RSP is total, because SP is deterministic and relational  composition preserves totality.  See Proposition 3.
+__原文中文_如果R和S是可溶解的不可逆的多重关系,那么R *S = RS* * = RS* * univalent,因为S* univalent和关系组成保持了共振。如果R和S也是共振,那么R *S = RSP是共振,因为SP具有确定性,关系组成保持完整。见提案3。
+__中文_有关财产的更彻底的结构分析见第3.2节,有关财产的更彻底的结构分析见第3.8节,有关财产的替代证据见第3.8节,有关财产的替代证据见第3.2节。
+__英文_See Section 3.2 for a more thorough structural analysis of related properties. See section 3. 8 for an alternative proof for
+__原文英文_8 for an alternative proof for deterministic multirelations and the end of  Section 3.2 for a more thorough structural analysis of related properties, including the relationship  of the Kleisli lifting of multirelations with the Kleisli category of the powerset functor.
+__原文中文_8项为确定性多重关系替代证据,第3.2节末尾为对有关属性进行更彻底的结构分析,包括Kleisli解除多关系与电源元件真菌Kleisli类别的关系。
+__中文_内在独一性、内在整体和内在确定性的定义取决于内演关于多重关系的多种关系,在[
+__英文_Deﬁnitions of inner univalence, inner totality and inner determinism depend on inner opera-tions on multirelations, which have been studied in detail in [
+__原文英文_  Deﬁnitions of inner univalence, inner totality and inner determinism depend on inner opera-  tions on multirelations, which have been studied in detail in [FGS23b], based on previous work  in [Rew03, FS15, FS16]. Algebraic deﬁnitions relative to a small basis can be found in Appendix A.
+__原文中文_内在独一性、内在整体和内在确定性的定义取决于内部歌剧对多种关系的定义,[FGS23b]根据[Rew03,FS15,FS16]中以前的工作,详细研究了这些内容。
+__中文_内十字路口及其单位随后以 R S = ( R ) 和 1  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 PY , 可以定义M( X, Y ) 中的原子A组。 内十字路口随后被称为内部组合 。
+__英文_The inner intersection and its unit are then obtained as R ⋓S = ∼(∼R ⋒∼S) and 1⋓= ∼1⋒. For R, S : X ↔PY , one can deﬁne the set of atoms A in M(X, Y ). The inner intersection is then called the inner union
+__原文英文_  For R, S : X ↔PY , one can deﬁne  • inner union R ⋒S = {(a, A ∪B) | Ra,A ∧Sa,B} with unit 1⋒= {(a, ∅) | a ∈X},  • inner complementation ∼R = RC = {(a, −A) | Ra,A},  • the set of atoms A⋒= {(a, {b}) | a ∈X ∧b ∈Y } in M(X, Y ).  The inner intersection and its unit are then obtained as R ⋓S = ∼(∼R ⋒∼S) and 1⋓= ∼1⋒.
+__原文中文_对于R,S:X {PY},可以定义 • 内联R {S = {(a, A {B) {(a, A {B) } {Ra,A Sa,B} 与单位 1{(a, ) {(a) } {(a) } {(a) = {(A) } {拉,A SA,B} 以单位 1{(a) {(a) } {(a) {(b) } = {({Y) } {({(a) ) } } {(a) {(a) {(a) ) {(a) {(a) {(a) {(b) ) } } } {(a {X {(X) {(a) {Y) {(a) {Y) } } } } } } } } {(a {X {X {(a {(a {(a) {Y) {(a) {_ {Y}}}}}}}}}}}}}} {* }}}}}}}}} } } } } } } } } } } } } } } } } } } } {内联 } } } } } } {内联 } } } } } } } } 。 。 。
+__中文_行动团和联合行动团
+__英文_The operations ⋒and ⋓are associ
+__原文英文_  The operations ⋒and ⋓are associative and commutative, but need not be idempotent.
+__原文中文_行动与行动是连通的,但不必是一无所有。
+__中文_多关系 R : X   Y 是内部总和和内部单项。在 R. B  Y 中,如果是内部总和或无单项,B 是单子或空单子(a、B),如果是空单子,则B是空单子,如果是内部总和或非单子,在这种情况下,B是空单子。
+__英文_The multirelation R : X ↓Y is inner total and inner univalent. B is either a singleton or empty for each (a, B) in R. B ⊆Y is an empty singleton if it is either inner total or univalent, in which case B
+__原文英文_  The multirelation R : X ↔Y is  • inner total if R ⊆−1⋒, that is, B is non-empty for each (a, B) ∈R,  • inner univalent if R ⊆A⋒∪1⋒, that is, B is either a singleton or empty for each (a, B) ∈R,  • inner deterministic if it is inner total and inner univalent, in which case B ⊆Y is a singleton  set whenever Ra,B for some a ∈X.
+__原文中文_多关系R: X  Y 是 内共 如果 R  1
+__中文_一组内在的单一关系、整体关系和确定性多重关系可定性为固定点。 Lemma 2.9 ([FGS23b, Lemma 3.9]):内在的单一关系多维关系是(-) (A1) 的点。
+__英文_Sets of inner univalent, total and deterministic multirelations can be characterised as ﬁxpoints. Lemma 2.9 ([FGS23b, Lemma 3.9]): Inner univalent multirelated are the points of (−) ∩(A⋒∪1
+__原文英文_  Sets of inner univalent, total and deterministic multirelations can be characterised as ﬁxpoints.  Lemma 2.9 ([FGS23b, Lemma 3.9]).  1. The inner univalent multirelations are the ﬁxpoints of (−) ∩(A⋒∪1⋒).  2. The inner total multirelations are the ﬁxpoints of (−) −1⋒.  3. The inner deterministic multirelations are the ﬁxpoints of (−) ∩A⋒and (−)1⌣1.
+__原文中文_2. 内在整体关系是(-)-(-)-1(-)-1(-)-3(-)-3(-)-1(-)-1(-)-1(-)-1(-)-1(-)1)1的固定点。 3. 内部确定性多重关系是(-)-(-)-(-)-(-)-(-)-(-)-(-)-1)-1(1)-1(1)-1(1)-1)的固定点。
+__中文_我们还需要以下封闭和内部顺序,以比较多种关系内在的不确定主义。 对于R: X  R U = R {{(a, A) } {(a, B) } 和 Smy 和 {A} 和 Smy: X  R U = R {(a, A) {(a, B) A} 和 Smy 来说 。
+__英文_We also need the following closures and inner preorder, which compare the inner nondetermin-ishlyism of multirelations. For R : X ↓= R ⋓U = RΩ⌣= {(a, A) |    (a, B) ⊆A} and the Smy
+__原文英文_  We also need the following closures and inner preorder, which compare the inner nondetermin-  ism of multirelations. For R : X ↔PY ,  6  • the up-closure R↑= R ⋒U = RΩ= {(a, A) | ∃(a, B) ∈R. B ⊆A} and the Smyth preorder  R ⊑↑S ⇔S ⊆R↑with equivalence =↑,  • the down-closure R↓= R ⋓U = RΩ⌣= {(a, A) | ∃(a, B) ∈R.
+__原文中文_我们还需要以下关闭和内部顺序,以比较多种关系的内部非确定值。对于R: X PY, 6 • 上锁的R R U = {(a, A) {(a, B) (a, B) B A} 和Smyth 前购的R S S S R U = {(a, A) (a, B) R 。
+__中文_连接关闭可以被定义为 R 。 连接关闭和关闭与内部二元性相关。 Egli- Milner 预购单可以被写成 R Q S , Hoare 预购单可以被写成 R R Q = Q 。 Hoare 预购单被命名为 R 。
+__英文_The convex closure can then be deﬁned as R↓. The up-closure and down-closure are related byinner duality. The Egli-Milner preorder can be written as R ⊑↓S and the Hoarepreorder as R  R ⊆S with equivalence = ‘’. The Hoare preorder is called R �
+__原文英文_ A ⊆B} and the Hoare  preorder R ⊑↓S ⇔R ⊆S↓with equivalence =↓.  The convex closure can then be deﬁned as R↕= R↑∩R↓, and the Egli-Milner preorder as  R ⊑↕S ⇔R ⊑↓S ∧R ⊑↑S with equivalence =↕. The up-closure and down-closure are related by  inner duality. Using up-closure, ∈= 1↑. Moreover, (1↓)∗= (1 ∪1⋒)∗= Ω⌣, and thus R↓= R ∗1↓  for all R : X ↔PY .
+__原文中文_和 Hoare 前置顺序 R S R R S S S S S S S S S S S S S S Are 预购顺序。 后可定义为 R R R R R R,后可定义为 Egli-Milner 前置顺序为 S S R R S S S R R S S S S。 上锁和下锁与内部的双重性有关。 使用 1 1 。 此外, (1 ) 1    , 和 因此R R 1 所有 R: X PY 。
+__中文_X 和 Y 关系以两种自然的方式嵌入 X 和 PY 的多重关系中。 与 Y 相连的后化将 Y 中的元素提升到 PY 中的单子设置 。 使用电源转换
+__英文_Relations X and Y embed into multirelations X and PY in two natural ways. Postcomposition with Y lifts the elements in Y to singleton sets in PY. Taking the power transpose
+__原文英文_ See Appendix A and [FGS23b] for context.  3  Deterministic Multirelations  Relations X ↔Y embed into multirelations X ↔PY in two natural ways: postcomposition with  1Y lifts the elements in Y to singleton sets in PY ; taking the power transpose Λ represents the  standard equivalent nondeterministic function as a multirelation X ↔PX.
+__原文中文_上下文见附录A和[FGS23b]。 3 确定性多重关系X Y 以两种自然方式嵌入多关系X PY:以 1Y 将Y 中的元素提升为PY 中的单吨组; 使用电源转换  表示标准等同的非确定性功能为多关系 X PX 。
+__中文_嵌入产生内定式多重关系,第二个是外定式关系,第一个是内定式多重关系,第二个是外定式关系。
+__英文_ embedding yields an inner deterministic multirelation, the second an outer deterministic one.  The ﬁrst
+__原文英文_ The ﬁrst embedding  yields an inner deterministic multirelation, the second an outer deterministic one:  {(a, R(a)) | a ∈X}  R  {(a, {b}) | Ra,b}.
+__原文中文_第一个嵌入产生一个内在确定性多重关系,第二个产生外部确定性关系:{(a),R(a) {(a) {(a) } {(a) {(a) {(b) } {(a) {(a) {(b) } {(ra),b} 。
+__中文_这些嵌入延伸到雷尔类别之间的无形态化,即以Kleisli构成为箭的内确定-minist多重关系类别与Kleisli构成的箭头。
+__英文_These embeddings extend to isomorphisms between the categories Rel, categories of inner deter-ministic multirelations with Kleisli composition as arrow
+__原文英文_  (−)1Y  Λ  These embeddings extend to isomorphisms between the categories Rel, categories of inner deter-  ministic multirelations with Kleisli composition as arrow compositions and identity arrows 1X and  categories of outer deterministic multirelations with the same composition and identity arrows.
+__原文中文_(-)1Y 这些嵌入层延伸到雷尔类别、内阻遏-多层关系类别与Kleisli构成的作为箭头组成和识别箭头1X和具有相同组成和识别箭头的外部确定性多层关系类别之间的异形。
+__中文_由于1X是强力元月月服的单位,在关系形式上,我们今后还写 X = (-)1X。
+__英文_As 1X is the unit of the powerset monad in relational form, we henceforth also write ηX = (−)1X. The isomorphism between Rel and the category of
+__原文英文_  As 1X is the unit of the powerset monad in relational form, we henceforth also write ηX = (−)1X.  The functions Λ, α and η become functors in this setting. The isomorphism between Rel and  the category of outer deterministic multirelations is just that between Rel and the Kleisli category  of the powerset monad in relational form.
+__原文中文_由于 1X 是 相关 的 电源 元件 , 我们今后还要写入 = X = (-) 1X 。 函数 = , α 和  成为此背景下的诱因 。 Rel 和 外部 确定性 多重 关系 类别 之间的 等式 , 就是 Rel 和 Kleisli 类 的 电源 元件 , 在 相关 形式 中 。
+__中文_正式证明内部和外部确定性多重关系形式为 " 类别 " 需要做一些工作。
+__英文_A formal proof that inner and outer deterministic multirelations form Categories requires some work.
+__原文英文_ That between Rel and the category of inner determinis-  tic multirelations is trivial. A formal proof that inner and outer deterministic multirelations form  categories, however, requires some work.
+__原文中文_里尔和内层确定性多关系类别之间是微不足道的。 但是,正式证明内层和外层确定性多关系类别需要做一些工作。
+__中文_象形形是一个类别,其中每个恒星构成一个完整的星盘。我们研究了关系与外部和内部确定性突变之间的两面。
+__英文_A quantaloid is a category in which each homset forms a complete lattice. We study the bijections between relations and outer and inner deterministic mult
+__原文英文_  Recall that a quantaloid is a category in which each homset forms a complete lattice and where  arrow composition preserves arbitrary sups in both arguments.  3.1  Bijections between relations and deterministic multirelations  First we study the bijections between relations and outer and inner deterministic multirelations  in detail.
+__原文中文_3.1 关系和确定性多重关系之间的分野。 首先,我们详细研究关系与外部和内部的确定性多重关系之间的分界。
+__中文_Lemma 3.1. 外部确定性关系的结果是众所周知的。 内确定性关系的结果是新的,但相当明显。 每个 R: X
+__英文_Lemma 3.1. The results for outer deterministic relations are known. Those for inner deterministicrelations are new, but rather obvious. For every R : X
+__原文英文_ The results for outer deterministic relations are known. Those for inner deterministic  relations are new, but rather obvious.  Lemma 3.1. For every R : X ↔Y , Λ(R) is outer deterministic and η(R) inner deterministic.  Proof. This is well known for outer determinism [BdM97].
+__原文中文_外部确定性关系的结果是众所周知的。 内确定性关系的结果是新的, 但相当明显。 Lemma 3. 1. 。 对于每一个 R: X  Y,   (R) 是外确定性, 和  (R) 内确定性。 证据。 这在外确定性关系中是众所周知的 [BdM97] 。
+__中文_在 Lemma 2. 1. 1 中回顾到,关于外部确定性多重关系的α  = id XY。对于内部确定性而言,R1  U1 = A ,因为组成保留了
+__英文_Recall from Lemma 2.1 that α ◦Λ = id X↔Y on outer deterministicmultirelations. For inner determinism, R1 ⊆U1 = A⋒since composition preserves the
+__原文英文_ For inner determinism,  η(R) = R1 ⊆U1 = A⋒  since composition preserves the order.  Recall from Lemma 2.1 that α ◦Λ = id X↔Y , while Λ ◦α = id X↔PY on outer deterministic  multirelations. Hence Λ and α form a bijective pair between relations and outer deterministic  multirelations. A similar fact holds for η and α.
+__原文中文_对于内部确定论, ( R) = R1  U1 = A  ,因为组成保留了顺序。 从 Lemma 2.1 中回顾, α = id XY, 而  = id XPY , 外确定论多重关系。 因此  和 α 形成关系和外部确定论多重关系之间的双向对。 类似的事实也存在于  和 α 之间 。
+__中文_让R、S、T成为适当类型的多重关系和R内部的确定性。(1)和(2)见[FGS23b]。(3),α(R)=R1 1R111(1)=R111。我们可以用这个,我们可以使用这个。
+__英文_Let R, S, T be multirelations of appropriate types and R inner deterministic. For (1) and (2), see [FGS23b]. For (3), α(R) = R1 ⌣1∋= R1⌣α(1) =R1 ⬉1. Using this lemma, we can
+__原文英文_ Before proving it, we mention a technical lemma.  Lemma 3.2. Let R, S, T be multirelations of appropriate types and R inner deterministic. Then  1. R ∗S = R1⌣S,  2. R ∗(S ∗T ) = (R ∗S) ∗T ,  3. α(R) = R1⌣.  7  Proof. For (1) and (2), see [FGS23b].  For (3), α(R) = R1⌣1∋= R1⌣α(1) = R1⌣using  Lemma 2.2.  Lemma 3.3.
+__原文中文_3.2. 让R、S、T成为适当类型和内分层的多重关系,然后是1. R *S = R1S, 2. R *(S ∗ T) = (R ∗S) * T, 3. α(R) = R1. 7 证明。关于(1)和(2),见[FGS 23b]。关于(3),α(R) = R11R1R1(1) = R1Lemma 2.2. Lemma 3.3。
+__中文_函数 α 和  构成关系和内部确定性多重关系之间的两面配对。 我们需要使用 Lemma 2.9(3) 和 Lemma 3.2(3) 来检查第二个身份的身份。 对于第一个身份, α () (R) 需要检查第二个身份的身份。
+__英文_The functions α and η form a bijective pair between relations and inner deterministicmultirelations. We need to check the identity for the second identity, using Lemma 2.9(3) and Lemma 3.2(3). For the ﬁrst identity, α(η(R
+__原文英文_ The functions α and η form a bijective pair between relations and inner deterministic  multirelations.  Proof. We need to check α◦ηY = idX↔Y on relations and ηY ◦α = id X↔PY on inner deterministic  multirelations. For the ﬁrst identity, α(η(R)) = α(R1) = Rα(1) = R Id = R. For the second one,  η(α(R)) = R1⌣1 = R, using Lemma 2.9(3) and Lemma 3.2(3).
+__原文中文_函数 α 和  形成关系和内部确定性多重关系之间的双向对。 证明。 我们需要使用 Lemma 2.9(3) 和 Lemma 3.2(3) 来检查 {Y = R1= R1= R。
+__中文_上行和下行的多重关系分别是外部和内部的确定性。因此,第2.1节的通量图可以扩大,以包括多行。 Lemma 3.3表示S= (R)和R= α(S)持有任何
+__英文_The multirelations in the upper and lower rows are outer and inner deterministic, respectively. The commutative diagram from Section 2.1 can thus be expanded to include the multirelated rows. Lemma 3.3 implies that S = η(R) and R = α(S) holds for any
+__原文英文_  The commutative diagram from Section 2.1 can thus be expanded:  X ↔PY  X ↔PY  X ↔Y  X ↔Y  X ↔PY  X ↔PY  id  α  α  id  Λ  η  id  α  α  The multirelations in the upper and lower rows are outer and inner deterministic, respectively.  Lemma 3.3 implies that S = η(R) ⇔R = α(S) holds for any R : X ↔Y and inner determin-  istic S : X ↔PY .  3.
+__原文中文_因此,可扩展第2.1节的通量图: X PY X Y X Y X PY X PY PY id α α id    id α α α 。 上行和下行的多重关系分别是外部和内部确定性。 Lemma 3.3 意味着任何R : X Y 和 内定分解- istic S : X PY 3 的 S = (R) R = α(S) 持有。
+__中文_关系和确定论多重关系之间的两截面延伸至类别和四环形之间的异形态。地图 , α 和  成为真菌, 事实上就是异形态。让 R : X  Y 和 R : X  Y 和  和  成为真菌。
+__英文_The bijections between relations and deterministic multirelations extend to isomorphisms between categories and quantaloids. The maps Λ, α and η become functors, and in fact isomorphism. Let R : X ↔Y and
+__原文英文_2  Categories of deterministic multirelations  The bijections between relations and deterministic multirelations extend to isomorphisms between  categories and quantaloids. The maps Λ, α and η become functors, and in fact isomorphisms.  Lemma 3.4. Let R : X ↔Y and S : Y ↔Z. Then  1. Λ(RS) = Λ(R) ∗Λ(S) and Λ(IdX) = 1X,  2.
+__原文中文_2 确定性多重关系类别。 关系和确定性多重关系之间的两分界线延伸至类别和孔体之间的异形态。 地图 , α 和  成为真菌, 实际上成为真菌。 Let R: X Y 和 S: Y 。 然后 1. (RS) = (R) (S) 和 (IdX) = 1X, 2 。
+__中文_对于第(1)条,第(2)和第(3)条,第(2)和第(3)条,第(2)和第(3)条,第(4)和第(5)条,第三级,所有确定式R和S对等的R和S。 其结果是,第二步,所有确定式S、R和R对等的S、R和R对等,如果R是内或外确定式的,如果S和R是确定式的,如果S和R是确定式的,第3步。
+__英文_For (1), for (2), and for (3), the secondstep holds. For (4) and (5), the thirdstep holds for all deterministic pairs of R and S. The result is that the second step holds for every deterministic pair of S, R, and R, if R is inner or outer deterministic, and if S and R are deterministic. For the third step, the result holds for both inner and outer pairs of S andR, if S is deterministic and R is determinist
+__原文英文_ η(RS) = η(R) ∗η(S) and η(IdX) = 1X,  3. α(R ∗S) = α(R)α(S) and α(1X) = IdX if R and S are inner or outer deterministic.  Proof. For (1), Λ(RS) = Λ(R)P(S) = Λ(R)Λ(S)P = Λ(R)Λ(S)∗= Λ(R)∗Λ(S), where the second  step holds by Λ(S)P = P(Λ(S))µ = P(Λ(S))P(∋) = P(Λ(S)∋) = P(S).  For (2), η(R) ∗η(S) = R1 ∗S1 = R1(S1)∗= R(1 ∗S1) = RS1 = η(RS).
+__原文中文_(RS) = (R) (S) (IdX) = 1X, 3. α(R) (S) = α(R) α(S) 和 α(1X) = IdX ,如果R和S是内或外确定性。关于(1) (RS) = (R) (S) = (R) (S) (R) (S) (R) (R) (R) (R) (R) (R) (R) (R) (R) (S) = RS1 = NS。
+__中文_对于(3),假定R和S是外部决定因素。然后R ∗S是外部决定因素,根据2.8号提议。内内决定因素,α和的证明相似。对于(1),α(R)α(S)=α(RS),如果而且只是
+__英文_For (3), suppose R and S are outer deterministic. Then R ∗S is outer Deterministic by proposition 2.8. The proof for inner determinism, α and η is similar. For (1),α(R)α(S) = α(R  S) if and only
+__原文英文_  For (3), suppose R and S are outer deterministic.  Then R ∗S is outer deterministic by  Proposition 2.8. Hence α(R)α(S) = α(R ∗S) if and only if Λ(α(R)α(S)) = R ∗S because Λ and  α form a bijective pair. Using this property again with (1),  Λ(α(R)α(S)) = Λ(α(R)) ∗Λ(α(R)) = R ∗S.  The proof for inner determinism, α and η is similar.
+__原文中文_对于(3),假设R和S是外部决定因素。然后R*S是外部决定因素,根据2.8号提案。因此,α(R)α(S) = α(R ∗S) = α(R {S) = R {S) ,因为 和α(S) 形成双向对。再次使用该属性的同时,(1) (α(R) = (α(R) ) (α(R) = R ∗S。内定论、α和的证明相似。
+__中文_如果R和S是内定论,那么R ∗S。内和外确定论多关系形式类别与Peleg组成和1X重交。两者对Rel都是无形态的。
+__英文_If R and S are inner deterministic, then so is R ∗S. The inner and the outer deterministic multirelations form categories with re-spect to Peleg composition and the 1X. Both are isomorphic to Rel.                  �
+__原文英文_ In particular, if R and S are inner determin-  istic, then so is R ∗S, because R ∗S = R ∗S1⌣1 = R1⌣S1⌣1 = (R ∗S)1⌣1, using Lemmas 2.9  and 3.2.  Proposition 3.5. The inner and the outer deterministic multirelations form categories with re-  spect to Peleg composition and the 1X. Both are isomorphic to Rel.  Proof.
+__原文中文_特别是,如果R和S是内部的确定因素-理论,那么R *S也是,因为R ∗S = R ∗S1 = R1QS1 = R1QS1 = (R ∗S)1 = 1 = (R {S)1 = 1,使用 Lemmas 2.9 和 3.2.2. 提案3.5。内和外的确定因素多重关系构成类别,与Peleg成分和1X相容。两者均与Rel. 证据不相容。
+__中文_关系、内部确定论多层关系和外部确定论多层关系与Lemma的两面
+__英文_The bijections between relations, inner deterministic multirelations and outer deterministicmultirelations together with Lemma
+__原文英文_ The bijections between relations, inner deterministic multirelations and outer deterministic  multirelations together with Lemma 3.4 imply that inner and outer determinism are closed under  Peleg composition and that the 1X are inner and outer deterministic.
+__原文中文_关系、内部确定论多重关系和外部确定论多重关系与 Lemma 3.4 的两面,意味着内外部确定论在Peleg的构成下是封闭的,1X是内外部确定论。
+__中文_对于Peleg构成的关联性,假设R、S、T是外部确定和可作成的。然后R = (α(R),S和T也是如此。 因此(R ∗S)和(S ∗T) = ((R),(T),(R,S),(S,T)
+__英文_For associativity of Peleg composition, suppose R, S, T are outer deterministic and composable. Then R = Λ(α(R) and likewise for S and T . Hence(R ∗S) and (S ∗T) = (Λ(R), (T), (R, S), (S, T)  
+__原文英文_  8  For associativity of Peleg composition, suppose R, S, T are outer deterministic and composable.  Then R = Λ(α(R)) and likewise for S and T . Hence  (R ∗S) ∗T = (Λ(α(R)) ∗Λ(α(R))) ∗Λ(α(T ))  = Λ(α(R)α(S)α(T ))  = Λ(α(R)) ∗(Λ(α(R)) ∗Λ(α(T )))  = R ∗(S ∗T ),  using Lemma 3.4. The proof of associativity for inner deterministic multirelations is similar.
+__原文中文_8 关于Peleg构成的联系,假定R、S、T为外部确定和可作成。然后R = (α(R))和S和T。因此(R ∗S) * T = (α(R)) (α(T)) (α(T) ) = (α(R) ) □(α(α(R) ) (α(T) ) = R *(S ∗ T) ,使用 Lemma 3.4。 内部确定性多重关系的联系证据相似。
+__中文_两组都以身份箭头 1X 的形式组为类别。 对于无形态,请记住
+__英文_Both sets form categories with identity arrows 1X. For the isomorphisms, recall that
+__原文英文_ Hence  both sets form categories with identity arrows 1X.  For the isomorphisms, recall that Λ, α and η form bijective pairs that preserve compositions  by Lemma 3.4.
+__原文中文_因此,这两组都以身份箭头1X的形式构成类别。 对于无形态者,请记住,用 Lemma 3.4来保存成份的双向双向成对是、α和。
+__中文_从雷尔到外部确定性多重关系类别的完全忠实的真菌真菌 是多种关系的一个类别
+__英文_A fully faithful functor from Rel to the category of outer deterministic multirelations is a category of multire
+__原文英文_ So Λ is a fully faithful functor from Rel to the category of outer deterministic  multirelations, η a fully faithful functor from Rel to the category of inner deterministic multire-  lations and α a fully faithful functor in the other directions.
+__原文中文_所以... 是完全忠实的杀虫者 从雷尔到外部确定性多重关系类别 完全忠实的杀虫者从雷尔到内确定性多重关系类别 和在另一个方向完全忠实的杀虫者
+__中文_这些目标的组件是身份, 查看突变
+__英文_The object components of thesefunctors are identities, viewing mult
+__原文英文_ (The object components of these  functors are identities, viewing multirelations X ↔PY in Rel as arrows from X to Y .
+__原文中文_(这些真菌的物体组件是身份,在 Rel 中以 X 到 Y 箭头的形式查看多个关系 X PY 。)
+__中文_因此,Peleg构成忠实地代表了Kleisli构成的非确定性功能,其模式是外确定性多重关系。
+__英文_Peleg composition is thus a faithful representation of Kleisli composition of nondeterministicfunctions modelled as outer deterministic multirelations. For relations R and S, R ⊆S implies η(R) �
+__原文英文_)  Peleg composition is thus a faithful representation of Kleisli composition of nondeterministic  functions modelled as outer deterministic multirelations, and of relational composition of relations  modelled as inner deterministic multirelations.  Lemma 3.6.  1. For relations R and S, R ⊆S implies η(R) ⊆η(S) and Λ(R) ⊑↕Λ(S).  2.
+__原文中文_3.6.1. 在关系R和S方面,R+S意味着“(R)”和“(R)”两个字。
+__中文_对于多重关系 R和 S, R S 意味着 α( R) ( S) ( S). proof 。 我们用 Lemma 2. 2. 2. 1 来证明,通过恢复,这相当于 R ( S)  S 使用 lemma 2. 1 的假设。 我们还表明,如果 R 是函数, 则是一个函数 。
+__英文_For multirelations R and S, R ⊆S implies α(R) ≹(S).Proof. We show that by residuation this is equivalent to R ⌣Λ(S) ⋹ S using Lemma 2.1, which is the assumption. We also show that if R is a function, this
+__原文英文_ For multirelations R and S, R ⊆S implies α(R) ⊆α(S).  Proof. We ﬁrst show Λ(R) ⊑↑Λ(S), that is, Λ(S) ⊆Λ(R)↑= Λ(R)Ω= R⌣\∈(see Lemma 2.3(2)).  By residuation this is equivalent to R⌣Λ(S) ⊆∈. Since Λ(S) is a function, this is equivalent  to R ⊆Λ(S)∋= S using Lemma 2.1, which is the assumption.
+__原文中文_对于多重关系 R和 S, R S 意味着 α( R) ( S) 。 证明。 我们首先显示 ( R) ( S) ( ) ( R)  ( R) ( R) ( R) ( R) ( R) ( R) ( S) ( ) 。 由于 ( S) 是一个函数, 这相当于 R ( S) ( S) ( S) ( ) ( S) ( ) ( ) ( S) ( ) ( ) ( ) ( ) ( ( R) ( R) ( R) ( R) ( R) ( R) ( R) ( R) ( R) ( R) ( R) ( R) ( R) ( R)  ( ) ) ( ( ( ) ( ) ( ) ) ( ( ) ( ) ( ) ( ) ) ) ( ) ) ( ) ) ( ) ( ( ) ) ) ( )  (  ( ) ) ( ( ) ) ( ) ) ( ) ( ) ( ) ) ( ) ) ) ( ) ( ) ( ) ) ( ) ( ) ( ) ( ) ( ) ) ( ) ( ) ) ) ) ) ) ) ) ) ) ) ( ( ) ) ( ) ) )
+__中文_备注3.7. 考虑关系R= {{{{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}= {{{{{{{{{{{{{{{}}}}}= {{{{{{{{}}}}}}= {{{(a,a, a}}}}}}}= {{{{{{}}}}}。其余索赔自关系构成以来就一直存在。
+__英文_Remark 3.7. Consider relations R = ∅and S = {(a, a) on the set {a}. Then R ⊆S, but                Λ(R) = { (a, ∅) ⊈{( a, {a})} = Λ(S). The remaining claims follow since relational composition
+__原文英文_  Since Λ(R) and Λ(S) are  functions, Λ(R) ⊑↕Λ(S) follows because ⊑↑, ⊑↓and ⊑↕coincide on outer deterministic mul-  tirelations [FGS23b, Proposition 5.8]. The remaining claims follow since relational composition  preserves ⊆.  Remark 3.7. Consider relations R = ∅and S = {(a, a)} on the set {a}. Then R ⊆S, but  Λ(R) = {(a, ∅)} ⊈{(a, {a})} = Λ(S).
+__原文中文_(R) 和 (S) 是功能, (R) (S) 之后是 (FGS23b, Proposition 5.8) 。 其余的索赔要求自关系构成保留 (3. 7) 后是 (Z) 和 (S) 。 考虑关系 R = (a, a) = {a} 。 然后是 (R) = {(a) {(a) = {(a) } {(a) } = □(S) 。 (a) {(a) } = □(S) 。
+__中文_提案3.5中的类别已经丰富。我们定义了不愿意捕捉到所产生的一个孔形结构。
+__英文_The categories in Proposition 3.5 are enriched. We deﬁne  reluctant to capture one of the quantaloid structures that arise. The categories in
+__原文英文_  The categories in Proposition 3.5 are enriched. We deﬁne  ⋒  i∈I  Ri =  (   a,  [  i∈I  Ai  ! ∀i ∈I. (a, Ai) ∈Ri  )  to capture one of the quantaloid structures that arise.
+__原文中文_提案3.5中的类别已经丰富。我们定义了 iI Ri = (a, [iI Ai! i I. (a, Ai) Ri ) 以捕捉出现的一种孔形结构 。
+__中文_石油构成和外外作业不构成孔子体。
+__英文_Peleg composition and the outer operations do not form quantaloids. Peleg composition is notassociative and does
+__原文英文_ Before that, note that multirelations under  Peleg composition and the outer operations do not form quantaloids: Peleg composition is not  associative and does not preserve the sups needed [FS15, FS16].  Proposition 3.8.
+__原文中文_在此之前,请注意,根据Peleg构成的多重关系和外在操作不构成四方形:Peleg构成不是关联性的,不能保留所需的超量[FS15、FS16]。
+__中文_与S的内在确定论的多重关系 与外部确定论的多重关系
+__英文_The inner deterministic multirelations with S and the outer deterministicmultirelations
+__原文英文_ The inner deterministic multirelations with S and the outer deterministic  multirelations with ⋒form quantaloids isomorphic to the quantaloid of binary relations.  Proof.
+__原文中文_与 S 的内在确定性多重关系, 与  形象质的外部确定性多重关系, 与二进制关系的四进制。 证明 。
+__中文_对于内定多元关系之四等离子体而言,请记住,关系构成保留着任意的结合。雷尔和内确定性多重关系之间的异形态论和α关系也是如此。例如,如果Si都是内在的阻力,那么,如果Si是内在的阻力
+__英文_For the quantaloid of inner deterministic multirelations, recall that relational compositionpreserves arbitrary unions. So do the isomorphisms η and α between Rel and the inner                deterministicmultirelations. For example, if all Si are inner deter
+__原文英文_ For the quantaloid of inner deterministic multirelations, recall that relational composition  preserves arbitrary unions, hence so do the isomorphisms η and α between Rel and the inner  deterministic multirelations:  η   [  i∈I  Ri  !  =  [  i∈R  η(Ri)  and  α   [  i∈I  Si  !  =  [  i∈I  α(Si),  if all Si are inner deterministic.
+__原文中文_对于内定多元关系等二次曲线,请记住,关系的组成保留了任意的结合,因此,雷尔和内定多重关系之间的等式主义和α也保留了这种结合: [iI Ri!] = [iR (Ri) 和α [iI Si! = [iI α(Si),如果西是内定论的话。
+__中文_内部的确定性由任意的工会和Peleg组成,因此,内部的确定性由任意的工会和Peleg组成来维持。
+__英文_Peleg composition distributes over arbitrary unions of inner deterministic multirelations. Inner determinism is therefore preserved by arbitrary unions and Peleg composition. For the quantaloid
+__原文英文_ Inner determinism is therefore preserved by arbitrary unions and  Peleg composition distributes over arbitrary unions of inner deterministic multirelations.  9  For the quantaloid of outer deterministic multirelations, the isomorphisms α and Λ between  outer deterministic multirelations and Rel satisfy  Λ   [  i∈I  Ri  !
+__原文中文_因此,任意的工会和Peleg的构成维持了确定性,分化了内部确定性多重关系的任意结合。 9 对于外部确定性多重关系的四环形体,在外部确定性多重关系与Rel满足[iI Ri!
+__中文_此外,任意内部结合的定义意味着它们保留了确定性。
+__英文_if all Si are deterministic. Moreover, the deﬁnition of arbitrary inner unions implies that they                preserve determinism. Peleg composition distributes over arbitrary inner union of de-terministic multirelations
+__原文英文_  = ⋒  i∈I  Λ(Si)  and  α    ⋒  i∈I  Si    =  [  i∈I  α(Si)  if all Si are deterministic. Moreover, the deﬁnition of arbitrary inner unions implies that they  preserve determinism.  Hence Peleg composition distributes over arbitrary inner unions of de-  terministic multirelations.
+__原文中文_此外,任意内部结合的定义意味着它们保留了确定论。因此,Peleg的构成分布在任意的、非终身主义多重关系内部结合之上。
+__中文_内在结合在单一性方面是一等的,因此在以威慑性为核心的多关系上也是一等的。 完整的拉蒂的顺序可以通过变异的 S. A. Kleisli 构成来定义。
+__英文_Inner union is idempotent on univalent and hence on determinis-centric multirelations. The order of the complete lattice can be deﬁned via R ≤S ⇔R ⋒S = S. A Kleisli composition of mult
+__原文英文_  Inner union is idempotent on univalent and hence on determinis-  tic multirelations [FGS23b, Lemma 3.6]. The order of the complete lattice can be deﬁned via  R ≤S ⇔R ⋒S = S, the natural order for deterministic multirelations [FGS23b, Lemma 5.9].  Remark 3.9. A Kleisli composition of multirelations can be deﬁned as R ◦P S = RSP [FKST17].
+__原文中文_内联是单一关系,因此是确定线多关系[FGS23b, Lemma 3.6]的一元能力。完整的层的顺序可以通过确定线多关系[FGS23b, Lemma 5.9] 的自然顺序R QS R R R R R S S = S 确定线多关系[FGS23b, Lemma 5.9] 来定义。注3.9. 多种关系中的Kleisli构成可定义为 R P S = RSP [FKST17]。
+__中文_它符合标准身份R P S = RP(S)μ。
+__英文_It satisﬁes the standard identity R ◦P S = RP(S)µ. By Lemma 2.6, Peleg and Kleisli lifting coincide on
+__原文英文_  It satisﬁes the standard identity R ◦P S = RP(S)µ, is associative on arbitrary multirelations of  appropriate type and has 1 as its right unit, and as a left unit on outer deterministic multire-  lations. By Lemma 2.6, Peleg and Kleisli lifting coincide on the category of outer deterministic  multirelations.
+__原文中文_它符合标准身份R P S = RP(S) μ,与适当类型的任意多重关系有关,有1个是其右侧单位,作为外部确定性多重关系左侧单位,Lemma 2.6、Peleg和Kleisli的提升与外部确定性多重关系类别相吻合。
+__中文_外部确定论多重关系类别与Set 中电源集真菌的Kleisli 类别无形态。
+__英文_The category of outer deterministic multirelations is isomorphic to the Kleisli category of the powerset functor in Set.
+__原文英文_ Finally, the category of outer deterministic multirelations is isomorphic to the  Kleisli category of the powerset functor in Set, using the graph functor to map from X →PY to  X ↔PY , which is clearly bijective.  3.
+__原文中文_最后,外部确定论多重关系类别与Set 中电源集真菌Kleisli类别是无形态的,使用图象真菌从 X PY 到 X PY 绘制图象,这显然是双向的。
+__中文_地图以内部或外部无定型内外部多层关系为模型,还构成内部和外部无定型多层关系类别之间的无定型关系。
+__英文_The maps are modelled as isomorphic inner or outer deterministic multirelations. They also form the isomorphism between the categories of inner and outer detergent multirelation
+__原文英文_3  Determinisation of multirelations  The maps Λ ◦α and η ◦α approximate multirelations by relations modelled as isomorphic inner  or outer deterministic multirelations. They also form the isomorphism between the categories of  inner and outer deterministic multirelations.  Let R : X ↔PY be a multirelation.
+__原文中文_3 确定多种关系 地图
+__中文_外层确定性或聚变操作以通勤图表示。内层确定性确定性或裂变操作将R送至内层确定性多关系中。
+__英文_The outer determinisation or fusion operation is expressed in the commuting diagram. The inner deter-minisation or ﬁssion operation sends R to the inner deterministic multirelation isomorphic to
+__原文英文_ The outer determinisation or fusion operation  δo = Λ ◦α  sends R to the outer deterministic multirelation isomorphic to relation α(R). The inner deter-  minisation or ﬁssion operation  δi = η ◦α  sends R to the inner deterministic multirelation isomorphic to α(R). This is expressed in the  following commuting diagram.
+__原文中文_外部确定性或聚变操作 o =    将R 送至外部确定性多因关系 α(R) 。 内确定性分解或裂变操作  =    将R 送至内确定性多因关系 到α(R) 。以下通勤图显示了这一点。
+__中文_设置- 理论, a, B, = {(a, B) {(a, B) {B = B = [[[R(a), R(a)] , R(R) = b = [R(b), {a, {b} , R(a, b) = 设置- 理论, a, B, = {(a, B) = {(a, B) {B = B = [[[R(a), R(a)] , R(R) = b = [R(b), {a, {b})], R(a, {b)] , R(a, b) 。 将本图的两边边图中的两面从下到上方组合成, 反之则产生下列结果 :
+__英文_Set-theoretically, a, B, = {(a, B) | B =[[R(a), R(a)], R(R) | b = [R(b), {a, {b})], R (a, b)}. Composing the bijections in this diagram from bottom to top and vice versa yields the following
+__原文英文_  X ↔PY  X ↔PY  X ↔Y  X ↔Y  X ↔PY  X ↔PY  δo  α  α  id  Λ  η  δi  α  α  Set-theoretically,  δo(R) = {(a, B) | B =  [  R(a)}  and  δi(R) = {(a, {b}) | b ∈  [  R(a)}.  Composing the bijections in this diagram from bottom to top and vice versa yields the following  corollary to Propositions 3.5 and 3.8.  Corollary 3.10.
+__原文中文_X PY X PY X Y X PY X PY X PY o α α α id    i α et-theertical, o (R) = {(a, B) B = [R(a) } 和 i (R) = {(a, {b} = {(a) b  [R(a)} 。将本图中的比喻从下到上合并,反之则产生3.5和3.8的必然结果。
+__中文_杀菌剂是内在确定论和外部确定论多种关系类别之间的异形。 它们保存了量。
+__英文_The functors are isomorphisms between the categories of inner deterministic and outer deterministic multirelations. They preserve the quant
+__原文英文_ The functors δi and δo are isomorphisms between the categories of inner deter-  ministic and outer deterministic multirelations. They preserve the quantaloid structure with S for  inner deterministic multirelations and ⋒for outer deterministic ones.
+__原文中文_i和o的真菌是内部威慑-一元论和外部确定性多关系类别之间的异形,它们保留了四环形结构,其中S用于内部确定性多关系和用于外部确定性关系。
+__中文_因此,对于外部确定性多重关系, " o i = id XPY " 和内确定性关系, " i " 。
+__英文_For outer deterministic multirelations, therefore, δo ◦δi = idX↔PY and for inner deterministic ones,  ‘i’
+__原文英文_  10  For outer deterministic multirelations, therefore, δo ◦δi = idX↔PY and for inner deterministic  ones, δi ◦δo = idX↔PY and we get the universal property R = δi(S) ⇔S = δo(R) for inner  deterministic R and outer deterministic S.
+__原文中文_10 外部确定性多重关系,因此, " o i = idXPY " 和内确定性关系, " i o = idXPY " 和 " 内确定性关系 " ,我们得到通用属性R = i(S) S = o(R) 用于内确定性关系R和外确定性关系S。
+__中文_3.11. 内和外的确定性多重关系恰恰分别是和的固定点。如果R是内定点,那么i(R)=(α(R))=R by Lemma 3.3。
+__英文_Corollary 3.11. The inner and outer deterministic multirelations are precisely the ﬁxpoints of                δi and δo, respectively. If R is inner deterministic, then δi(R) = η(α(R)) = R by Lemma 3.3.
+__原文英文_ By functoriality, δi(R ∗S) = δi(R) ∗δi(S) if R, S are  outer deterministic and δo(R ∗S) = δo(R) ∗δo(S) if R, S are inner deterministic.  Corollary 3.11. The inner and outer deterministic multirelations are precisely the ﬁxpoints of  δi and δo, respectively.  Proof. If R is inner deterministic, then δi(R) = η(α(R)) = R by Lemma 3.3.
+__原文中文_i(R ∗ S) = i(R) i(S) 如果 R, S是外部确定性, o(R ∗ S) = o(R) o(S) 如果 R, S 是内部确定性。 collorary 3. 11. 11. 内和外确定性多重关系分别是 i 和 o的固定点。 证明。 如果 R 是内部确定性, 则 i(R) = (α(R) = R = Lemma 3. 3 。
+__中文_3.1.2.1 提案:如果R是 Lemma 3.1. 的内在决定因素。 外部决定因素的证明相似。 Galois 与任意多重关系的关系使用  和  关系 。
+__英文_Proposition 3.12.1: If R is inner deterministic by Lemma 3.1. The proof for outer determinism is similar. Galois connections on arbitrary multirelations use ⊆on relations and
+__原文英文_ If δi(R) = R, then  R is inner deterministic by Lemma 3.1. The proof for outer determinism is similar.  The universal properties for α and Λ or η for relations and outer or inner deterministic mul-  tirelations generalise to Galois connections on arbitrary multirelations. These use ⊆on relations  and ⊑↓on multirelations.  Proposition 3.12.
+__原文中文_如果 & i (R) = R, 则 R 是 Lemma 3.1. 的内在确定论。 外部确定论的证明相似。 α 和  或  的通用属性, 关系和外部或 内确定论的混合物性能, 在任意的多重关系上, 向 Golois 连接概括。 这些都使用  关系 和  多重关系 。 Proposition 3. 12 。
+__中文_让我们,让R,S:X PY和T,V:X Y。然后我们有:α(R) T R (T)、(T) S(T) 和i(S) R R (S)。然后我们说:α(R S) =α(R) (S),我们称之为“结束”。我们称之为“结束”。
+__英文_Let R, S : X ↔PY and T, V : X → Y. Then we have: α(R) ⊆T ⇔R ⊑↓Λ(T), η(T ) ⊉↓S (T) and δi(S) ≓R ≳R (S) . We then say:  α(R ⋓S) = α( R) ∩α(S), and we call this a closure. We also call it a
+__原文英文_ Let R, S : X ↔PY and T, V : X ↔Y . Then  1. α(R) ⊆T ⇔R ⊑↓Λ(T ), η(T ) ⊑↓S ⇔T ⊆α(S) and δi(R) ⊑↓S ⇔R ⊑↓δo(S),  2. α(R ⋓S) = α(R) ∩α(S),  3. T ⊆V ⇒Λ(T ) ⊑↓Λ(V ), T ⊆V ⇒η(T ) ⊑↓η(V ) and R ⊑↓S ⇒α(R) ⊆α(S),  4. δo is a closure and δi an interior operator,  5. (α, Λ) and (α, η) are epi-mono-factorisations of δo and δi, both unique up to isomorphism,  6.
+__原文中文_让R,S:X PY和T,V:X Y。然后是 1. α(R) T R (T), (T) (T) (T) (S) S T (S) (S) 和 i(R) S (S) S (S) (S) (S), 2. α(R S) = α(R) (S) (S), 3. T V (T) (V) (V) (V) (V) (V) (R) (R) (S) (S), 4. o 是内地操作员, 5. (α, ) 和(α,) (α) 是() () (A) (A) ) (两个) () ) (T) (T) (T) (T) (T) (T) (V) (V) (V) (V) (V) (V) (V) (V) ) ) (V) (V) (T) (T) (V) (V) (V) (V) ) (V) (V) (V) (V) (V) (V) (V) (V) (V) ) ) ) ) (V) (V) (V) ) (V) ) (V) ) ) ) ) ) ) ) ) (V) ) ) (V) (V)
+__中文_对于 (1) , 请忆及 R  S  R   S               。 对于 Galois 的第一个连接, α( R)  T , α( R)  T
+__英文_Proof. For (1), recall that R ⊑↓S ⇔R ⊆SΩ⌣and Ω ⌣= ∋/∋. For the ﬁrst Galois connection,                α(R) ⋆T
+__原文英文_ δo(R) is the ⊑↓-least outer deterministic multirelation above R and δi(R) the ⊑↓-greatest  inner deterministic multirelation below R.  Proof. For (1), recall that R ⊑↓S ⇔R ⊆SΩ⌣and Ω⌣= ∋/∋. For the ﬁrst Galois connection,  α(R) ⊆T ⇔R ⊆T/∋using the standard Galois connection for left residuals.
+__原文中文_o(R) 是R和i(R) 上方的- least 外部确定性多关系, 是R. 证据下方的- 最大内部确定性多关系。 对于(1) , 请忆及 R S R S S S S S X 和 { / 。 对于 Galois 的第一个连接, α(R) T R T T/ 使用标准 Galois 连接的左残留物 。
+__中文_随后,T/((T))采用一般残留物法提出索赔。对于第二个Glois联系,假设是(T)(S(8))。
+__英文_The claim then follows from T/∋= (Λ(T )∋) using a general law of residuals. For the second Glois connection, suppose η(T) ⊆SΩ�
+__原文英文_ The claim then  follows from T/∋= (Λ(T )∋)/∋= Λ(T )Ω⌣, using a general law of residuals ((RS)/Q = R(S/Q)  for all composable relations R and S such that R is deterministic) in the last step. For the second  Galois connection, ﬁrst suppose η(T ) ⊆SΩ⌣.
+__原文中文_索赔随后从T/((T))()()()()()()()()()()()()()()()()()()()()()()()()()())()()()())()()()()())()()()()()()()()()()()()()()(())())()()((()())((()()(())((()))()((()()(((()))()))()))((()()()))(()()((()(((()()))(()))(((())()))))))((()))))((()))()))(()((()))(()))((()())))))
+__中文_T {S} α(S) , 使用 (R/R)R = R , 它在所有关系中都保持 R, 在第二个 。 第三个 Galois 连接是即时的 。 例如, 假设 T {( S) 。 然后 {( T) {( S) = {( S) }
+__英文_T ⊆SΩ⌣∋= α(S), using (R/R)R = R, which holds for all relations R, in the second one. The third Galois connection is then immediate. For example, suppose T ⋆α(S). Then η(T ) ≳(S) �
+__原文英文_ Then T ⊆SΩ⌣∋= α(S), using α ◦η = id and ⊆-  preservation of α in the ﬁrst step, and (R/R)R = R, which holds for all relations R, in the second  one. Conversely, suppose T ⊆α(S). Then η(T ) ⊆S∋1 ⊆SΩ⌣, because ∋1∋= ∋α(Λ(Id)) = ∋  and therefore ∋1 ⊆Ω⌣by the Galois connection for left residuals. The third Galois connection is  then immediate.
+__原文中文_然后是T+S+Q+A+A+S+A+S+A+S+A+S+A+Q#################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+__中文_第(3)段的前两个属性直接源于Galois连接,第(1)段:(1) 对于第三个属性,R S 意指α(R) (S ) 。
+__英文_The ﬁrst two properties in (3) follow directly from the Galois connections in (1) For the third one, R ⊑↓S implies α(R) ⊆α(SΩ⌣) �
+__原文英文_  Item (2) follows from a simple set-theoretic calculation.  The ﬁrst two properties in (3) follow directly from the Galois connections in (1). For the third  one, R ⊑↓S implies α(R) ⊆α(SΩ⌣) ⊆α(S), where the ﬁrst step uses ⊆-preservation of α and  the second Ω⌣∋= ∋, like in (1).
+__原文中文_项目(2)由简单的一套理论计算得出,头两个属性(3)直接取自Galois连接(1)。第三,R S意味着α(R) (S ) (S) (S) (S),第一步使用-保全α,第二步使用  (S),如(1)。
+__中文_Galois连接(1)和(4)中的 Galois 连接由于 α  = id = α  而保持。对于 (5) 来说, α 的推测性以及  和  的投射性是从 Galois 连接的取消属性中直接产生的 (2) The Galois 连接的取消性能 。
+__英文_The Galois connections in (1) and (4) hold because α ◦Λ = id = α ■η. For (5), surjectivity of α and injectivity of Λ and η is immediate from the cancellation properties of the Galois connection in (2) The Galois
+__原文英文_  For (4), ⊑↓-preservation of δo and δi follows from (3); R ⊑↓δo(R) and δi(R) ⊑↓R follow from  (1). Further, δo ◦δo = δo and δi ◦δi = δi hold because α ◦Λ = id = α ◦η.  For (5), surjectivity of α and injectivity of Λ and η is immediate from the cancellation properties  of the Galois connections in (1).
+__原文中文_对于(4),-保全和-----从(3)开始;Ro(R)和i(R)从(1)开始。此外,o o =o和i i =i =i 因为α  = = id = α -.对于(5)来说,α的投射性以及和的投射性是从(1)中Galois连接的取消特性中立即出现的。
+__中文_对于独特性, 请注意 Set 中的每个函数都有此属性, 证明是标准。 对于命令保存函数, 的证明相似。 对于功能的独特性, Prof for
+__英文_For uniqueness, note that every function in Set has this property, and the proof is standard. For order-preservation of the function, the proof for δo is similar. For uniqueness of thefunction, theProof for
+__原文英文_ For uniqueness, note that every function in Set has this property,  and the proof is standard.  For (6), R ⊑↓δo(R) by (4). Now suppose δo(S) = S and R ⊑↓S. Then δo(R) ⊑↓δo(S) = S  by order-preservation of δo. The proof for δi is similar.
+__原文中文_对于独特性, 请注意 Set 中的每一函数都有此属性, 并且证明是标准 。 对于 (6) , R o( R) 乘 (4) 。 现在假设 o( S) = S 和 R S 。 然后 o( R) o( S) = S , 以 o 的命令保存 。 i 的证明相似 。
+__中文_(1)和(2)中的属性可以用托波理论的语言概括概括,说:
+__英文_The properties in (1) and (2) can be summarised in the language of topos theory by sayingthat
+__原文英文_  The properties in (1) and (2) can be summarised in the language of topos theory by saying  that the adjunction (α, Λ) is an essential geometric morphism – but of course Rel does not form a  topos.
+__原文中文_(1)和(2)中的属性可以用托波理论的语言概括,说附加(α, )是一种基本的几何形态,但当然雷尔不构成托波。
+__中文_第(3)和第(4)项中的属性是Galois连接的标准属性,然而,这些属性通常用于两个部分订单或两个预先订单。
+__英文_The properties in (3) and (4) are standard for Galois connections, however these are usuallypresented for two partial orders or for two preorders. This is why we list and prove these
+__原文英文_ The properties in (3) and (4) are standard for Galois connections, however these are usually  presented for two partial orders or for two preorders whereas we have a mixed case. This is why we  list and prove these properties. Item (4) shows that δo is a monad and δi a comonad on ⊑↓, both  of which are idempotent.
+__原文中文_第(3)和第(4)项中的属性是Galois连接的标准,但这些属性通常分为两个部分订单或两个预购单,而我们的情况是混合的。这就是为什么我们列出和证明这些属性的原因。第(4)项表明,是一个monad,是上的共产物,两者都是不称职的。
+__中文_和往常一样,单位和共同单位分别是箭头R o(R)和i(R),乘法和乘法是箭头 o(i) (R)和(R) (i) 。以下示例排除了Galois连接,仅用于设定包含。(for for ())
+__英文_As usual, the unit and counit are arrows R ⊑↓δo(R) and δi(R), respectively. The multiplication and comultiplication are arrows δo (δi) (R), and    (R) (i). The following examples rule out Galois connections for set inclusion only. For (
+__原文英文_ As usual, the unit and counit are arrows R ⊑↓δo(R) and δi(R) ⊑↓R,  the multiplication and comultiplication are arrows δo(δo(R)) ⊑↓δo(R) and δi(R) ⊑↓δi(δi(R)).  11  Example 3.13. The following examples rule out Galois connections for set inclusion only.  • For (α, Λ), consider R = {(a, ∅)} in X ↔PY and S = {(a, b)} in X ↔Y for X = {a} and  Y = {b}.
+__原文中文_与往常一样,单位和共同单位为箭头R o(R)和i(R),乘法和乘法为箭头 o(o(R)) o(R) o(R) 和i(R) i(i) i(i) 例3.13。以下示例排除Galois连接,仅供设定包含。 对于(α, ),考虑 X PY 和 S = X X X Y = {a} 和 Y = {b}。
+__中文_在 X 中考虑 R = {(a, {b1, b2}}} 在 X 中考虑 R = {(a) {(a) = {(a) = {(a) = b1 / b2. 然后R = (a, b) = α(S),但R = (S) = (R) 对于 (, α),考虑 R = R 在 X 中考虑 = R
+__英文_Consider R = {(a, {b1, b2})} in X ↔PY for X = {a} and Y =  b1 / b2. Then R ⊆{ (a, b)} = α(S), but R ≹(S) = Λ(R) For (Λ, α), consider R = R in X
+__原文英文_ Then α(R) = ∅⊆S, but R ⊈{(a, {b})} = Λ(S).  • For (Λ, α), consider R = ∅in X ↔Y and S = {(a, {b})} in X ↔PY for X = {a} and  Y = {b}. Then R ⊆{(a, b)} = α(S), but Λ(R) = {(a, ∅)} ⊈S.  • For (α, η), consider R = {(a, {b1, b2})} in X ↔PY and S = {(a, b1), (a, b2)} in X ↔Y for  X = {a} and Y = {b1, b2}.
+__原文中文_(R) = {(a) {(b) } = {(S) } {(a) } = {(a) = {(a) = {(a) {(b) } = X X = {(a) = {(a) = {(a) = {(b) = *** (S) = {(a) = {(a) = {(a) = {(a) {(a) } {(b) } = □(S ) = □(α ) ,(α ) = {(a) {(a) , {(b1) {(b) } = X {(a) {(a) = {(a) {(a) = {(b) ) = {(b) {(b) )。
+__中文_裂变和裂变也可以以多重关系来定义。 对于 (, α), 考虑 R = {(a), b1, (a), (b2) 在 X 和 S 在 Y 中。 然后 R = α(S), 但 {(R) = {(a, {b1}) , (b) , (b) , (b) , (b) , (b) , (b) , (b) , (b) , (b) , (b) , (b) , (b)
+__英文_Fusion and ﬁssion can also be deﬁned in terms of multirelations. For (η, α), consider R = {(a, b1), ( a, b2) in X and S in Y. Then R = α(S), but η(R) = { (a, {b1}), (
+__原文英文_ Then α(R) = S, but R ⊈{(a, {b1}), (a, {b2})} = η(S).  • For (η, α), consider R = {(a, b1), (a, b2)} in X ↔Y and S = {(a, {b1, b2})} in X ↔PY for  X = {a} and Y = {b1, b2}. Then R = α(S), but η(R) = {(a, {b1}), (a, {b2})} ⊈S.  Fusion and ﬁssion can also be deﬁned in terms of multirelations.
+__原文中文_α(R) = S, 但R = {a, {b1}, (a, {b2}}} = {(S) = □(S) 。 对于 (, {(a), b1, (a, b2)} , 在 X = {(a, {b1, b2} , 在 X = {PY = X = {a} 和 Y = {b1, b2} 。 然后 R = α(S) , 但 {(R) = {(a, {b1} ) , (a, {b2} ) {(a, {b2} ) {(S) 。
+__中文_Lemma 3.1.4.1:让R: X PY 。然后是M(X, Y)中的一组共原子 A A{{(a, X b}) {(a, X b Y} 和Rd = R 的双轨操作。
+__英文_Lemma 3.14.1: Let R : X ↔PY . Then the set of co-atoms A⋓= ∼A⋒= {(a, X −{b}) | a ∈X ∧b ∈Y } in M(X, Y ) and the duality operation Rd = −∼R, which relates the inner and the
+__原文英文_ This requires two additional  concepts from the inner structure: the set of co-atoms A⋓= ∼A⋒= {(a, X −{b}) | a ∈X ∧b ∈Y }  in M(X, Y ) and the duality operation Rd = −∼R, which relates the inner and the outer structure.  See [FGS23b] for details.  Lemma 3.14. Let R : X ↔PY . Then  1. δi(R) = R↓∩A⋒,  2. δo(R)↓= −((−δi(R) ∩A⋒)↑) = −((−(R↓) ∩A⋒)↑),  3.
+__原文中文_这要求从内部结构中增加两个概念:M(X,Y)中的共原子AAA{(a, Xb}){(a, Xb}){{(a, XBY})}和Rd=R的双元操作,这与内和外结构有关。详情见[FGS23b]。Lemma 3.14。然后请R:XPY。1. i(R)=RA,2. o(R)-(i)-(R)AA) =-(((-(R))A3),3。
+__中文_包含 {{{{{{{{}}} {}} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}}} {} {}} {} {}} {}} {} {} {} {}}}} {}}} {}}} {} {} {} {} {} {} {}}} {} {} {} {} {} {} {} {}}}}}} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}}}}}} {}}}}}}}}}}}}}}}}}}}}}}}}} {}}}}}}}}}} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}____ {
+__英文_The inclusion ⊆follows by residuation from ∋1∋= α(η(∋) = ∋. The opposite inclusion follows from −∋1 ⊉= −(∉/∉) using boolean properties. For (1), R↓∩A⋒= RΩ⌣∩U1, hence it suﬃces to show that R1 = Ω U1 = (∋/∓) U1.
+__原文英文_ δo(R)↑= δi(R)↑d = −((∼δi(R))↓) = −((∼(R↓) ∩A⋓)↓),  4. δo(R) = −((−(R↓) ∩A⋒)↑) ∩−((∼(R↓) ∩A⋓)↓).  Proof. For (1), R↓∩A⋒= RΩ⌣∩U1 = R(Ω⌣∩U1), hence it suﬃces to show  ∋1 = Ω⌣∩U1 = (∋/∋) ∩U1.  The inclusion ⊆follows by residuation from ∋1∋= α(η(∋)) = ∋. The opposite inclusion follows  from −∋1 ⊆−∋∈= −(∋/∋) using boolean properties.
+__原文中文_(
+__中文_第一步使用Lemma 2.9。第二个平等以(1) 和布林代数为依次。对于(2),(2)-(3),(3),``` ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , ' , '! ' , ' , ' , ' 。 ' ; ' ; ' ; ' , ' , ' , ' , ' , '! ' , ' , ' 。 ' ; '
+__英文_Using Lemma 2.9 in the ﬁrst step. The second equality follows by (1) and boolean algebra. For (2),                −((−δi(R) ∩A⋒)↑) = −(−(R∋1)1⌣1Ω) For (3),                ‘’’ ‘ ’    ‚’,’;’.’,.’%;’.,’%.’%,’!’!,’+.’!.’.;’
+__原文英文_  For (2),  −((−δi(R) ∩A⋒)↑) = −(−(R∋1)1⌣1Ω)  = −(−(R∋11⌣)∈)  = −(−(R∋)∈)  = R∋/∋  = Λ(R∋)∋/∋  = Λ(R∋)(∋/∋)  = δo(R)↓  using Lemma 2.9 in the ﬁrst step. The second equality follows by (1) and boolean algebra.  For (3),  δi(R)↑d = −∼(δi(R)↑)  = −((∼δi(R))↓)  = −(δi(R)CΩ⌣)  = −(α(R)1ΩC)  = −(α(R)∈C)  = −(α(R)(−∈))  = α(R)⌣\∈  = Λ(α(R))Ω  = δo(R)↑  12  using Lemma 2.3.
+__原文中文_第一步,对于(2)-(( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( ) =( )-( )-( )-( )-( )-( )-( ) )-( )-( )-( )-( ))-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )-( )( )( )( )( )( )-( )-( )=( )-( )-( )-( )-( )-( )=( )-( ))-( ))-( )-( ))-( ) )-( )-( )-( ) ) ) )-( )-( )-( )-( ) )-( )-( ) )-( ) )-( )- ( ) ) ) ) )- ( ) ) = =-( =( )-( )- ( )- ( )- ( )- ( )- ( )- ( )- ( )- ( )- ( )- ( )- ( )- ( )- ( )- ( )- ( ) )- ( )); )- ( )- ( )- ( )- ( ) ( ) ( )- ( )- ( )- ( ) ) ( ) ( ) ) ) ( ) ( )););); ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( )
+__中文_Lemma 3.15.4概括了任意的多重关系,其余的平等又依次于(1)。项目(4)从(2)和(3)开始,因为o(R)是封闭的。让R:X PY和S:Y PZ。然后,
+__英文_Lemma 3.15.4 generalises to arbitrary multirelations. The remaining equality follows again by (1). Item (4) follows from (2) and (3) since δo(R) is convex-closed. Let R : X ↔PY and S : Y ↓PZ. Then the
+__原文英文_ The remaining equality follows again by (1).  Item (4) follows from (2) and (3) since δo(R) is convex-closed.  3.4  Properties of approximation and determinisation  Lemma 3.4(3) generalises to arbitrary multirelations.  Lemma 3.15. Let R : X ↔PY and S : Y ↔PZ. Then  1. α(R∗) = α(dom(R)∗)α(R),  2. α(R ∗S) ⊆α(R)α(S),  3. α(R↓) = α(R).  Proof.
+__原文中文_其余的平等又依次为(1)。项目(4)源于(2)和(3),因为(R)是封结的。 3.4 近似和确定 Lemma 3.4(3) 属性,概括为任意的多重关系。 Lemma 3.15.让R: X PY 和 S: Y PZ。然后是 1. α(R* ) = α(dom(R)* α(R), 2. α(R ∗ S) (R) α(S), 3. α(R ) = α(R). 证据。
+__中文_一般来说,前列目ma的部分(2)不能普遍加强为平等。对于(3),α(R)=RR,这意味着R(R)等于R(R),R(S)等于R(S),R(S)等于R(S),而R(R)等于R(S)等于S(R)等于S(R),而R(R)等于R)等于R(R)等于R,R(R)等于R(R)等于R)等于R(R)等于R)等于R(R)等于R(R)等于R)等于S(R)等于S),而R(R)等于(R)等于(R)等于R)等于R(S)等于R,这首先不是平等。结果是R是R的不平等,R等于R等于R(R)等于R(R)等于R)等于R(R)等于R)。
+__英文_Part (2) of the previous lemma cannot in general be strengthened to an equality. For (3), α(R↓) = RΩ⌣∋= R∋, which implies that R(R) is an equality of R (R) and R(S) is the same as R (S) and S (R), which is not an equality in the first place. The result is that R is an inequality of R and R is
+__原文英文_ For (1), ∋α(T ) = α(Λ(∋T ∋)) = α(TP). Thus  α(R∗) = dom(R)∗  [  T ⊆dR  α(TP)  = dom(R)∗  [  T ⊆dR  ∋α(T )  = dom(R)∗∋α(R)  = α(dom(R)∗)α(R).  This implies (2) by α(R ∗S) = Rα(S∗) ⊆Rα(1)α(S) = α(R)α(S).  For (3), α(R↓) = RΩ⌣∋= R∋= α(R) since ∈Ω= ∈.  Part (2) of the previous lemma cannot in general be strengthened to an equality.
+__原文中文_对于(1) {(T) = α(R) {(T) = α(TP) = α(S) = α(R* ) = dom(R) {(TP) {(T) = dom(R) {(T) = dom(R) {(R) = α(R) {(R) } {(R) = α(S) = α(R) α(S) 。(3) {(R) = R} {(R) {(R) {(T) = dom(R) * 。
+__中文_大约在接近一致时丢失结构。 对于 R = {(a, {a, {a, b)}, α( R) = α( R) = α( R) α( R) 。 其余属性的证明相似。 前两个属性是提案3. 12 中封闭条件的一部分。 其余属性的证明与前一个相似。 最后的证明与提案3相似。
+__英文_The structure is lost when approximating. For R = {(a, {a, b)}, α(R) = α( R)α(R). The proof of the remaining properties is similar. The first two properties are part of the closure conditions in Proposition 3.12. The proofof the remaining ones are similar to the previous one. The final proof is similar to that of Proposition 3
+__原文英文_ Of course,  structure is lost when approximating.  Example 3.16. For R = {(a, {a, b})},  α(R ∗R) = α(∅) = ∅⊂{(a, a), (a, b)} = α(R) = α(R)α(R).  Lemma 3.17. δi ◦δi = δi, δo ◦δo = δo, δi ◦δo = δi and δo ◦δi = δo.  Proof. The ﬁrst two properties are part of the closure conditions in Proposition 3.12. The proof  of the remaining ones are similar.  Lemma 3.
+__原文中文_当然,在接近时会丢失结构。例3.16。对于 R = {(a, {a, b}}}, α(R ∗R) = α() = {(a, a, (a), (a) , (b) = α(R) = α(R) α(R) α(R) 。 Lemma 3.17. i = i, o o = o, i o = i 和o i = o。证据。前两个属性是方案3.12中封闭条件的一部分。其余属性相似。 Lemma 3。
+__中文_Lemmas 3.15和3.4.18 让R: X PY和S: Y PZ。然后,(1), i(R) *S = α(R)1S,(2),(2),S = α(R)1S,(3),所有R为S,所有R为S,例如,Y为Z,R为Y,Y为Y,S为Y,X为PZ,Z为Z。(1)和(a)
+__英文_Lemmas 3.15 and 3.4. 18. Let R : X ↔PY and S : Y →PZ. Then, for (1), δi(R) ∗S = α( R)1S, and for (2), for (3), for all R in S, for all S in R, for example, for R in Y in Z, for S in Y, for X in PZ, for Z in Z. For (1) and (
+__原文英文_18. Let R : X ↔PY and S : Y →PZ. Then  1. δi(R) ∗S = α(R)S,  2. δi(R ∗S) ⊆δi(R) ∗δi(S),  3. δo(R ∗S) ⊑↕δo(R) ∗δo(S).  Proof. For (1), δi(R) ∗S = α(R)1S∗= α(R)(1 ∗S) = α(R)S.  For (2), δi(R ∗S) = η(α(R ∗S)) ⊆η(α(R)α(S)) = η(α(R)) ∗η(α(S)) = δi(R) ∗δi(S) using  Lemmas 3.15 and 3.4.
+__原文中文_18. 让R:X PY和S:Y PZ。然后,1. i(R) * S = α(R)S, 2. i(R) * i(R) i(S), 3. o(R) o(R) o(S) 。关于(1), i(R) ∗ S = α(R)1S α(R)1* {(S) = α(R) = (R) (RA) = i(R) (S) = i(R) (S) 使用Lemmas 3.15和3.4。
+__中文_Lemmas 3.15、3.6和3.4. 以下列目马的证明立即从第2节的属性中取出。请R:X PY和S:X Y。然后,RP=o(R)、R=R、Y=Y、PY=
+__英文_Lemmas 3.15, 3.6 and 3.4. The proofs of the following lemma are immediate from properties of Section 2.Lemma 3.19. Let R : X ↔PY and S : X → Y. Then. RP = δo(∋R),                 R = R,                 Y = Y,                 PY =
+__原文英文_  For (3), δo(R ∗S) = Λ(α(R ∗S)) ⊑↕Λ(α(R)α(S)) = Λ(α(R)) ∗Λ(α(S)) = δo(R) ∗δo(S) using  Lemmas 3.15, 3.6 and 3.4.  The proofs of the following lemma are immediate from properties of Section 2.  Lemma 3.19. Let R : X ↔PY and S : X ↔Y . Then  1. RP = δo(∋R),  2. δo(R) = ηRP = Λ(R)µ.
+__原文中文_(3), (R ∗ S) = (α(R) (R)) (α(R)) (α(S)) (α(S) ) ((R) (S) = (R) (R) (S) 使用 Lemmas 3.15、 3.6 和 3.4 。下列(R) 的证明直接来自第 2. emma 3. 19 节的属性。让 R: X (PY) 和 S: X Y 。然后, 1. RP = (), 2. (R) = (R) (R) = (R) (R) (R) (R) (R) (R) (R) (R) = (R) = (R) (R) □。
+__中文_以下图表从我们的伊莎贝尔神话中收集了、P、P、(-)P和μ的多个身份,大部分身份已在前几节中提及。身份是:P2YPX、YP2YX、PYP2PX和YPYX。
+__英文_The following diagram collects a number of identities for δo, P, (−)P and µ from our Isabelletheories. Most of the identities have been mentioned in previous sections. The identities are: P2YPX, YP2YX, PYP2PX and YPYX. The identity for the identity for P
+__原文英文_  13  The following diagram collects a number of identities for δo, P, (−)P and µ from our Isabelle  theories, most of which have been mentioned in previous sections.  X ↔P2Y  PX ↔P2Y  X ↔PY  X ↔PY  PX ↔PY  X ↔Y  X ↔Y  PX ↔Y  (−)P  (−)µY  (−)µY  α  δo  Λ  P  (−)P  α  1(−)  id  Λ  P  ∋(−)  Λ  Remark 3.20.
+__原文中文_13 下图从我们的伊莎贝尔理论中收集了、P、(-)P和的一些身份,其中大部分已在前几节中提及。 X P2Y PX P2Y X PYX PY X PY PX X PY X Y PX Y Y (-)P (-) □Y o P (-) P P 1(-) id P (-)  (-)  (-) (3.20)。
+__中文_此图表的底部半部可以通过从 1X 开始解析 i( R) = 1X( R) = 1X( R) 1Y 来类似扩展 。
+__英文_The bottom half of this diagram can be extended similarly by decomposing δi(R) =1X(∋R∋1Y ), since 1X
+__原文英文_ The bottom half of this diagram can be extended similarly by decomposing δi(R) =  1X(∋R∋1Y ), since 1X∋= IdX. The intermediate relation ∋R∋1Y corresponds to the Kleisli lifting  of R except that it maps to all singleton subsets instead of the union.
+__原文中文_此图的下半部可以通过从 1X = IdX = 1X = 1X(R) = 1X(R) = 1X(IdX)。 中间关系 +R = 1Y 与 Kleisli 解除 R 相对应, 但它绘制所有单吨子集而不是联盟的地图 。
+__中文_操作员P, (-) P 和恒定 微克所有因数通过 + , 也就是说, 它们产生一组数据集 。
+__英文_The operators P, (−)P and the constant µ all factor through Λ, that is, they produce a set of sets.
+__原文英文_  Like δo, the operators P, (−)P and the constant µ all factor through Λ, that is, they ﬁrst  produce a set of sets which is then ﬂattened by taking their union resulting in outer deterministic  multirelations.
+__原文中文_例如P,(-)P操作员 和恒定的微克所有因子 通过 ,即,他们首先生产 一组组,然后通过结合 导致外部的确定性多重关系
+__中文_扩展图的二元化。 此二元化为i, 使用相应的内部运算符 Pi( R) = ( R) , Rbi = Pi( α( ) ) 。
+__英文_The extended diagram dualises this way. This dualises to δi using corresponding inner operators Pi(R) = η(∋R), RPi =Pi(α(
+__原文英文_ This dualises to δi using corresponding inner operators Pi(R) = η(∋R), RPi =  Pi(α(R)) and constant µi = Pi(∋) which factor through η, that is, ﬂatten the set of sets to singleton  sets resulting in inner deterministic multirelations. The entire extended diagram dualises this way.
+__原文中文_此二元化为 & i, 使用相应的内部运算符 Pi( R) = ( R), Rbi = Pi( α( R) ) 和恒定 μi = Pi( ) 。 该因数通过 ( ) , 也就是说, 将数据集平整成单子组, 导致内部确定性多重关系 。 整个扩展图图以这种方式将二元化 。
+__中文_仍要描述内在独一的多重关系类别,我们将进一步研究这些内部经营者及其结构作用留待今后的工作。
+__英文_It remains to describe the category of inner univalent multirelations. We leave further study of these inner operators and their structural role to future work.
+__原文英文_  We leave further study of these inner operators and their structural role to future work.  4  Category of Inner Univalent Multirelations  It remains to describe the category of inner univalent multirelations. This requires diﬀerent tech-  niques, as this category is not isomorphic to Rel.
+__原文中文_我们把这些内部操作员及其结构作用的进一步研究留给未来工作。 4 内部单项多重关系类别,仍要描述内在单项多重关系类别。 这就需要不同的技术-尼克斯,因为这一类别对雷尔来说不是无定型的。
+__中文_内在总多重关系以前被R.的一套非终端元素称为非终止性多相关[FS16],即为VV(R)
+__英文_Inner total multirelations have previously been called non-terminal multirelated [FS16], writ-                ing ν(R) for the set of non- terminal elements of R. In addition, the map τ(R), which projects on
+__原文英文_  Inner total multirelations have previously been called non-terminal multirelations [FS16], writ-  ing ν(R) for the set of non-terminal elements of R: those pairs in R whose second component  is not ∅, that is, ν(R) = R −1⋒. In addition, the map τ(R) = R ∗∅= R ∩1⋒projects on the  terminal elements of R: those pairs in R whose second component is ∅.
+__原文中文_全部多重关系以前被称作非终止性多重关系[FS16],对R的一组非终止性元素写字(R) :R的对子,其第二个组成部分不是,即VV(R) = R-1。此外,地图 □(R) = R  R 1 项目在R的终端元素上:R的对子,其第二个组成部分是。
+__中文_Lemma 4.1. 让R: X PY 。 然后 1. α( □ (R) =  和 α( vong( R) ) = α( R) , 2. ( R) = , 3. o " (R) = `
+__英文_Lemma 4.1. Let R : X ↔PY . Then                1. α(τ(R)) = ∅and α(ν(R))) = α(R),                2. ν(δi(R)' =  ‘’,                3. δo’(R’) = ‘�
+__原文英文_ We use this notation in  this section.  First we list properties needed for reasoning about α, δi and δo in the presence of the non-  terminal and terminal multirelations.  Lemma 4.1. Let R : X ↔PY . Then  1. α(τ(R)) = ∅and α(ν(R)) = α(R),  2. ν(δi(R)) = δi(R) = δi(ν(R)) and τ(δi(R)) = ∅,  3. δo(ν(R)) = δo(R),  4. R ∗S = ν(R) ∗S ∪τ(R),  5.
+__原文中文_我们在本节中使用此符号。 首先, 我们列出在非终端和终端多重关系面前对α、 i 和o进行推理所需的属性 。 Lemma 4. 。 让我们 R : X PY 。 然后 1. α( □ (R) = & α( R) = α( R) , 2. v( i( R) = i( ( viw( R) ) 和 □ ( i( R) = , 3. o( VO( R) = o( R) , 4. R * S = ( R) {( S ) , 5 。
+__中文_对于(1),α(-(R)=RR,对于(2),R=R=VV(R),以及对于(3),项目(4)和(5)
+__英文_For (1), α(τ(R) = R∅∗∋= R, and for (2) R = R = ν(R), and so is (3) Items (4) and (5)
+__原文英文_ τ(R ∗S) = τ(R) ∪ν(R) ∗τ(S).  Proof. For (1), α(τ(R)) = R∅∗∋= R∅∋= ∅. The second property follows from R = ν(R) ∪τ(R).  Both properties in (2) are obvious, and so is (3). Items (4) and (5) are from [FS16].  Remark 4.2.
+__原文中文_□(R ∗S) = □(R) □(R) □(R) □(S) □(R) □(S) 。关于(1), □(-(R) = R) □(R) □(R) □(R) □。第二个属性来自 R = v(R) □(R) □(R) □(R) 。(2) 中的两种属性显而易见,(3) 也是。项目(4)和(5)来自[FS16] 。注4.2。
+__中文_多重关系R = {(a, ) 在 X = {a, b} 满足 {(o) (R) =  R {(b, ) = o (R) 因为 R 是内在的单词。 R = R = R = R = R,
+__英文_The multirelation R = {(a, ∅) on X = {a, b} satisﬁes                ν(δo(R) = ∅̸= R ∪{(b,∅) = δo (R) because R is inner univalent. R = R =  R =  R = R,
+__原文英文_ The multirelation R = {(a, ∅)} on X = {a, b} satisﬁes  ν(δo(R)) = ∅̸= R ∪{(b, ∅)} = δo(R)  because δo adds a pair (c, ∅) for each c that is not related to any set.  14  Lemma 4.3. Let R : X ↔PY . Then the following statements are equivalent:  1. R is inner univalent,  2. ν(R) ⊆A⋒,  3. ν(R) = δi(R),  4. R = δi(R) ∪τ(R).  Proof.
+__原文中文_在 X = {(a, ) = {(a, ) = {(a, ) = {(a, ) = {(b) = {(R) = {(R) = □(R) = (R) = (R) ,因为 (o) 增加一对(c, ) = (c, ) 与任何c 无关。 14 Lemma 4.3. 。让我们R : X (PY) 。 然后以下的语句等同 : 1. R 是内部单词, 2. v(R) (A) , 3. v(R) = (R) , 4. R = (R) 。 证明 。
+__中文_让R1
+__英文_Let R ⊆1 ⋒∪A⋒ be a union. Let (1) be a boolean algebra. Then (2) is a union, and so (3) is the same as (4) by Lemma 3.14. This is because down-closure ofmultirelations preserves unions [FGS23b, Lemma 4.
+__原文英文_ Suppose (1), that is, R ⊆1⋒∪A⋒. Then ν(R) = R−1⋒⊆A⋒yields (2) by boolean algebra,  and further ν(R) ⊆R ∩A⋒⊆R↓∩A⋒= δi(R). For (3) it then remains to show δi(R) ⊆ν(R)  and thus R↓∩A⋒⊆R by Lemma 3.14. Further, by Lemmas 2.9 and because down-closure of  multirelations preserves unions [FGS23b, Lemma 4.
+__原文中文_假设(1),即R+1A。然后是(R)=R-1AYields (2),用布尔扬代数,然后是(R)R ARAAAii(R)。对于(3)来说,它仍然可以显示i(R)(R),因此RAR由Lemma 3.14。此外,Lemmas 2.9,还因为多关系下接保护了工会[FGS23b,Lemma 4]。
+__中文_由于(R 1)和(R A)等于 1,我们可以显示 11 1 Id。这是通过从(R A U1)获得R(R U1)的R(R U1)和R(A A A)作为U1根获得的。要显示(R A) R(A) R(A) U1(U1) U1(U1) U1 = R(1) R(2) U(1) U1 (2) = R(1、2、3、4、5、6、7、8、9、10、11、12、13、14)的R(RA) R(A) R(A) U1(U1) U1 = R(1) R(2) U(1) U 1 (2) = R(1、2、3、4、5、6、7、8、9、10、11、12、13、14
+__英文_Since (R ∩1⋒) and (R  A) are equal to 1, we can show 1Ω⌣1 ⊆Id. This is obtained by getting R(R    U1) from (R A   U1) with R(U1   1) and R(A  A) as the root of U1. To show Id, we need to show (R A) R(A) R (A) U1 (U1 ) U1 = R(1) R(2) U (1) U 1 (2) = R (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+__原文英文_3],  R↓= (R ∩(A⋒∪1⋒))↓= (R ∩A⋒)↓∪(R ∩1⋒)↓  Since (R ∩1⋒)↓∩A⋒⊆1⋒↓∩A⋒= 1⋒∩A⋒= ∅, it remains to show (R ∩A⋒)↓∩A⋒⊆R. Using  A⋒= U1, we have  (R ∩A⋒)↓∩A⋒= (R ∩U1)Ω⌣∩U1 = R(Ω⌣∩1⌣U ∩U1) = R(Ω⌣∩1⌣U1)  so it suﬃces to show Ω⌣∩1⌣U1 ⊆Id. This is obtained by  Ω⌣∩1⌣U1 ⊆1⌣(U1 ∩1Ω⌣) = 1⌣1(Ω⌣∩U1) ⊆1⌣1Ω⌣1⌣1 = 1⌣1 ⊆Id  if we can show 1Ω⌣1⌣= Id.
+__原文中文_3),(R),(R),(A),(A),(A),(R),(R),(A),(A),(R),(R),(R),(A),(A),(A),(A),(A),(A),(A),(A),(A),(A),(A),(A),(R),(R),(R),(A),(R),(R),(A),(A),(A),(A),(R),(R),(R),(R),(A),(A),(A),(A),(A),(A),(A),(A),(A),(A),(A),(A),(R),(R),(A),(A),(A),),(A),(A),(R),(A),(A),(A),),(R),(A),(R),(R),),(R),(R),(R),(R),(R),(A),(R),(A),(R),),(A),(A),(R),),(A),),(A),(A),(A),(A),(R),(R),(A),(A),(R),),(R),),(R),),)因此,(R),),(R),(R),(R),(A),),),)因此,(R),),(R),),(A),(R,(R,)因此,),),),(R,(R,),),),),(因此,),(因此,(因此(因此(因此,)足以足以足以足以足以足以足以足以足以足以足以足以足以显示(R),(R),(R),(R),(R),(R),(
+__中文_使用 Lemma 3.4.1, 我们通过将R分解成终端元素和非终点元素获得(4), 后者随后对(1)和(2)进行反向应用, 结果R为内单体,R=R=R=R=R=i(R) A=1
+__英文_Using Lemma 3.14.1, we obtain (4) by partitioning R into terminal and non-terminal elements. The latter follows by applying converse to (1) and (2) The result is that R is inner univalent and R = R =  R =  R = δi(R)  ⊆A⋒∪1�
+__原文英文_ The latter follows by applying converse to  1Ω1⌣= 1(∈\∈)1⌣= (∈1⌣\∈)1⌣= ∈1⌣\∈1⌣= Id\Id = Id  From (3) we immediately obtain (4) by partitioning R into terminal and non-terminal elements.  Finally, (4) implies (1) because R = δi(R) ∪τ(R) ⊆A⋒∪1⋒using Lemma 3.14.  It follows that δi(R) ⊆R for inner univalent R.  Lemma 4.4. Let R be inner univalent. Then  1.
+__原文中文_后一种情况是,对1/3/1111111111Id=Id从(3)中立即获取(4),将R分割成终端元素和非终点元素。最后,(4)意味着(1),因为R=i(R)A11使用Lemma 3.14,因此,将i(R)R用于内隐隐隐性R.Lemma 4.4。让R成为内隐性元素。然后,1。
+__中文_Lemmas 3.18、4.1和4.3证明R是内在的单独性。因此,对于(1),VV(R)=i(R),对于(2),(3)和(4),我们说R *S=R S,RR S是内在的(R R、R S),而且
+__英文_Lemmas 3.18, 4.1 and 4.3 prove that R is inner univalent. For (1), therefore, ν(R) = δi(R), and for (2), for (3) and (4) we say that R ∗S = R  S, and that R R S is innerUnivalent (R R, R S), and that
+__原文英文_ R ∗S = α(R)S ∪τ(R),  2. α(R ∗S) = α(R)α(S),  3. δi(R ∗S) = δi(R) ∗δi(S) and δo(R ∗S) = δo(R) ∗δo(S).  Proof. Suppose R is inner univalent. For (1), therefore, ν(R) = δi(R) by Lemma 4.3. Hence, with  Lemmas 3.18, 4.1 and 4.3, R ∗S = ν(R) ∗S ∪τ(R) = δi(R) ∗S ∪τ(R) = α(R)S ∪τ(R).
+__原文中文_R *S = α(R)S (R)S, 2. α(R)S) = α(R)α(S), 3. i(R) *S) = i(R) i(S) 和 o(R) o(S) = o(R) o(S) 。 证据。 假设R 是内部的单词。 因此,(1) 因此, v(R) = i(R) 由Lemma 4.3. 因此,与Lemmas 3.18、4.1和4.3一起, R *S = i(R) {S = i(R) {(R) {(R) = α(R) S (R) = □(R)
+__中文_Lemma 4.1直接从Lemma 3.4和Colollarary 3.10.0. 项目(3)随后从(2)和Lemma3.4立即从(2)和Lemma3.4立即从(2)和Lemma3.4。
+__英文_Lemma 4.1 is immediate from Lemma 3.4 and Corollary 3.10. Item (3) is then immediate from (2) and Lemma3.4. Proposition 4.5. generalises inner determinism to inner univalence. The
+__原文英文_  For (2), α(R ∗S) = α(α(R)S ∪τ(R)) = α(α(R)S) ∪α(τ(R)) = α(R)α(S) using (1) and  Lemma 4.1.  Item (3) is then immediate from (2) and Lemma 3.4.  Items (2) and (3) generalise parts of Lemma 3.4 and Corollary 3.10 from inner determinism to  inner univalence.  Proposition 4.5.
+__原文中文_对于(2),α(R ∗S) = α(α(R)S) (R) = α(α(R)S) (□(R) = α(R) (S) 使用(1) 和 Lemma 4.1。 项目(3) 然后从(2) 和 Lemma 3.4 立即开始。项目(2)和(3) 将Lemma 3.4和Colololry 3.10的部分从内部确定性到内部单独性进行概括。
+__中文_内空单向多重关系构成包含组成和身份箭头 1X 的类别
+__英文_The inner univalent multirelations form a category with composition and identity arrows 1X
+__原文英文_ The inner univalent multirelations form a category with composition ∗and  identity arrows 1X.  Proof. Suppose Q, R and S are composable and inner univalent.
+__原文中文_内在的单向多重关系构成一个包含组成 ∗ 和识别箭头 1X 的类别。 假设Q、 R 和 S 是可共和和和内在的单向。
+__中文_1x显然是内在的单项,R *S是内在的。对于Peleg compo-sition的关闭,1X和R显然是内在的单项。R是内部的中性,因为R是内部的中性,R是内部的中性。R是内部的。R
+__英文_1X are clearly inner univalent and R ∗S is innerUnivalent. For closure under Peleg compo-                sition, the 1X and R are clearly Inner Univalent. R is inner Univalent because R   is inner Univalent, and R  is inner inner. R
+__原文英文_ For closure under Peleg compo-  sition, the 1X are clearly inner univalent and R ∗S is inner univalent because  R ∗S = α(R)(δi(S) ∪τ(S)) ∪τ(R)  = δi(R) ∗δi(S) ∪δi(R) ∗τ(S) ∪τ(R)  = δi(R ∗S) ∪τ(R ∗S),  15  using Lemmas 3.18, 4.1, 4.3 and 4.4.
+__原文中文_在Peleg compo-sition下,对于封闭,1X明显是内在的,R*S是内在的,因为R*S = α(R)(i)(S) (S) (R) i(S) (S) (S) (R) (R) = i(R ∗S) (R ∗S),15 使用 Lemmas 3.18、4.1、4.3和4.4。
+__中文_因此,我们在多个相关代数的代数中,确定了内部和外部确定性以及内在和外部单独多重关系的类别。 对于关联性,我们可以用相同的列母来使用相同的公式来决定性联系。 我们还可以使用这个公式来进行单体联系。
+__英文_We have thus characterised the categories of inner and outer deterministic as well as those ofinner and outer univalent multirelations within the algebra of multirelated. For associativity, using the same lemmas, we can use the same formula for deterministic associativity. We can also use this formula for univalent associativity
+__原文英文_ For associativity, using the same lemmas,  Q ∗(R ∗S) = α(Q)(α(R)S ∪τ(R)) ∪τ(Q)  = α(Q)α(R)S ∪α(Q)τ(R) ∪τ(Q)  = α(Q ∗R)S ∪τ(Q ∗R)  = (Q ∗R) ∗S.  We have thus characterised the categories of inner and outer deterministic as well as those of  inner and outer univalent multirelations within the algebra of multirelations.  Lemma 4.6.
+__原文中文_对于关联性,使用相同的 Lemmas, Q *(R ∗S) = α(Q)(α(R)S (R)) (Q) = α(Q) α(R)S (Q) (R) (Q) (Q) = α(Q ∗R) (Q ∗ R) = (Q ∗ R) * S。 因此,我们确定了多种关系代数的代数内的内外部决定因素类别以及内外部单一的多重关系类别。 Lemma 4.6。
+__中文_在这一类别中,Peleg构成保留了第一种论点中的任意夸夸其谈。
+__英文_In this category, Peleg composition preserves arbitrary sups in the ﬁrst argument. Inner univalent multirelations are closed under arbitrary unions by Lemma 4.
+__原文英文_ Each homset in the category of inner univalent multirelations is a complete lattice.  In this category, Peleg composition preserves arbitrary sups in the ﬁrst argument and non-empty  sups in the second argument.  Proof. Inner univalent multirelations are closed under arbitrary unions by Lemma 4.3 since ν  preserves arbitrary unions.
+__原文中文_每类内在的单体多重关系中,每类同族关系都是一个完整的套装。在这一类中,Peleg的构成保留了第一个论点中的任意夸夸,第二个论点中则保留了非空洞的夸夸。证据。内体的同族多重关系由Lemma 4.3 任意结合封闭,因为保留了任意结合。
+__中文_Peleg compo-phthalstion在其第一个论点中保留了任意的工会。 在第二个论点中保留了非空的工会。 这构成了一个完整的居家式结构。 例如,在 Lemma 4.4 中,如果我
+__英文_Peleg compo-phthalsition preserves arbitrary unions in its ﬁrst argument. Preservation in the second argument holds for non-empty unions. This forms a complete lattice structure on the homsets. For example, in Lemma 4.4 if I ̸=    
+__原文英文_ This forms a complete lattice structure on the homsets. Peleg compo-  sition preserves arbitrary unions in its ﬁrst argument. Preservation in the second argument holds  for non-empty unions:  R ∗  [  i∈I  Si =     α(R)  [  i∈I  Si  !  ∪τ(R) =  [  i∈I  (α(R)Si ∪τ(R)) =  [  i∈I  R ∗Si  by Lemma 4.4 if I ̸= ∅.  Remark 4.7.
+__原文中文_这在家庭礼仪上形成了完整的套装结构。 Peleg compo- sition在其第一个论点中保留了任意的工会。 第二个论点中的保留适用于非空的工会:R ∗ [iI Si = α(R) [iI Si ! (R) = [iI (Al(R) Si  (R) = [iI R ∗ Si = lemma 4.4 (如果I ) 。 Remart 4.7 。
+__中文_与苏普有关的非整体性多重关系不构成孔子体,也就是说,3.8号提案没有概括Lemma 4.6之外的内容。这表明R必须具有内在的确定性,才能使这一论点发挥作用。对于I = {______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+__英文_Inner univalent multirelations do not form quantaloids with respect to sups, that is, Proposition 3.8 does not generalise beyond Lemma 4.6. This shows that R must be inner deterministic for this argument to work. For I = ∅
+__原文英文_ Inner univalent multirelations do not form quantaloids with respect to sups, that  is, Proposition 3.8 does not generalise beyond Lemma 4.6. For I = ∅we have R ∗S  i∈I Si = R ∗∅  and S  i∈I(R ∗Si) = ∅. But R ∗∅= ∅if and only if τ(R) = ∅, that is, R must be inner total. This  shows that R must be inner deterministic for this argument to work.
+__原文中文_内在的多重关系不构成与苏波有关的孔径质,也就是说,3.8号提案没有概括到 Lemma 4.6 之外。因为我= {我们有R {S iI Si = R = R 和 S iI (R ∗ si) = 。但是,R { { { { { { { { { 或 , 只有当 { ( R) = , 即 R 必须是内共 。 这表明 R 必须是内部的确定性, 才能使这个论点发挥作用 。
+__中文_说明4.8. 外体非异象性多关系不构成与 有关的四环体。 coun-terexample再次使用 I = , 在哪种情况下, I = 。
+__英文_Remark 4.8. Outer univalent multirelations do not form quantaloids with respect to ⋒. A coun-terexample again uses I = ∅in which case I
+__原文英文_  Likewise, outer univalent multirelations do not form quantaloids with respect to ⋒. A coun-  terexample again uses I = ∅in which case ∅∗⋒i∈ISi = ∅but ⋒i∈I(∅∗Si) = 1⋒.  Remark 4.8. Lemma 4.4 and Proposition 4.
+__原文中文_同样,外外非象牙多重关系不构成与 有关的孔子体。 coun-terasample再次使用 I =                                                                                        .  4.4      4.  4.  4.
+__中文_α, i 和 o 分别是内向单向多重关系与Rel和内向和外向确定性多重关系类别中的衍生物。 它们不必是注射的。 对于 X = X = 。
+__英文_ α, δi and δo are functors from the category of inner univalent multirelations to Rel and the categories of inner and outer deterministicmultirelations, respectively. They need not be injective. For X =
+__原文英文_5 show that α, δi and δo are functors from the  category of inner univalent multirelations to Rel and the categories of inner and outer deterministic  multirelations, respectively. They need not be injective. For X = {a, b}, for instance, α maps the  inner univalent multirelations {(a, ∅)} and {(a, ∅), (b, ∅)} in X →PY to the relation ∅X,Y .
+__原文中文_5 显示 α、 i 和 o 是分别与 Rel 和 内外部确定性多重关系类别 的内在单项多重关系类别中的衍生物。 它们不需要是注射的。 对于 X = {a, b} 来说, 例如, α 映射 X = {(a, )} 和 {(a, ) , (b, ) } 在 X PY 中映射内部单项多重关系 {(a, ) 和 {(a, ) , (b, ) } 和 {(b, ) 。
+__中文_精细的确定性观点。 内部确定性多种关系的许多特性已经保存在内部非动态关系中。 我们在这里证明了完善的结果。 首先, 我们重新检查了 Cor 。
+__英文_A Fine-Grained View on Determinisation. Many properties of inner deterministic multirelations hold already of inner univalent ones. Here we prove reﬁned results. First we re-examine Cor
+__原文英文_ This  failure of injectivity extends along Λ and η, so that the categories are not isomorphic.  5  A Fine-Grained View on Determinisation  Many properties of inner deterministic multirelations hold already of inner univalent ones. Here  we prove reﬁned results. First we reﬁne Corollary 3.11 for deterministic multirelations.  Lemma 5.1.  1.
+__原文中文_注射失败会延及 + 和 + 和 , 使这些类别不具有非无形态性。 5 确定性精细分析。 5 内确定性多元关系的许多特性已经保留在内在非单一关系中。 在这里我们证明了精细的结果。 首先, 我们为确定性多重关系改进了3. 11 。 Lemma 5. 1 。
+__中文_外外非象牙多重关系正是的后缀点和的前缀点。前缀点是外的。
+__英文_The outer univalent multirelations are precisely the postﬁxpoints of δo with respect to ⊆and the preﬃpoints of  δo with respect to   . Preﬅxpoints are outer
+__原文英文_ The outer univalent multirelations are precisely the postﬁxpoints of δo with respect to ⊆and  the preﬁxpoints of δo with respect to ⊑↑.  2. Preﬁxpoints of δo with respect to ⊆and ⊑↓and postﬁxpoints with respect to ⊑↑are outer  total. The postﬁxpoints of δo with respect to ⊑↕and ⊑↑coincide.  3.
+__原文中文_2. 与和和和和和和之间的前缀点,与和和之间的后缀点,与和和的后缀点,与和的后缀点的后缀点,与和和ccolincide的后缀点,与和o的后缀点完全相同。
+__中文_对于(1),如果R是非异性,那么R=R()=R()=R()=R()R是()的后缀点。如果R是外部的确定点,那么R是确定性后决定性点。对于(2),R是确定性,R是确定性;对于(2),R是确定性,R是确定性。
+__英文_For (1), if R is univalent, thenR = R(∈÷ ∈) = (∈R⌣÷  )  R is a postﬁxpoint of  δo with respect to ⊆. If R is an outer deterministic point, then R is a deterministic post-deterministic point. For (2), for R to be deterministic, R is
+__原文英文_ Preﬁxpoints of δo with respect to ⊑↕are outer deterministic.  Proof. For (1), if R is univalent, then  R = R(∈÷ ∈) = (∈R⌣÷ ∈) ∩RU ⊆∈R⌣÷ ∈= Λ(α(R)) = δo(R).  16  Conversely, if R is a postﬁxpoint of δo with respect to ⊆, then  R⌣R ⊆δo(R)⌣δo(R) = Λ(α(R))⌣Λ(α(R)) = (∈÷ ∈R⌣)(∈R⌣÷ ∈) ⊆∈÷ ∈= Id.
+__原文中文_o 的前缀点 。 证明 。 对于 (1) , 如果 R 是 univalent, 那么 R = R(          R        (
+__中文_R 是一个后缀点。如果 R 是  前点, R 也是 后点。 R 是 R 和 R 分别是 预点前点和 预点后点的点。 R  R 是 R 的后写点, R 和 R 是 R 的后写点 。 R R R 是 R 的后写点 。 R 后写点 R 是 R 的后写点 。 R R 是 R 的后写点 。
+__英文_R is a postﬁxpoint with respect to ⊆. If R is a pre-↑ point, R is also a post-↑point. R is the point where R and R are pre- and post-pre-pre points, respectively. R ⋅R is the post-post-post point of R, and R ≉R is the pre-postpoint of R. The post- post- Post-Post Point of R is R R.
+__原文英文_  Since δo(R) ⊆δo(R)↑, postﬁxpoints of δo with respect to ⊆are also preﬁxpoints with respect to  ⊑↑. Conversely, if R is a preﬁxpoint with respect to ⊑↑, then  R ⊆δo(R)↑= Λ(α(R))Ω= Λ(α(R))(∈\∈) = ∈Λ(α(R))⌣\∈= ∈(∈÷ ∈R⌣)\∈= ∈R⌣\∈.  Together with R ⊆α(R)/∋, we obtain R ⊆∈R⌣÷∈= Λ(α(R)) = δo(R). Thus R is a postﬁxpoint  with respect to ⊆.
+__原文中文_自(R)(R)()()()()()()()()()()()()()()()()()()()()()()()()()()()()()。
+__中文_对于(2),如果R是的后缀点,则U=o(R) U RRU =R(8)U =RU,使用该的增产阻遏
+__英文_For (2), if R is a postﬁxpoint of δo with respect to ⊑↑, then  U =  δo(R) U ⊆R↑U = RΩU = RU using that Λ yields deter
+__原文英文_  For (2), if R is a postﬁxpoint of δo with respect to ⊑↑, then δo(R) ⊆R↑. Hence totality of  R follows by U = Λ(α(R))U = δo(R)U ⊆R↑U = RΩU = RU using that Λ yields deterministic  multirelations and Ωis total. The proof for preﬁxpoints with respect to ⊑↓is similar, using Ω⌣  instead of Ω.
+__原文中文_对于 (2) , 如果 R 是  的后缀点 , 那么 o (R)                                                   (R)
+__中文_显而易见,如果R是外部决定性的,那么o(R) = (α(R) ) = R。 反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反反,以上(3)反反反反反反反,因为任何R是后缀点。
+__英文_Obviously, if R is outer deterministic, then δo(R) = Λ(α(R)) = R. The converse implica-tion follows by (3) above. The remaining claim follows since any R is a postﬁxpoint with respect to �
+__原文英文_ Moreover preﬁxpoints with respect to ⊆are also postﬁxpoints with respect to ⊑↑  since R ⊆R↑. The remaining claim follows since any R is a postﬁxpoint of δo with respect to ⊑↓  (Proposition 3.12).  Finally, (3) follows by (1) and (2).  Obviously, if R is outer deterministic, then δo(R) = Λ(α(R)) = R. The converse implica-  tion follows by (3) above.
+__原文中文_此外,关于的前缀点也是关于的后缀点,自R {R}以来。其余索赔是照搬的,因为任何R是的后缀点(建议3.12),最后,(3)后面是(1)和(2)。显然,如果R是外部确定性,那么o(R)=(α(R))=R。反反反反反反反反反比照,则依附于上文(3)。
+__中文_Lemma 5.2.1: 内生非象素多重关系系的前缀点,与和的后缀点有关的前缀点。
+__英文_Lemma 5.2.1: Inner univalent multirelations are preﬁxpoints of δi with respect to ⊆and postﬃx points of  δo with respect to �
+__原文英文_ This yields an alternative algebraic proof of the fact that the outer  deterministic multirelations are precisely the ﬁxpoints of δo.  Next we reﬁne Corollary 3.11 for inner deterministic multirelations.  Lemma 5.2.  1. Inner univalent multirelations are preﬁxpoints of δi with respect to ⊆and postﬁxpoints of δi  with respect to ⊑↑.  2.
+__原文中文_这提供了替代代数证据,证明外部确定性多重关系恰恰是的固定点。接下来,我们将对内确定性多重关系校正3.11。 Lemma 5.2.1. 内非象性多重关系是的前缀点,对的后缀点和的后缀点来说是的前缀点。
+__中文_内部总多重关系正好是 的前缀点。 后缀点是 的前缀点。 内层总和点是 。
+__英文_The inner total multirelations are precisely the preﬁxpoints of δi with respect to ⊑↑. The postﬄxpoints are the pre-preﬅpoints of  δi with respect to    . The inner totalmultire
+__原文英文_ Postﬁxpoints of δi with respect to ⊑↓are inner univalent. The postﬁxpoints of δi with respect  to ⊑↕and ⊑↓coincide.  3. The inner total multirelations are precisely the preﬁxpoints of δi with respect to ⊑↑. The  preﬁxpoints of δi with respect to ⊑↕and ⊑↑coincide.  4. Postﬁxpoints of δi with respect to ⊆are inner deterministic.  Proof.
+__原文中文_的后缀点为 的后缀点; 的后缀点为 和的后缀点; 3. 和的后缀点为 的后缀点; 的后缀点为 和的前缀点; 4. 的后缀点为 的后缀点为 的后缀点。 证明 。
+__中文_对于(2),如果R是的后缀点,那么R i(R)A1AAA1AA,所以R是内在的单词。到(1),R也是关于的后缀点。
+__英文_For (2), if R is a postﬁxpoint of δi with respect to ⊑↓, then R ⊆δi(R)↓⊆A⋒↓= 1 ⋒∪A ⋓, so R is inner univalent. By (1), R is also a post-post point of  ‘δ’ with respect
+__原文英文_  (1) follows by Lemma 4.3, using δi(R) ⊆R ⊆R↑.  For (2), if R is a postﬁxpoint of δi with respect to ⊑↓, then R ⊆δi(R)↓⊆A⋒↓= 1⋒∪A⋒, so  R is inner univalent. Hence by (1), R is also a postﬁxpoint with respect to ⊑↑and therefore with  respect to ⊑↕.  For (3), if R is a preﬁxpoint of δi with respect to ⊑↑, then R ⊆δi(R)↑⊆A⋒↑= −1⋒, so R is  inner total.
+__原文中文_(1) Lemma 4.3 之后,使用 i(R) R R R R。(2) 如果 R 是 i 的后缀点, 那么R i(R) A A 1A A , 所以R 是 内在的单词。因此, 到 (1) 时, R 也是 (R) 的后缀点, 因而是 。 (3) , 如果 R 是 i 的前缀点, 那么 R i (R) A - 1, 所以 R 是 内在的总计 。
+__中文_由于根据3.12号提案,任何R是`i ' 的前缀,因此,该索赔即为`i ' 。 相反,如果R为`i ' 的内数,则该索赔即为`i ' 的内数。 关于(4),由于该索赔是真实的,该索赔也维持在(5)和(6)以及(7)和(8)之间。
+__英文_The claim follows since any R is a preﬁxpoint of δi with respect to ⊑↓ by Proposition 3.12.  Conversely, if R is inner total, then the claim follows that R is an inner total point of  δi. For (4), since the claim is true, the claim also holds for (5) and (6) and for (7) and for (8)
+__原文英文_ Conversely, if R is inner total, then  R ⊆RR⌣R ⊆R(−1⋒)⌣(−1⋒) = R∋∈= R∋1Ω= δi(R)Ω= δi(R)↑.  The claim follows since any R is a preﬁxpoint of δi with respect to ⊑↓by Proposition 3.12.  For (4), since δi(R) ⊆δi(R)↓and δi(R) ⊆δi(R)↑, postﬁxpoints of δi with respect to ⊆are  also postﬁxpoints with respect to ⊑↓and preﬁxpoints with respect to ⊑↑.
+__原文中文_反之,如果R是内向总计,则RRRRRRRRR(-1)(-1)(-1)RRRR1Qi(R)i(R})i(i)RRRRRRR(-1)(-1)(-1)(-1)RRRRRRI(R)i)i(i) =RRRR1i(i)i)i(i)i) =RRRi(i)i(R}}i)i(i)i(i)(i)(R)。
+__中文_要显示内定分层多重关系正是 ii 的定点, 仍需要使用上文(1)和(4)部分进行检查。 如果 R 是内定分层, 那么 R
+__英文_To show that the inner deterministic multirelations are precisely the ﬁxpoints of δi, it remains to check, using parts (1) and (4) above. If R is inner Deterministic, then R �
+__原文英文_ Hence the ﬁnal claim  follows by (2) and (3).  To show that the inner deterministic multirelations are precisely the ﬁxpoints of δi, it remains  to check, using parts (1) and (4) above, that inner deterministic multirelations are postﬁxpoints  of δi with respect to ⊆. Indeed, if R is inner deterministic, then R ⊆A⋒= U1.
+__原文中文_因此,最后索赔以第(2)和第(3)段为依次。为了证明内定式多关系正是i的定点,仍需要使用上文第(1)和第(4)段来核实内定式多关系是i的后定点。事实上,如果R是内定式,则R AU1。
+__中文_内外部总多重关系在Peleg构成下是封闭的。以下结果将重新审视以前的关闭结果。结果R = R U1 R1 R1 R1 R1 R1 = i(R) 使用 1  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+__英文_Inner and outer total multirelations are closed under Peleg composition. The following results revisit previous closure results in the context of totalMultirelations. The result is that R = R ∩U1 ⊆R1⌣1 ⋆R∋1 = δi(R) using 1 ⊉∉
+__原文英文_ Hence  R = R ∩U1 ⊆R1⌣1 ⊆R∋1 = δi(R)  using 1 ⊆∈.  The following results revisit previous closure results in the context of total multirelations.  17  Lemma 5.3. Inner and outer total multirelations are closed under Peleg composition.  Proof. Let R and S be total. Then  S∗= dom(S)∗  [  Q⊆dR  QP = 1∗  [  Q⊆dR  QP =  [  Q⊆dR  (∈Q∈÷ ∈).
+__原文中文_因此,R=R U1 R1 R1 R1 = i(R) 使用 1 R。以下结果在总共多重关系的背景下重新审视先前的关闭结果。 17 Lemma 5.3. 内和外总多重关系在Peleg构成下封闭。 证明。 让R和S为总计。 然后S dR QP = 1 {[dR QP = [dR QP = [dR ( )。
+__中文_由于Peleg的组成足以显示-1,我们说R、S、P、Q、R、Q是内部总数,我们有以下公式:RSS、RS、Q R、PQ、R、R、RQ、PP、RQ、RP、RS、RS、RRR、RRR、RRR、RRR、RRRR、RRRR、RRRR、RRRR、RRRR、RRRRR、RRRRR、RRRR、RRRR、RRR、RRRR、SR、S S S、RS S SS、RS SQ、RS RS、RSRRRRRR、RRRRR、RRRRR、RRRR、RRRRR、RRRR、RRRR、SR、SR、SRRRRR、SR、S S S S、RS SS、RS S RS、RS RS、RSRRRRRR、RS
+__英文_Let R and S be inner total, that is, R ⊆−1⋒ and S ⋒. Since Peleg composition preserves                ⊆it suﬃces to show −1, we say R, S, P, Q, R, Q are the inner total. We have the following formula: RS∗S, R S, Q R, P Q, R R, R Q, Q Q, P P, R S, Q R, P S, S S, R RS, R RR, RRR, RR RR, RS RR, RRRR,RRRR, RSRR, S RR, S S S, RS S S⌣, RS�
+__原文英文_  Hence  S∗S⌣  ∗=  [  P,Q⊆dR  (∈P∈÷ ∈)(∈÷ ∈Q∈) =  [  P,Q⊆dR  (∈P∈÷ ∈Q∈) ⊇  [  P ⊆dR  (∈P∈÷ ∈P∈) ⊇Id.  Thus (R ∗S)(R ∗S)⌣= RS∗S⌣  ∗R⌣⊇RR⌣⊇Id.  Let R and S be inner total, that is, R ⊆−1⋒and S ⊆−1⋒. Since Peleg composition preserves  ⊆it suﬃces to show −1⋒∗−1⋒⊆−1⋒. We have  −1⋒∗−1⋒= −1⋒(−1⋒)∗= −1⋒dom(−1⋒)∗  [  Q⊆d−1⋒  QP = −1⋒  [  Q⊆d−1⋒  QP =  [  Q⊆d−1⋒  −1⋒QP.
+__原文中文_因此,S*S*S *RS *R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*S*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*R*QQQ*Q*Q*Q*S*Q*Q*}。既然佩列格的构成保留了显示 -1Q1的足够数量。我们有-1Q1Q1Q*-1QQ*QQP*QP*Qd-1QQQQ*Q*Q*Q*QD-1QQ*P。
+__中文_因此,它仍然要表明Q是单元、总计和内在总量。剩下的目标相当于11(QP)1111。这源自Q的定义为内总计和总计:Q分别为内总计、总计、内和外总计。其结果是,QP是任何Qd-11.01.最终目标是1QP,这是Q和Q的产物。QP是Q和Q的产物。QP是Q和Q的产物。QP是Q和Q的产物。QP是Q和Q的产物。QP是Q的产物。QP是Q和Q的产物。Q是Q的产物。QP是Q和Q的产物。Q是Q的产物。Q和Q是Q的产物。QP和Q的产物。QP是QP和QP的总和QP的总和QP和QP和QP和QP。Qd-11.01. 最终的目标是1QP,QP是Q和Q和Q的产物。
+__英文_Hence it remains to show that Q is univalent, total and inner total. The remaining goal is equivalent to 1⋒(QP)⌣⊆1 ⋒. This follows from the definition of Q as inner total and total: Q is inner total, total, inner, and outer total, respectively. The result is that QP is the sum of QP and QP for any Q ⊆d −1 1 0 1. The final goal is 1 QP, which is the product of Q and Q
+__原文英文_  Hence it remains to show −1⋒QP ⊆−1⋒for any Q ⊆d −1⋒. The latter condition means Q is  univalent, total and inner total. The remaining goal is equivalent to 1⋒(QP)⌣⊆1⋒. This follows  by  1⋒(QP)⌣= 1⋒Λ(∋Q∋)⌣  = 1⋒(∈÷ ∈Q⌣∈)  = (∈1⋒⌣÷ ∈Q⌣∈)  = (∅÷ ∈Q⌣∈)  = ∅/∋Q∋  = −(U∈Q⌣∈)  = −(U(−1⋒Q⌣∈))  ⊆−(UQQ⌣∈)  ⊆−(U∈)  = 1⋒  using that Q is inner total and total.
+__原文中文_因此,对于任何Q Q d -1                                                                                                                                                                          。
+__中文_随后,将第4.5号提案与第4.5号提案合并,在Pelele组成(第3.5号提案)下,内部确定性多关系多关系(第3.5号提案)的封闭。
+__英文_Closure of inner deterministic multirelations under Peleg composition (Proposition 3.5) also follows by combining Proposition 4.5 and
+__原文英文_  Hence closure of inner deterministic multirelations under Peleg composition (Proposition 3.5)  also follows by combining Proposition 4.5 and Lemma 5.3. However, composition of total or inner  total multirelations need not be associative.  Example 5.4.
+__原文中文_因此,在Peleg组成(3.5号提案)下,内部确定主义多重关系(3.5号提案)的结束也随之将4.5号提案和Lemma 5.3号提案合并,但总或内部总多重关系的组成不必是连带关系。
+__中文_Lemma 5.5.1: 外和内总多重关系不构成类别。 Let X = {a, b, c} 和 R, S : X {PX with R = {(a, a, b, b, b, {a} , (c, {c} 。 ) 。 (n) 。 (n) 。 (n) 。
+__英文_Lemma 5.5.1: Outer andinner total multirelations do not form categories. Let X = {a, b, c} and R, S : X ↔PX with R = {(a, a, b), (b, {a}), (c, {c})}. Then (
+__原文英文_ Let X = {a, b, c} and R, S : X ↔PX with R = {(a, {a, b}), (b, {a}), (c, {c})} and  S = {(a, {a, b}), (b, {a, c}), (c, {c})}. Then (a, {a, b, c}) ∈R ∗(R ∗S) −(R ∗R) ∗S. Thus outer and  inner total multirelations do not form categories.  We conclude with preservation properties for outer total multirelations.  Lemma 5.5.
+__原文中文_让 X = {a, b, c} 和 R, S : X {PX 与 R = {(a, {a, b} ) {(b, {a} ) {a, (c) } 和 S = {(a, {a, b) {c} {(c) } 。 (a, {a, b, c} 。) {R } {(R ) {(R ) {(R ) } {(R ) } {S } {S } {(R ) {S } } {因此, 外部和内部的共和多重关系不构成类别。 我们的结论是, 外共多重关系的保存属性。 Lemma 5.5。
+__中文_Lemma 3.15(1)说,如果S是外加的,那么Dom(S) = Id 和 α(S*) = α(1) ,这是一种平等,在Lemma的证据中包含的步骤。 3. 15(2) 即成为平等,表明要求。(1)和(2) 对于(1)和(2),
+__英文_Lemma 3.15(1) states that if S is outer total, then dom(S) = Id and α(S∗) = α(1), which is an equality. The inclusion step in the proof of Lemma. 3. 15(2) then becomes an equality, which shows the claim. For (1) and (2), the
+__原文英文_ Let R : X ↔PY and S : Y ↔PZ be outer total. Then  1. α(R ∗S) = α(R)α(S),  2. δi(R ∗S) = δi(R) ∗δi(S) and δo(R ∗S) = δo(R) ∗δo(S).  Proof. For (1), if S is outer total, then dom(S) = Id and α(S∗) = α(1)α(S) by Lemma 3.15(1).  The inclusion step in the proof of Lemma 3.15(2) then becomes an equality, which shows the claim.
+__原文中文_允许 R: X PY 和 S: Y PZ 是外向总计。 然后, 1. α(R ∗ S) = α(R)α(S), 2. i(R ∗ S) = i(R) i(S) 和 o(R ∗ S) = o(R) o(S) 。 证据。 关于(1) , 如果 S 是外向总计, 那么 dom(S) = Id 和 α(S ) = α(1) α(S) , 改为 Lemma 3.15(1) 。 将Lemma 3.15(2) 的证明纳入步骤成为一项平等,显示索赔。
+__中文_Lemma 5.6.5 不支持外部的单体多重关系。 (2) 考虑 X = {a, b} 和 R, S : X = {PX 与 R = {(a, {a, b)}。 (3) 考虑 R,
+__英文_Lemma 5.6.5 does not hold for outer univalent multirelations. For (2) consider X = {a, b} and R, S : X ↔PX with R = {(a, {a,. b)}. For (3) consider R,
+__原文英文_  Item (2) is then immediate from (1) and Lemma 3.4.  18  Example 5.6. Part (1) of Lemma 5.5 does not hold for outer univalent multirelations: we have  α(1 ∗∅) = α(1) = Id but α(1)α(∅) = Id ∅= ∅. For (2) consider X = {a, b} and R, S : X ↔PX  with R = {(a, {a, b})} and S = {(a, {a})}.
+__原文中文_项目(2)随后从(1)和Lemma 3.4. 18例5.6. Lemma 5.5第(1)部分不支持外部非象形多重关系:我们有α(1 ) = α(1) = Id,但α(1) () = Id  。关于(2) 考虑 X = {a, b} 和 R, S : X = {(a, {a, b} 和 S = {(a, {a, b} 和 S = {(a, {a} } } 和 S = {(a, {a} } } 。
+__中文_我们讨论另外两项行动,称为多重关系的共聚和共产主义。共同确定和进一步地分化。我们还讨论另外两项行动,即共同决定和共同多民族关系。我们最后讨论共同决定和在本条的共集和多重关系一节中进一步的非共产主义。我们讨论的是共同决定和共产主义。
+__英文_We discuss two additional operations called co-fusion and co-ﬁssion of multirelations. Co-Determinisation and Further Isomorphisms. We also discuss two more operations called Co-Fusion and Co-Multirelated Multirelated. We conclude with a discussion of co-determination and further isomorphisms in the context of the Co-fusions and Multirelations section of this article. We
+__原文英文_ Then δi(R ∗S) = δi(∅) = ∅but  δi(R) ∗δi(S) = {(a, {a}), (a, {b})} ∗S = {(a, {a})}.  Moreover δo(R ∗S) = δo(∅) = {(a, ∅), (b, ∅)} but  δo(R) ∗δo(S) = (R ∪{(b, ∅)}) ∗(S ∪{(b, ∅)}) = {(a, {a}), (b, ∅)}.  6  Co-Determinisation and Further Isomorphisms  We discuss two additional operations called co-fusion and co-ﬁssion of multirelations.
+__原文中文_(R)=(R) (S) = {(a) {(a) {(a) },(a) {(b)}} {(S) {(a) } {(a) {(a) } 。此外,(R) = (o) = {(a) },(b) } 但(R) (S) = (R) (b) } {(S) {(b) } {(b) } = {(a) {(a) ) ,(b) {(a)} } 。
+__中文_内无形态化赋予共聚和共分裂的特性。 由此可见, 这些特性是通过内无形态论获得的。 内无形态主义也可以用来定义共制。 例如, 共制的特性。
+__英文_The inner isomorphism gives the properties of co-fusion and co-ﬁssion. It follows that the properties are obtained via the inner isomorphicism. The inner ismorphism can also be used to define co-formula. For example, the property of co
+__原文英文_ They are  obtained via the inner isomorphism:  ˜δo(R) = ∼δo(∼R)  and  ˜δi(R) = ∼δi(∼R).  It follows that  ˜δo(R) =  n  (a, B) | B =  \  R(a)  o  and  ˜δi(R) = R↑∩A⋓.  Other properties of co-fusion and co-ﬁssion follow immediately from the inner isomorphism.
+__原文中文_它们是通过内部异体主义获得的:o(R) = o(R) 和i(R) = i(R) 。 因此,o(R) = n(a, B)  B = \ R(a) o 和i(R) = RA 。 内部异体主义随之而来的其他合并和共联特性。
+__中文_在3.3节中,我们使用了异形态主义来代表α(R)作为(内在)确定性多关系。我们现在讨论进一步的异形态表现。详情见我们的伊莎贝尔理论。例如,我们表明,Galois联系的定义是````。
+__英文_In Section 3.3 we have used isomorphisms to represent α(R) as (inner) deterministic multire-lations. We now discuss further isomorphic representations. See our Isabelle theories for details. For example, we show that there is a Galois connection deﬁned with respect to  ‘’’ ‘
+__原文英文_ For  instance,  ˜δo(R) = −(−R↑∩A⋓)↓∩−(∼R↑∩A⋒)↑= −(−R↑∩A⋓)↓∩−((R↑∩A⋓) ⊙∼1)↑  and there is a Galois connection deﬁned with respect to ⊑↑. See our Isabelle theories for details.  In Section 3.3 we have used isomorphisms to represent α(R) as (inner) deterministic multire-  lations δo(R) and δi(R). We now discuss further isomorphic representations.
+__原文中文_例如,o(R)=-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-(-)-)-(-)-(-)-(-)-(-)-(-)-)-(-)-(-)-(-)-(-)-(-)-)-(-)-(-)-(-)-)-(-)-(-)-)-(-)-(-)-(-)-)-(-)-(-)-(-)-(-)-)-(-)--)---(--(-(-)-(-)-)-(---)-(-)-)-(--)-)-(-)-)-)-(--)-)------(-(-)-(---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+__中文_断层多层关系与其下层封闭状态不均匀。 下层封闭的表示包括聚变和裂变。 聚变的应用让我们根据 o( R) = ( R) = ( R) ( ) 返回 。
+__英文_Deterministicmultirelations are isomorphic to their down-closures. Down-closed representation contains both the fusion and the ﬁssion. Application of fusion takes us back according to δo(R) =  δo (R) (
+__原文英文_ Since deterministic  multirelations are isomorphic to their down-closures, we obtain the down-closed representation  δ↓(R) = δo(R)↓. Application of fusion takes us back according to δo(R) = δo(δ↓(R)). Moreover,  ﬁssion is now obtained by δi(R) = δ↓(R)∩A⋒. Hence the down-closed representation contains both  the fusion and the ﬁssion.
+__原文中文_由于确定论的多重关系与其下沉封闭是分不开的,所以我们获得了下沉封闭式的表示法 (R) = o(R) 。根据 (R) = o(() (R) 。此外,裂变现在由 (R) = (R) (A ) 获得。 因此,下沉封闭式表示法既包括聚变,也包括裂变。
+__中文_我们获得了确定性多重关系与-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+__英文_We obtain anisomorphism between the quantaloid of deterministic multirelations with ⋒ and the quantALoid of down-closures of determetic multirelated. (R ∗S)↓= R ∗
+__原文英文_ Finally, (R ∗S)↓= R ∗S↓= R ∗(1⋒∪S↓) = R↓∗S↓for deterministic  S and (−)↓preserves arbitrary inner unions of deterministic multirelations. Hence we obtain an  isomorphism between the quantaloid of deterministic multirelations with ⋒and the quantaloid of  down-closures of deterministic multirelations with ⋒.
+__原文中文_最后,(R ∗S) {R {S }} {( 1 S } ) = R S = 确定性S 和-} 维护确定性多重关系任意的内部结合。 因此,我们在确定性多重关系与确定性多关系和确定性多重关系下降连接之间取得了一种无定型。
+__中文_确定性多重关系也与它们的上层封闭状态不相适应。 封闭式的表示方式包含聚合和共构。 通过 [FGS23b, 例4.2], 我们获得了上层封闭式表示 i(R) 。
+__英文_Deterministic multirelations are also isomorphic to their up-closures. The up-closed representation contains both the fusion and the co-ﬁssion. By [FGS23b, Example 4.2] we obtain the up- closedrepresentation ˜δi(R)
+__原文英文_  Deterministic multirelations are also isomorphic to their up-closures, so we obtain the up-closed  representation δ↑(R) = δo(R)↑. To get back we apply co-fusion: δo(R) = ˜δo(δ↑(R)). Furthermore,  co-ﬁssion is obtained by ˜δi(R) = δ↑(R) ∩A⋓. Hence the up-closed representation contains both  the fusion and the co-ﬁssion. By [FGS23b, Example 4.
+__原文中文_确定性多重关系也与其上层闭合程度不同,因此我们获得了封闭式代表(R) = o(R) = o(R) 。要获得回调,我们应用共聚: o(R) = o((R) ((R) )。此外,共产性由 i(R) = (R) = (R) A = 。因此,封闭式代表既包含聚合,也包含共产性。 by [FGS23b,例4] by [FGS23b,例4] by [FGS23b,例4] 。
+__中文_上锁不会分布在确定性多重关系Pelegcommation上, 因此在这种情况下没有四核异形态。 但是,
+__英文_Up-closure does not distribute over Pelegcomposition for deterministic multirelations, so there is no quantaloid isomorphism in this case. However,
+__原文英文_9], up-closure does not distribute over Peleg  composition for deterministic multirelations, so there is no quantaloid isomorphism in this case.  Nevertheless, since (−)↑preserves arbitrary inner unions of deterministic multirelations, we obtain  complete lattice isomorphisms between deterministic multirelations and their up-closures.
+__原文中文_然而,由于(-)保留了确定性多重关系任意的内部结合,我们获得了在确定性多重关系及其上层关系之间完全的拉蒂氏形态。
+__中文_o (-) 的范围等于o 的范围, 即确定性多关系。 类似的结果可以从  ⁄4o( R) 开始, 而不是从  ⁄4o( R) 开始, 而不是从
+__英文_The range of ˜δo(−) equals that of δo, namely the deterministic multirelations. Similar results can be obtained by starting from ˜¼o(R) instead of 
+__原文英文_  The range of ˜δo(−) equals that of δo, namely the deterministic multirelations. Hence similar  results are obtained by starting from ˜δo(R) instead of δo(R) and considering down-/up-closed  representations. From the range of δi it is also possible to apply ↓or ↑and then go back by δi or  intersection with A⋒.
+__原文中文_o(-) 的范围等于o 的范围, 即确定论的多重关系。 因此,从o( R) 开始, 而不是o( R) , 并考虑下调/ 上调的表达方式, 就能取得相似的结果。 从i 的范围, 也可以应用or( ) 或( ) , 然后返回i 或与 A 交叉 。
+__中文_类似构造适用于 i(-) 的范围。 注意 (R ∗S) R ZS 用于 内底端
+__英文_A similar construction applies to the range of ˜δi(−). Note that (R ∗S)↑=R↑∗S↑for inner-deter
+__原文英文_ A similar construction applies to the range of ˜δi(−). Note that (R ∗S)↑=  R↑∗S↑for inner-deterministic R [FGS23b, Lemma 4.8] and (−)↑preserves arbitrary unions of inner  deterministic multirelations [FGS23b, Lemma 4.3].
+__原文中文_类似构造适用于i(-)的范围。请注意,(R ∗S)      [FGS23b, Lemma 4.8] 和 (-)  维护内在确定性多重关系任意结合[FGS23b, Lemma 4.3]。
+__中文_我们获得的是S与S之间的内定性多关系方和内封闭的等离子体之间的无形态化。
+__英文_We obtain an isomorphism between thequantaloid of inner deterministic multirelations with S and the quantaloids of up-closures of innerd
+__原文英文_ Hence we obtain an isomorphism between the  quantaloid of inner deterministic multirelations with S and the quantaloid of up-closures of inner  deterministic multirelations with S. Example 4.10 in [FGS23b] rules out a corresponding result for  the down-closure of inner deterministic multirelations.
+__原文中文_因此,我们获得了与S的内在确定性多层关系孔形体和与S.例4.10的内确定性多层关系升级的孔形体之间的异形体,[FGS23b]排除了内部确定性多层关系缩小的对应结果。
+__中文_内定主义多重关系 与下沉关系 之间的拉蒂氏形态
+__英文_Lattice isomorphisms between inner deterministic multirelations and their down-closures.
+__原文英文_ However, since (−)↓preserves arbitrary  unions of inner deterministic multirelations, at least we obtain complete lattice isomorphisms  between inner deterministic multirelations and their down-closures.
+__原文中文_然而,既然(-)---保留了任意的内定主义多重关系结合,至少我们获得了内在内定主义多重关系与下沉关系之间完全的线性等式主义。
+__中文_我们研究了内外部和内外部多种关系内部结构。
+__英文_We have studied the inner structure of multirelations through the categories of outer and inner. Univalent and deterministic multirelated and determin
+__原文英文_  19  7  Conclusion  We have studied the inner structure of multirelations through the categories of outer and inner  univalent and deterministic multirelations and determinisation maps in a multirelational language  that combines features of relation algebra and power allegories with multirelational concepts.
+__原文中文_19 结论:我们研究了多种关系内部结构,通过外部和内部单独和确定性多关系和确定性多关系类别,以多种关系语言绘制的确定性地图,将关系代数和权力直系的特征与多关系概念结合起来。
+__中文_在以前关于多种关系的各种内外部作业和外部作业的工作的基础上,增加了结果。
+__英文_Results add to previous work on the various inner and outer operations on multirelations. But shift the focus towards unival
+__原文英文_ Our  results add to previous work on the various inner and outer operations on multirelations [FGS23b],  but shift the focus towards univalence and determinism and from a relation-algebraic language to  one based on power allegories.
+__原文中文_我们的成果补充了以往关于多种关系的各种内部和外部行动的工作[FGS23b],但把重点转向了独一性和确定主义,从关系-代数语言转向基于权力-代数语言。
+__中文_虽然这种多关系语言迄今为止一直以具体关系和多关系为基础,但一种不言而喻
+__英文_While this multirelational language of has so far been based on concrete relations and multire-lations, an axiomatic
+__原文英文_  While this multirelational language of has so far been based on concrete relations and multire-  lations, an axiomatic extension of the abstract allegorical approach, which equips boolean power  allegories with multirelational operations, is its most natural continuation.
+__原文中文_虽然这种多关系语言迄今一直以具体关系和多关系为基础,但使布林能源具有多关系操作能力的抽象方略法的不言明延伸是其最自然的延续。
+__中文_这将使Birdand de Moor编程的代数[BdM97]扩大至交替非决定性。
+__英文_This would extend Birdand de Moor’s algebra of programming [BdM97] to alternating nondeterminism. The characteri-sation of intuition
+__原文英文_ This would extend Bird  and de Moor’s algebra of programming [BdM97] to alternating nondeterminism. The characteri-  sation of intuitionistic variants of power allegories based on locally complete allegories is another  interesting question, or the consideration of categories of multirelations in arbitrary Grothendieck  topoi.
+__原文中文_这将扩大Bird 和 de Moor 编程代数[BdM97] , 以取代非确定主义。 基于本地完整全部全部配电的强权异变的直觉化特征是另一个有趣的问题,或者在任意的Grothendieck topoi中考虑多种关系类别的问题。
+__中文_近似图对于确定多关系模式十分重要。 这些是佩列格[Pel87]和Nerode及Wijesekera[Pel87]和Nerode及Wijesekera[的同步动态逻辑产生的。
+__英文_ approximation maps are important for deﬁning modaloperators on multirelations. These arise in concurrent dynamic logic following Peleg [Pel87] and Nerode and Wijesekera [
+__原文英文_  Last but not least, the approximation maps α, δo and δi are important for deﬁning modal  operators on multirelations, which arise in concurrent dynamic logic following Peleg [Pel87] and  Nerode and Wijesekera [NW90].  In fact, an algebraic formalisation of such operators in our  multirelational language has been a starting point of this line of work.
+__原文中文_最后但并非最不重要的是,近似图α、o和i对于界定多重关系模式操作员非常重要,这种模式操作员的多重关系是在Peleg[Pel87]和Nerode和Wijesekera[NW90]之后同时动态逻辑中产生的。 事实上,以我们多关系语言对此类操作员进行代数正规化一直是这项工作的起点。
+__中文_这个三部论的第三部分(FGS23a)对此进行了探讨,并产生了迄今为止我们成果的主要应用。
+__英文_This is explored in the third part of this trilogy [FGS23a] and yields the main application of our results so far. The Japan Society for the
+__原文英文_ This is explored in the  third part of this trilogy [FGS23a] and yields the main application of our results so far.  Acknowledgement  Hitoshi Furusawa and Walter Guttmann thank the Japan Society for the  Promotion of Science for supporting part of this research through a JSPS Invitational Fellowship  for Research in Japan.
+__原文中文_这三部著作的第三部分(FGS23a)对此进行了探讨,并产生了迄今为止我们成果的主要应用。 致谢:Hitoshi Furusawa和Walter Gutmann感谢日本科学促进学会通过日本的JSPS研究邀请研究金支持了这部分研究。
+__中文_George Struth感谢川原康夫在九州大学几次研究访问期间的热情款待。 Georg Struth是一本关于二进制关系的书《二进制关系理论》的作者。
+__英文_Georg Struth would like to thank Yasuo Kawahara for his hospitality during several research visits at KyushuUniversity. Georg Struth is the author of a book on binary relations, Theory of Binary Relations
+__原文英文_ Georg Struth would like to thank Yasuo Kawahara for discussions on the  allegorical approach to binary relations and his hospitality during several research visits at Kyushu  University.  References  [BdM97]  R. Bird and O. de Moor. Algebra of Programming. Prentice Hall, 1997.  [FGS23a] H. Furusawa, W. Guttmann, and G. Struth.
+__原文中文_Georg Struth感谢Yasuo Kawahara讨论对二进制关系的比喻方法以及他在九州大学几次考察访问时的热情款待。
+__中文_https://arxiv.org/abs/2305.11346。 [FKST17] H. Furusawa、Y. Kawahara、G. Struth和N. Tsumagari。
+__英文_arXiv, 2305.11342, 2023. https://arxiv.org/abs/2305. 11346.                [FKST17] H. Furusawa, Y. Kawahara, G. Struth, and N. Tsumagari. On the
+__原文英文_ Modal algebra of multirelations. arXiv,  2305.11346, 2023. https://arxiv.org/abs/2305.11346.  [FGS23b] H. Furusawa, W. Guttmann, and G. Struth. On the inner structure of multirelations.  arXiv, 2305.11342, 2023. https://arxiv.org/abs/2305.11342.  [FKST17] H. Furusawa, Y. Kawahara, G. Struth, and N. Tsumagari.
+__原文中文_多重关系摩达尔代数;arXiv, 2305.11346, 2023.https://arxiv.org/abs/2305.11346.[FGS23b]H. Furusawa, W. Guttmann和G. Struth. 关于多重关系内部结构, arXiv, 2305.11342, 2023. https://arxiv.org/abs/2305.11342. [FKST17] H. Furusawa, Y. Kawahara, G. Struth和N. Tsumagari。
+__中文_P.Kleisli、Parikh和Peleg Pelegrov:《多重关系的组成和提升》,《逻辑和代数方法规划学杂志》,90:84-101,2017年。
+__英文_P. Kleisli, Parikh and Peleg Pelegrov: Compositions and liftings for multirelations. Journal of Logical and Algebraic Methods in Programming, 90:84–101, 2017. P. Freyd and A
+__原文英文_ Kleisli, Parikh and Peleg  compositions and liftings for multirelations. Journal of Logical and Algebraic Methods  in Programming, 90:84–101, 2017.  [FˇS90]  P. J. Freyd and A. ˇSˇcedrov. Categories, Allegories, volume 39 of North-Holland Math-  ematical Library. Elsevier Science Publishers, 1990.  [FS15]  H. Furusawa and G. Struth.
+__原文中文_Kleisli, Parikh和Peleg的构成和提炼,用于多重关系。《逻辑和代数方法规划学杂志》,90:84-101, 2017年。 [FS90] P.J.Freyd和A.Q.Sácedrov。类别,Allegories,北Holland数学电子图书馆第39卷,Elsevier科学出版社,1990年。 [FS15] H. Furusawa和G. Struth。
+__中文_ACM交易,17(4:28):1-34,2016年。ACM诉讼,2023:2023:2023,正式逻辑的正式证明,20(4):1-4,2017年。AC
+__英文_ACM Transactions on Computa-tional Logic, 17(4:28):1–34, 2016. ACM Proceedings of the ACM, 2023: 2023 Formal Proofs of Formal Logic, 20(4):1-4, 2017. AC
+__原文英文_  Concurrent dynamic algebra.  ACM Transactions on  Computational Logic, 16(4:30):1–38, 2015.  [FS16]  H. Furusawa and G. Struth. Taming multirelations. ACM Transactions on Computa-  tional Logic, 17(4:28):1–34, 2016.  [GS23]  W. Guttmann and G. Struth.  Inner structure, determinism and modal algebra  of multirelations.  Archive of Formal Proofs, 2023.
+__原文中文_同时动态代数。关于计算逻辑的ACM交易, 16(4:30):1- 38, 2015. [FS16] H. Furusawa和G. Struth。 限制多重关系。 Compututa- 原义逻辑的ACM交易, 17(4:28): 1-34, 2016. [GS23] W. Guttmann和G. Struth。 内建、 确定性和多重关系模式代数。 形式证据档案, 2023。
+__中文_正式证据发展,https://isa-afp.org/entries/Multifilations Heterogeneous.html.[KS18]B.Klin和J.Salamanca。
+__英文_Formal proof development,                https://isa-afp.org/entries/Multirelations Heterogeneous.html.                [KS18]                B. Klin and J. Salamanca. Iterated covariant powerset is
+__原文英文_  Formal proof development,  https://isa-afp.org/entries/Multirelations Heterogeneous.html.  [KS18]  B. Klin and J. Salamanca. Iterated covariant powerset is not a monad. Electronic Notes  in Theoretical Computer Science, 341:261–276, 2018.  Proceedings of Mathematical  Foundations of Programming Semantics (MFPS 2018).  20  [NW90]  A. Nerode and D.
+__原文中文_正式证据发展,https://isa-afp.org/entries/Multifilations Heterogeneous.html.[KS18] B.Klin和J.Salamanca。 迭代共变动力装置不是修道院。
+__中文_一. 《1990年康奈尔大学数学研究所90-43号报告》,康奈尔大学,M. Pitts. M. Pitts.
+__英文_A. Wijesekera. Constructive concurrent dynamic logic I. Report Mathematical Sciences Institute 90-43, Cornell University, 1990. M. Pitts. Applications of sup-lattice enriched
+__原文英文_ Wijesekera. Constructive concurrent dynamic logic I.  Technical  Report Mathematical Sciences Institute 90-43, Cornell University, 1990.  [Pel87]  D. Peleg. Concurrent dynamic logic. Journal of the ACM, 34(2):450–479, 1987.  [Pit88]  A. M. Pitts. Applications of sup-lattice enriched category theory to sheaf theory.
+__原文中文_Wijesekera. 建设性的并行动态逻辑一. 技术报告数学研究所90-43,康奈尔大学,1990年[Pel87] D. Peleg. 同时动态逻辑。 ACM杂志,34(2):450-479,1987年。 [Pit88] A. M. Pitts. Sup-lattice 丰富类别理论应用于Sheaf理论。
+__中文_I. Rewitzky是一本关于二进制多重关系的书的作者,他也是《计算机科学讲座说明》第2929卷编辑,第256-271页,Springer,2003年。
+__英文_I. Rewitzky is the author of a book on binary multirelations. He is also the editor of Lecture Notes in Computer Science, volume 2929, pages 256–271, Springer, 2003. He has also written a
+__原文英文_ Pro-  ceedings of the London Mathematical Society, 57(3):433–480, 1988.  [Rew03]  I. Rewitzky. Binary multirelations. In H. de Swart, E. Or lowska, G. Schmidt, and  M. Roubens, editors, Theory and Applications of Relational Structures as Knowl-  edge Instruments, volume 2929 of Lecture Notes in Computer Science, pages 256–271.  Springer, 2003.
+__原文中文_伦敦数学学会的预书,57(3):433-480,1988年。 [Rew03] I. Rewitzky. Rewitzky. Binary 多重关系。载于H. de Swart, E. Or Lowska, G. Schmidt, 和M. Roubens,编辑,《关系结构作为已知边缘工具的理论和应用》,计算机科学讲座说明第2929卷,第256至271页,Springer,2003年。
+__中文_G. Schmidt和T. Str ohlein. Relationen und graphen, Springer,1989年。I. Rosenthal,《四象体理论》,加
+__英文_G. Schmidt and T. Str¨ohlein. Relationen und Graphen. Springer, 1989. I. Rosenthal. The Theory of Quantaloids. Add
+__原文英文_  [Ros96]  K. I. Rosenthal. The Theory of Quantaloids. Addison Wesley Longman Limited, 1996.  [Sch11]  G. Schmidt. Relational Mathematics. Cambridge University Press, 2011.  [SS89]  G. Schmidt and T. Str¨ohlein. Relationen und Graphen. Springer, 1989.
+__原文中文_K. I. Rosenthal,《赤道理论》,亚迪森·韦斯利·朗曼有限公司,1996年[Sch11] G. Schmidt. Relateal数学,剑桥大学出版社,2011年[SS89] G. Schmidt和T. Str ohlein. Relationen und Grapen. Springer,1989年。
+__中文_本条中的几乎每一项行动几乎都可以以6项行动为基础来界定,6项行动混合了关系语言和多关系语言。
+__英文_Almost every operation in this article can be deﬁned in terms of a basis of 6 operations that mix the relational and the multirelational language. Here we extend the list from [FGS23b] with with
+__原文英文_  A  Basis  As in [FGS23b], almost every operation in this article can be deﬁned in terms of a basis of 6  operations that mix the relational and the multirelational language: the relational operations −,  ∩, / and the multirelational operations 1, ⋒, ∗. Here we extend the list from [FGS23b] with  deﬁnitions of the operations from power allegories.
+__原文中文_与[FGS23b]一样,本条几乎每一项行动都可以以6项行动为基础来界定,这些行动混合了关系和多关系语言:关系行动 -, , / 和多关系行动1, , , 。 我们在此将清单从[FGS23b] 中扩展,并加上权力所有者对业务的定义。
+__中文_
+__英文_We could replace relational intersection  with a multirelational intersection variant. The basis: relational ∩is obtained by R ∩S = α(R1  S1) which can be deﬁned in terms of multirerational  and the rest of the basis. For example, we could say that R S 1 1 is a variant of R R S 1 1. We could also say that  R 1 R1 2 is an variant of R R1 R2 1 and that R 2 R3 R4 R5 R6 R7 R8 R9 R10 R11 R12 R13 R14 R15 R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R28 R29 R30 R31 R32 R33 R34 R35 R36 R37 R38 R39 R40 R41 R42 R43 R44 R45 R46 R47 R48 R49 R50 R51 R52 R53 R54 R55 R58 R59 R60 R61 R62 R63 R64
+__原文英文_  • R ∪S = −(−R ∩−S)  • R −S = R ∩−S  • ∅= R ∩−R  • U = −∅  • R↑= R ⋒U  • ∈= 1↑  • Id = 1/1  • R⌣= −(−Id/R)  • SR = −(−S/R⌣)  • ∋= ∈⌣  • R\S = (S⌣/R⌣)⌣  • R ÷ S = (R\S) ∩(R⌣/S⌣)  • Λ(R) = R⌣÷ ∈  • P(R) = Λ(∋R)  • RP = P(R∋)  • µ = IdP  • Ω= ∈\∈  • C = ∈÷ −∈  • ∼R = RC  • R ⋓S = ∼(∼R ⋒∼S)  • R↓= X ⋓U  • R↕= R↑∩R↓  • 1⋒= 1 ⋓∼1  • 1⋓= ∼1⋒  • Rd = −∼R  • R ⊙S = ∼(R ∗∼S)  • R∗= (Λ(∋1) ∗1⌣R1)µ  • A⋒= U1  • A⋓= ∼A⋒  • ν(R) = R −1⋒  • τ(R) = R ∩1⋒  • α(R) = R∋  • δi(R) = R↓∩A⋒  • δo(R) = 1RP  • ˜δi(R) = R↑∩A⋓  • ˜δo(R) = ∼δo(∼R)  • dom(R) = Id ∩RR⌣  • R ⊑↑S ⇔S ⊆R↑  • R ⊑↓S ⇔R ⊆S↓  • R ⊑↕S ⇔R ⊑↓S∧R ⊑↑S  We could replace relational intersection ∩with a multirelational intersection variant ∩in  the basis: relational ∩is obtained by R ∩S = α(R1 ∩S1) which can be deﬁned in terms of  multirelational ∩and the rest of the basis.
+__原文中文_
+__中文_我们不知道多关系-多关系-能否取代关系-我们不知道
+__英文_We do not know whether a multirelational −could replace the relational
+__原文英文_ Yet we do not know whether a multirelational −could  replace the relational variant. See the comments on the list in [FGS23b] for further information.
+__原文中文_然而,我们不知道多关系-能否取代关系变式。 更多信息见[FGS23b]中列表上的评论。
