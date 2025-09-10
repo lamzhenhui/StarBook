@@ -320,7 +320,7 @@ class ExcelControl():
         else:
             hour_passed_cnt = self.get_hour_passed()
         default_hours = 8
-        logger.info('hour_passed_cnt = ', hour_passed_cnt)
+        logger.info('hour_passed_cnt = %s' % hour_passed_cnt)
         cal_hours = 0
         ret  = {} # 计算未完成任务数
         for item in task_lst:
@@ -332,7 +332,7 @@ class ExcelControl():
             if cal_hours == 0 :
                 ret[item] = 0
                 continue
-            logger.info(item, task_info,default_hours ,cal_hours)
+            logger.info('%s %s %s %s' % (item, task_info,default_hours ,cal_hours))
             # 计算未完成任务数
             ret[item] =task_info.get(item)/7*2 /default_hours * cal_hours  - \
                 self.get_day_cnt(day_before_cnt=day_before_cnt)
@@ -466,47 +466,48 @@ class ExcelControl():
         logger.info('get_money-day_before_cnt : %s' % day_before_cnt)
         msg = 'lost_finish:'
 
-        try: 
-            logger.info('>>>>')
-            if day_before_cnt:
-                day_before_cnt = int(day_before_cnt)
-            if day_before_cnt > 0:
-                cur_hour = 24
-            else:
-                cur_hour =self.get_cur_year_month_day_hour()[-1]
-            logger.info('>>>>')
-            logger.info('ast.literal_eval(exit_done).items()')
-            exis_info = ast.literal_eval(exit_done).items()
-            new_exis_info = {key:value for key, value in exis_info}
-            # logger.info('new_exis_info: %s' % new_exis_info)
-            for k in [11,13,15,17]:
-                if k not in new_exis_info:
-                    new_exis_info[k] = 0
-            logger.info('%s' % new_exis_info)
-            # logger.info('>>>2')
-            for k,v in new_exis_info.items():
-                logger.info('%s,%s,%s' % (cur_hour,v,k))
-                for item in ([10,11],[12,13],[14,15],[16,17]):
-                    if item[0] <= k  <=item[1] and v !=0:
-                        logger.info( '免除罚款: %s' % item)
-                        lost_finish_money -= 400
-                    if item[0] <= cur_hour  <=item[1] \
-                        and v ==0:
-                        logger.info('罚款所在时间点: %s' % cur_hour)
-                        logger.info('msg')
-                        msg+=str(item)
-                        logger.info('msg2')
+        # try: 
+        logger.info('>>>>')
+        if day_before_cnt:
+            day_before_cnt = int(day_before_cnt)
+        if day_before_cnt > 0:
+            cur_hour = 24
+        else:
+            cur_hour =self.get_cur_year_month_day_hour()[-1]
+        logger.info('>>>>')
+        logger.info('ast.literal_eval(exit_done).items()')
+        exis_info = ast.literal_eval(exit_done).items()
+        new_exis_info = {key:value for key, value in exis_info}
+        # logger.info('new_exis_info: %s' % new_exis_info)
+        for k in [11,13,15,17]:
+            if k not in new_exis_info:
+                new_exis_info[k] = 0
+        logger.info('%s' % new_exis_info)
+        # logger.info('>>>2')
+        for k,v in new_exis_info.items():
+            logger.info('%s,%s,%s' % (cur_hour,v,k))
+            for item in ([10,11],[12,13],[14,15],[16,17]):
+                if item[0] <= k  <=item[1] and v !=0:
+                    logger.info( '免除罚款: %s' % item)
+                    lost_finish_money -= 400
+                if item[0] <= cur_hour  <=item[1] \
+                    and v ==0:
+                    logger.info('罚款所在时间点: %s' % cur_hour)
+                    logger.info('msg')
+                    msg+=str(item)
+                    logger.info('msg2')
 
-                    # if cur_hour < 10:
-                    #     logger.info('还没到点,免除罚款: %s' % item)
-                    #     lost_finish_money-=400
+                # if cur_hour < 10:
+                #     logger.info('还没到点,免除罚款: %s' % item)
+                #     lost_finish_money-=400
 
-                logger.info('>>??')
-            logger.info('money %s' % money)
-            logger.info('补交 %s ' % lost_finish_money)
+            logger.info('>>??')
+        logger.info('money %s' % money)
+        logger.info('补交 %s ' % lost_finish_money)
+        if lost_finish_money:
             money += lost_finish_money
-        except Exception as e:
-            logger.info('get_money error: %s' % e)
+    # except Exception as e:
+        # logger.info('get_money error: %s' % e)
 
         logger.info('run get_money end')
         return money, msg
@@ -703,6 +704,45 @@ class ExcelControl():
 
     def read_ex(self):
         pass
+
+    def get_total_lose_money_before_today(self):
+        import os
+        import pandas as pd
+        
+        # 获取当前年和周以排除当前周文件
+        # current_year, current_week, _ = self.get_cur_year_week_weekday(day_before_cnt=0)
+        total_lose_money = 0.0
+        
+        # 遍历当前目录所有Excel文件
+        for filename in os.listdir('.'):
+            print(filename)
+            if filename.endswith('.xlsx') and filename != 'report_tmp.xlsx':
+                # 检查是否为每周文件（格式为 YYYY_WW.xlsx）
+                if '_' in filename and filename.split('_')[1].endswith('.xlsx'):
+                    try:
+                        year_str, week_str = filename.split('_')
+                        week_str = week_str[:-5]  # 移除 .xlsx 后缀
+                        year = int(year_str)
+                        week = int(week_str)
+                        df = self.read_df(filename)
+                        # 检查第6行是否存在（lose_money行）
+                        if len(df) > 6:
+                            lose_money_row = df.iloc[6]
+                            print(lose_money_row, 'lose_money_row')
+                            # 累加工作日列的值
+                            # for col in ['1', '2', '3', '4', '5', '6', '7']:
+                            for col in range(1,8):
+                                if col in lose_money_row:
+                                    value = lose_money_row[col]
+                                    if not pd.isna(value):
+                                        total_lose_money += float(value)
+                                        print(total_lose_money, 'total_lose_money')
+                    except (ValueError, IndexError):
+                        # 跳过不匹配或无法读取的文件
+                        continue
+        
+        return total_lose_money
+
 
 
 if __name__ == '__main__':
