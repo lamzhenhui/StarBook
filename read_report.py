@@ -647,7 +647,11 @@ class ExcelControl():
         exit_done =self.cnt_hour_detail([task_name])[task_name]
         logger.info(exit_done)
         logger.info(exit_done)
-        exit_done = ast.literal_eval(exit_done)
+        # exit_done = ast.literal_eval(exit_done)
+        import json
+
+        exit_done = json.loads(exit_done)
+
 
 
         hour_bf2 =self.get_cur_year_month_day_hour(hour_before_cnt=2)[-1]
