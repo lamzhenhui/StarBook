@@ -199,7 +199,7 @@ def handle_add_day_point():
     task_name = request.args.get('task_name')
     update_type = request.args.get('update_type')
     day_ind = request.args.get('day_ind', '')
-    add_values = int(float(request.args.get('add_values', 1)))
+    add_values = float(request.args.get('add_values', 1))
     
     logger.info(f'请求参数: {request.args}')
     
