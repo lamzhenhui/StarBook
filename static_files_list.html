@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static文件列表</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .file-item:hover {
+            background: #e9ecef;
+        }
+        .file-link {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .file-link:hover {
+            text-decoration: underline;
+        }
+        .file-path {
+            color: #666;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .count {
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Static文件列表</h1>
+        <p>共找到 <span class="count">4</span> 个文件</p>
+        <ul class="file-list">
+
+            <li class="file-item">
+                <a href="http://39.108.219.192/static/BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding——1810.04805.html" class="file-link" target="_blank">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding——1810.04805.html</a>
+                <span class="file-path">(static/BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding——1810.04805.html)</span>
+            </li>
+
+            <li class="file-item">
+                <a href="http://39.108.219.192/static/test.css" class="file-link" target="_blank">test.css</a>
+                <span class="file-path">(static/test.css)</span>
+            </li>
+
+            <li class="file-item">
+                <a href="http://39.108.219.192/static/DeepSeek LLM Scaling Open-Source Language Models with Longtermism.html" class="file-link" target="_blank">DeepSeek LLM Scaling Open-Source Language Models with Longtermism.html</a>
+                <span class="file-path">(static/DeepSeek LLM Scaling Open-Source Language Models with Longtermism.html)</span>
+            </li>
+
+            <li class="file-item">
+                <a href="http://39.108.219.192/static/js/app.js" class="file-link" target="_blank">app.js</a>
+                <span class="file-path">(static/js/app.js)</span>
+            </li>
+
+        </ul>
+    </div>
+</body>
+</html>

@@ -26,4 +26,4 @@ def run_command_in_background():
 
 if __name__ == "__main__":
     kill_post_py_processes()
-    run_command_in_background()
+    # run_command_in_background()
